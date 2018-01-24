@@ -1,0 +1,15 @@
+.user-form-width{
+    width: 40%;
+}
+#error_explanation h2{
+    display: none;
+}
+#error_explanation ul li  {
+    color: red;
+}
+.error_msg {
+    color: red;
+}
+.contact-form .input:nth-child(2) {
+    width: calc(100% - 10px);
+}s
