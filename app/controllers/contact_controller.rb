@@ -6,7 +6,6 @@ class ContactController < ApplicationController
     @contact =Contact.new(person_params)
   	 if @contact.save
       ###  call deliver method for send email ###
-      Contactus.contact_mail(@contact).deliver!
       respond_to do |format|
        format.html { redirect_to root_path, success: 'Contact was successfully created.' }
      end

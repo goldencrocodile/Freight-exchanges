@@ -3,7 +3,10 @@ class Contact < ActiveRecord::Base
 	validates :email, :presence => true
 	validates :subject, :presence => true
 	validates :messsage,:presence => true
-	def self.send_mail(contact)
-		 contact_mail(contact).deliver!
+
+	after_create :send_email_to_user
+
+	def send_email_to_user
+		Contactus.contact_mail(self).deliver
 	end
 end
