@@ -23,7 +23,7 @@
   <h2>User Type</h2>
     <div class="field user-form-width">
       <%= f.label :User_Type %><span>*</span><br />
-      <%= f.select "role_id", options_for_select(Role.all.collect{ |u| [u.name, u.id]}) %>
+      <%= f.select "role_id", options_for_select(Role.all.collect{ |u| [u.name, u.id]}), :prompt=>"Select Role" %>
     </div>
 <!-- Personal info  -->
 <h2>Personal info</h2>

@@ -32,8 +32,26 @@
 					<li>
 						<%= link_to "Home", root_path %>
 					</li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
+					<li class="has-dropdown"><a href="#">Post</a>
+            <ul class="dropdown">
+              <li>
+                <%= link_to "Post a Load", new_load_path %>
+              </li>
+              <li>
+                <%= link_to "Post a Truck", new_truck_path %>
+              </li>         
+            </ul>
+          </li>
+					<li class="has-dropdown"><a href="#">Board</a>
+            <ul class="dropdown">
+              <li>
+                <%= link_to "Load Board", loads_path %>
+              </li>
+              <li>
+                <%= link_to "Truck Board", trucks_path %>
+              </li>         
+            </ul>
+          </li>
 					<li><a href="#service">Services</a></li>
 					<li><a href="#pricing">Prices</a></li>
 					<li><a href="#team">Team</a></li>

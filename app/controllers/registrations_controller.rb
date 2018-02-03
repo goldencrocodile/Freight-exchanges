@@ -12,7 +12,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_up_path_for(resource)
-    flash[:success]  = "Welcome! You have signed up successfully."
+    '/users/sign_in'
     super
   end
 end

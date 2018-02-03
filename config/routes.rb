@@ -1,13 +1,15 @@
 FreightExchange::Application.routes.draw do
   resources :contact
+  resources :loads
+  resources :trucks
   # devise_for :users
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, :controllers => {:registrations => "registrations", confirmations: 'confirmations' }
   get "welcome/index"
   ## Redirect to root url for unknown path ###
   match '*path' => redirect('/'), via: :get
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  # get '/:token/confirm_email/', :to => "registrations#confirm_email", as: 'confirm_email'
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   get 'welcome/test' => 'welcome#test'
