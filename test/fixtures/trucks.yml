@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicle_number: MyString
+  driver_name: MyString
+  driver_mobile_no: MyString
+  truck_weight: MyString
+  truck_type: MyString
+  schedule_date: 2018-01-31
+  truck_from: MyString
+  truck_to: MyString
+
+two:
+  vehicle_number: MyString
+  driver_name: MyString
+  driver_mobile_no: MyString
+  truck_weight: MyString
+  truck_type: MyString
+  schedule_date: 2018-01-31
+  truck_from: MyString
+  truck_to: MyString

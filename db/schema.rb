@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180123071902) do
+ActiveRecord::Schema.define(version: 20180201102915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cities", force: true do |t|
+    t.string   "city_name"
+    t.string   "city_state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contacts", force: true do |t|
     t.string   "name"
@@ -25,8 +32,33 @@ ActiveRecord::Schema.define(version: 20180123071902) do
     t.datetime "updated_at"
   end
 
+  create_table "loads", force: true do |t|
+    t.string   "load_from"
+    t.string   "load_to"
+    t.string   "load_material"
+    t.string   "load_weight"
+    t.string   "load_truck_type"
+    t.integer  "load_no_of_truck"
+    t.date     "load_schedule_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "roles", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trucks", force: true do |t|
+    t.string   "vehicle_number"
+    t.string   "driver_name"
+    t.string   "driver_mobile_no"
+    t.string   "truck_weight"
+    t.string   "truck_type"
+    t.date     "schedule_date"
+    t.string   "truck_from"
+    t.string   "truck_to"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,8 +92,12 @@ ActiveRecord::Schema.define(version: 20180123071902) do
     t.string   "other_detail_aadhaar_no"
     t.string   "company_name"
     t.integer  "role_id"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 

@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<div class="container">
+  <h2>Post a Load</h2>
+  <p>Plese fill the following form to load  post details</p>
+  <fieldset><legend>Basic Details</legend></fieldset>
+    <%= form_for @load, url: {action: "create"}, html: {class: "form-inline"} do |f| %>
+      <% if @load.errors.full_messages.any? %>
+        <% @load.errors.full_messages.each do |error_message| %>
+          <div class="error_msg">
+            <%= error_message %> <br />
+          </div>
+        <% end %>
+      <% end %>
+      <div class="form-group form-margin-20">
+        <label for="from">From<span>*</span></label>
+        <%= f.select 'load_from', options_for_select(City.all.collect{ |u| [u.city_name, u.id] }), :class=> "input control-label col-sm-4", :prompt=>"Source" %>
+      </div>
+      <div class="form-group">
+        <label for="to">To <span>*</span></label>
+        <%= f.select 'load_to', options_for_select(City.all.collect{ |u| [u.city_name, u.id] }), :prompt=>"Destination" %>
+      </div>
+      <br>
+      <div class="form-group form-margin-6">
+        <label for="from">Material<span>*</span></label>
+          <%= f.select :load_material, options_for_select(Load::LOAD_MATERIAL.map {|k| [k.humanize.capitalize]}), :prompt=>"Material" %>      
+      </div>
+      <div class="form-group">
+        <label for="from">Weight(Metric Ton)<span>*</span></label>
+          <%= f.select :load_weight, options_for_select(Load::LOAD_WEIGHT.map {|k| [k.humanize.capitalize]}), :prompt=>"Weight" %>
+      </div>
+      <br>
+      <div class="form-group form-margin-8">
+        <label for="from">Truck Type<span>*</span></label>
+          <%= f.select :load_truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}), :prompt=>"Truck Type" %>
+      </div>
+      <div class="form-group form-margin-6">
+        <label for="from">No. of Truck<span>*</span></label>
+          <%= f.select :load_no_of_truck, options_for_select(Load::NO_OF_TRUCKS.map {|k| [k.humanize.capitalize]}), :prompt=>"No. of Truck" %>
+      </div>
+      <div class="form-group form-margin-4 form-width-40">
+        <label for="from">Scheduled Date </span></label>
+         <span> <%= f.text_field :load_schedule_date, :id=> "datepicker" %></span>
+      </div>
+      <div>
+        <%= f.submit "Send Post", class: "main-btn" %>
+      </div>
+    <% end -%>
+</div>
+<script type="text/javascript">
+    $( "#datepicker" ).datepicker({ minDate: 0, dateFormat: 'yy-mm-dd' });
+</script>

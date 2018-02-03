@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  load_from: MyString
+  load_to: MyString
+  load_material: MyString
+  load_weight: MyString
+  load_truck_type: MyString
+  load_no_of_truck: 1
+  load_schedule_date: 2018-01-29 15:30:42
+
+two:
+  load_from: MyString
+  load_to: MyString
+  load_material: MyString
+  load_weight: MyString
+  load_truck_type: MyString
+  load_no_of_truck: 1
+  load_schedule_date: 2018-01-29 15:30:42

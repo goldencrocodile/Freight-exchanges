@@ -1,0 +1,25 @@
+ <tr>
+  <th scope="col">Source City</th>
+  <th scope="col">Destination City</th>
+  <th scope="col">Weight (MT)</th>
+  <th scope="col">Truck Type</th><th scope="col">Gps Enable</th>
+  <th scope="col">Details</th>
+  <th scope="col">Premium Member</th>
+</tr>
+<% trucks.each do |truck| %>
+  <tr>
+    <td>
+      <span id="cphContent_grdTruckPost_lblFrom_23" title=<%= truck.truck_from %>><%= truck.truck_from %></span>
+        </td><td>
+            <span id="cphContent_grdTruckPost_lblTo_23" title=<%= truck.truck_to %>><%= truck.truck_to %></span>
+        </td><td>
+            <span id="cphContent_grdTruckPost_lblWeight_23"><%= truck.truck_weight %></span>
+        </td><td>
+            <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= truck.truck_type %>><%= truck.truck_type %></span>
+        </td><td>
+        </td><td>
+            <a class="btn-xs btn-danger" onclick="CheckGuest(this)" href="#">Book</a>
+        </td>
+      <td>
+    </td>
+<% end %>
