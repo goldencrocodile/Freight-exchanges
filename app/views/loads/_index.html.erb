@@ -1,0 +1,34 @@
+ <tr class="board_header">
+  <th scope="col" >Source City</th>
+  <th scope="col">Destination City</th>
+  <th scope="col">Material</th>
+  <th scope="col">Weight (Metric Ton)</th>
+  <th scope="col">Truck Type</th>
+  <th scope="col">Schedule Date</th>
+  <th scope="col">Detail</th>
+</tr>
+<% loads.each do |load| %>
+  <tr>
+    <td>
+      <span id="cphContent_grdTruckPost_lblFrom_23" title=<%= load.load_from %>><%= load.load_from %></span>
+        </td>
+      <td>
+        <span id="cphContent_grdTruckPost_lblTo_23" title=<%= load.load_to %>><%= load.load_to %></span>
+      </td>
+      <td>
+        <span id="cphContent_grdTruckPost_lblWeight_23"><%= load.load_material %></span>
+      </td>
+      <td>
+        <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_weight %>><%= load.load_weight %></span>
+      </td>
+      <td>
+        <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_truck_type %>><%= load.load_truck_type %></span>
+      </td>
+      <td>
+        <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_schedule_date.to_formatted_s(:long) %>><%= load.load_schedule_date.to_formatted_s(:long)%></span>
+      </td>
+      <td>
+        <a class="btn-xs btn-danger" onclick="CheckGuest(this)" href="#">Book</a>
+        </td>
+    </td>
+<% end %>

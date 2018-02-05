@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <div class="container">
   <h2>Post a Load</h2>
   <p>Plese fill the following form to load  post details</p>
@@ -14,11 +13,11 @@
       <% end %>
       <div class="form-group form-margin-20">
         <label for="from">From<span>*</span></label>
-        <%= f.select 'load_from', options_for_select(City.all.collect{ |u| [u.city_name, u.id] }), :class=> "input control-label col-sm-4", :prompt=>"Source" %>
+        <%= f.select 'load_from', options_for_select(country_list.collect{ |u| [u] }), :class=> "input control-label col-sm-4", :prompt=>"Source" %>
       </div>
       <div class="form-group">
         <label for="to">To <span>*</span></label>
-        <%= f.select 'load_to', options_for_select(City.all.collect{ |u| [u.city_name, u.id] }), :prompt=>"Destination" %>
+        <%= f.select 'load_to', options_for_select(country_list.collect{ |u| [u] }), :prompt=>"Destination" %>
       </div>
       <br>
       <div class="form-group form-margin-6">
@@ -47,6 +46,7 @@
       </div>
     <% end -%>
 </div>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript">
     $( "#datepicker" ).datepicker({ minDate: 0, dateFormat: 'yy-mm-dd' });
 </script>

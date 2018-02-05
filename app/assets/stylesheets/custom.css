@@ -28,3 +28,6 @@
 .form-width-40{width: 40%;}
 .text-data{color: red; text-align: center;}
 .board_header {background-color: none repeat scroll 0 0 #00468c !important;}
+.calculate-data{display: none;}
+#error_distance_from{display: none;color: red}
+#error_distance_to{display: none;color: red}

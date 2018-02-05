@@ -1,0 +1,2 @@
+$('.calculate-data').show();
+$(".calculate-data").html("<%= escape_javascript(render partial: 'distance_calculation', locals: { response: @response } ) %>"); 

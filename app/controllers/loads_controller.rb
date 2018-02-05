@@ -1,6 +1,6 @@
 class LoadsController < ApplicationController
+  respond_to :html, :json, :js
   def index
-    binding.pry
     @loads = Load.all
   end
 	def new
@@ -17,8 +17,18 @@ class LoadsController < ApplicationController
         render "loads/new"
       end
   end
-  def index
-    redirect_to new_load_path
+
+  def distance_calculation
+    if  params[:distance_from].present? and params[:distance_to].present?
+      # @response = HTTParty.get("https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{params[:distance_from]}&destinations=#{params[:distance_to]}+BC&key=AIzaSyAlvMtnmGT7_fFtVgvKtDMG5tYuIX2Rdig", :verify => false)
+      @response = HTTParty.get("https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{params[:distance_from]}&destinations=#{params[:distance_to]}&key=AIzaSyAlvMtnmGT7_fFtVgvKtDMG5tYuIX2Rdig", :verify => false)
+      respond_to do |format|  ## Add this
+        format.js
+        format.html
+      end  
+    end
+  end
+  def calculations
   end
    private
     def load_params

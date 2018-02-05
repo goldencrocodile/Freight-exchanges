@@ -26,6 +26,8 @@ gem 'quiet_assets', group: :development
 gem 'turbolinks'
 gem 'devise'
 gem 'toastr-rails'
+gem 'httparty'
+gem 'city-state'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

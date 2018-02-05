@@ -1,0 +1,51 @@
+<h1>Calculate <span class="color_orange">Distance</span></h1>
+<p>Please enter source city and destination city to calculate distance.</p>
+<div class="container"> 
+  <%= form_tag("/distance_calculation", method: "get", id:"distance-from", remote: true ) do %>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Source City: </label>
+      </div>
+      <div class="col-75">
+        <%= select_tag 'distance_from', options_for_select(country_list.flatten.collect{ |u| [u] }), :class=> "input control-label col-sm-4", :prompt=>"Distance from" %>
+      </div>
+      <span id="error_distance_from">Please select source city.</span>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Destination City: </label>
+      </div>
+      <div class="col-75">
+        <%= select_tag 'distance_to', options_for_select(country_list.flatten.collect{ |u| [u] }), :class=> "input control-label col-sm-4", :prompt=>"Distance to" %>
+      </div>
+      <span id="error_distance_to">Please select destination city.</span>
+    </div>
+     <div class="row">
+      <br>
+        <div><%= submit_tag 'Calculate' %></div>
+  <% end %>
+</div>
+<div class="calculate-data">
+  <%= render partial: 'distance_calculation', locals: {response: @response}  %>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#distance-from").submit(function(){
+      var distance_from = $('#distance_from').val();
+      var distance_to = $('#distance_to').val();
+        if ($('#distance_from').val() == ""){
+          $('#error_distance_from').show();
+          $('#error_distance_to').hide();
+        }
+        if ($('#distance_to').val() == ""){
+          $('#error_distance_to').show();
+          $('#error_distance_from').hide();
+        }
+        if (($('#distance_to').val() != "") && ($('#distance_from').val() != "")){
+          $('#error_distance_to').hide();
+          $('#error_distance_from').hide();
+        }
+    });
+});
+</script>

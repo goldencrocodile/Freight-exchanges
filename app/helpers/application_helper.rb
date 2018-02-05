@@ -9,4 +9,13 @@ module ApplicationHelper
     end
     flash_messages.join("\n").html_safe
   end
+
+  def country_list
+    cities = [] 
+    states = CS.states(:in) 
+    states.keys.last(36).each do |state| 
+    cities << CS.cities(state.to_sym, :IN)   
+    end
+    return cities.flatten
+  end
 end

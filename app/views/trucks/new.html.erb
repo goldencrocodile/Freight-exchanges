@@ -41,11 +41,11 @@
         </div>
         <div class="form-group form-margin-20">
         <label for="from">From<span>*</span></label>
-          <%= f.select 'truck_from', options_for_select(City.all.collect{ |u| [u.city_name] }), :class=> "input control-label col-sm-4", :prompt=>"Truck from" %>
+          <%= f.select 'truck_from', options_for_select(country_list.collect{ |u| [u] }), :class=> "input control-label col-sm-4", :prompt=>"Truck from" %>
       </div>
       <div class="form-group">
         <label for="to">To <span>*</span></label>
-          <%= f.select 'truck_to', options_for_select(City.all.collect{ |u| [u.city_name] }), :prompt=>"Truck to" %>
+          <%= f.select 'truck_to', options_for_select(country_list.collect{ |u| [u] }), :prompt=>"Truck to" %>
       </div>
       <div>
         <%= f.submit "Send Post", class: "main-btn" %>

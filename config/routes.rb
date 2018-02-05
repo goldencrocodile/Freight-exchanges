@@ -5,6 +5,8 @@ FreightExchange::Application.routes.draw do
   # devise_for :users
   devise_for :users, :controllers => {:registrations => "registrations", confirmations: 'confirmations' }
   get "welcome/index"
+  get 'distance_calculation' => 'loads#distance_calculation', as: :distance_calculation
+  get 'calculations' => 'loads#calculations', as: :calculations
   ## Redirect to root url for unknown path ###
   match '*path' => redirect('/'), via: :get
   # The priority is based upon order of creation: first created -> highest priority.
