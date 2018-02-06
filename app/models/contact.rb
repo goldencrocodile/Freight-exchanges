@@ -3,6 +3,9 @@ class Contact < ActiveRecord::Base
 	validates :email, :presence => true
 	validates :subject, :presence => true
 	validates :messsage,:presence => true
+  validates :mobile_number,   :presence => {:message => 'Mobile number with 10 digit!'},
+                     :numericality => true,
+                     :length => { :minimum => 10, :maximum => 11}
 	CONTACT_CATEGORY = ['Advertise on the website',
       'Complaint',
       'Customer Service',
