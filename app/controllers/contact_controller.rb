@@ -10,7 +10,7 @@ class ContactController < ApplicationController
        format.html { redirect_to root_path, success: 'Contact was successfully created.' }
      end
       else
-        format.html { render "contact/new" }
+        render "contact/new"
       end
   end
   def show
@@ -20,6 +20,6 @@ class ContactController < ApplicationController
   end
    private
     def person_params
-      params.require(:contact).permit(:name, :email,:subject,:messsage)
+      params.require(:contact).permit(:name, :email,:subject,:messsage,:mobile_number)
     end
 end
