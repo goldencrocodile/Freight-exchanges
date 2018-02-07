@@ -329,14 +329,9 @@
                 
 </div>
                 <span id="cphContent_tmTruckBoard" style="visibility:hidden;display:none;"></span>
-                <div class="row">
-                    <div class="form-group">
-                        <div class="col-lg-12">
-                            <h1 class="truckBoard-title">Truck <span class="color_orange">Board</span>
-                                <span id="cphContent_lblTotalTruckPostsCount" style="font-size:25px;"> (<%= @trucks.count %>)</span></h1>
-                            <br>
-                        </div>
-                    </div>
+                <div class="row truck-counter">
+                  <%= render "truck_title", trucks: @trucks  %>
+                    <br>
                 </div>
                 <div id="divBlurData" style="display: none;">
                     <a>

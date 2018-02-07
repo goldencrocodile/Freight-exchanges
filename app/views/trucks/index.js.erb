@@ -1,5 +1,7 @@
 <% if @trucks.present? %>
 	$(".truck-index").html("<%= escape_javascript(render partial: 'index', locals: { trucks: @trucks } ) %>");
+	$(".truck-counter").html("<%= escape_javascript(render partial: 'truck_title', locals: { trucks: @trucks } ) %>");
 <% else %>
 	$(".truck-index").html("<h3 class='text-data'>No data found</h3>");
+	$(".truck-counter").html("<%= escape_javascript(render partial: 'truck_title', locals: { trucks: @trucks } ) %>");
 <% end %>
