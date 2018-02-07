@@ -331,14 +331,9 @@
                 
 </div>
                 <span id="cphContent_tmTruckBoard" style="visibility:hidden;display:none;"></span>
-                <div class="row">
-                    <div class="form-group">
-                        <div class="col-lg-12">
-                            <h1 class="truckBoard-title">Load <span class="color_orange">Board</span>
-                                <span id="cphContent_lblTotalTruckPostsCount" style="font-size:25px;"> (<%= @loads.count %>)</span></h1>
-                            <br>
-                        </div>
-                    </div>
+                <div class="row load-counter">
+                  <%= render "loads_title", loads: @loads  %>
+                    <br>
                 </div>
                 <div id="divBlurData" style="display: none;">
                     <a>
@@ -368,7 +363,7 @@
                                 </div>
                                 <div class="col-md-2 col-sm-4 divTruckType">
                                     <label>Truck Type</label>
-                                    <%= select_tag :truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}), :prompt=>"Truck type", :class=>"truck_type_change" %>
+                                    <%= select_tag :load_truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}), :prompt=>"Truck type", :class=>"load_type_change" %>
                                 </div>
                                 <div class="col-md-2 col-sm-4 divScheduledDate" style="display: none;">
                                     <label>Scheduled Date</label>

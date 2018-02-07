@@ -1,7 +1,11 @@
 class LoadsController < ApplicationController
   respond_to :html, :json, :js
   def index
-    @loads = Load.all
+    if params[:selectbox1_selectedvalue].present?
+      @loads = Load.where(:load_truck_type=> params[:selectbox1_selectedvalue])
+    else
+      @loads = Load.all
+    end
   end
 	def new
   	@load =Load.new
