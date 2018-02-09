@@ -33,3 +33,8 @@
 #error_distance_to{display: none;color: red}
 #contact_subject {margin-right: 538px; margin-bottom: 20px;}
 .contact-text{text-align: center;}
+#multi_markers{width: 1200px;height: 400px;}
+.map-div{width: 1000px;}
+#map {
+        height: 50%;
+      }

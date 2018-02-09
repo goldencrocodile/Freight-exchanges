@@ -28,7 +28,8 @@ gem 'devise'
 gem 'toastr-rails'
 gem 'httparty'
 gem 'city-state'
-
+gem 'gmaps4rails'
+gem 'underscore-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
