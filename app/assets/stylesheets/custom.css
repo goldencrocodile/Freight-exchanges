@@ -35,6 +35,10 @@
 .contact-text{text-align: center;}
 #multi_markers{width: 1200px;height: 400px;}
 .map-div{width: 1000px;}
-#map {
-        height: 50%;
-      }
+#map {height: 50%;}
+#truck-type{display: block;}
+/*#load_source_pin_code{display: none;}
+#load_destination_pin_code{display: none;}
+#pin-code-destination{display: none;}
+#pin-code-source{display: none;}
+*/
