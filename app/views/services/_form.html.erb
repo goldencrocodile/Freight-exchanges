@@ -1,22 +1,16 @@
 <div class="contact-text">
-  <h2 class="font-h4">Inquiry Form</h2>
+	<% page_title = request.path.gsub('-', ' ').gsub("/","").capitalize %>
+  <h2 class="font-h4"><%= page_title %> form</h2>
   <br>
   <p>Please fill in the requisite details in the following form. We shall get back to you.</p>
 </div>
 <div class="col-md-8 col-md-offset-2">
 	<%= form_for Contact.new, url: {action: "create"}, html: {class: "contact-form"} do |f| %>
-		<%# if @contact.errors.full_messages.any? %>
-		  <%# @contact.errors.full_messages.each do |error_message| %>
-		  <div class="error_msg">
-		    <%#= error_message %> <br />
-		   </div>
-		  <%# end %>
-		<%# end %>
 	  <%= hidden_field_tag 'country_code', '+91' %>
 	  <%= f.text_field :mobile_number, class: "input", placeholder:"Enter Mobile Number *" , :required => true %>
 		<%= f.text_field :name, class: "input", placeholder:"Enter Name *" , :required => true %>
 		<%= f.email_field :email, class: "input", placeholder:"Enter E-mail Address *" , :required => true %>
-	  <%= f.select :subject, options_for_select(Contact::CONTACT_CATEGORY.map {|k| [k.humanize.capitalize]}, :selected => "Franchise"), :prompt=>"Please Select Subject" %>
+	  <%= f.select :subject, options_for_select(Contact::CONTACT_CATEGORY.map {|k| [k.humanize.capitalize]}, :selected => "#{page_title.present? ? page_title : '' }"), :prompt=>"Please Select Subject" %>
 		<%= f.text_area :messsage, class: "input", placeholder:"Write Message *" , :required => true %>
 		<%= f.submit "Send message", class: "main-btn" %>
 	<% end %>

@@ -17,7 +17,7 @@ class ServicesController < ApplicationController
 	end
   def franchise_inquiry
   end
-  def vehicle_load_inquiry
+  def vehicle_loan_inquiry
   end
   private
     def person_params

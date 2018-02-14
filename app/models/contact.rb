@@ -21,7 +21,7 @@ class Contact < ActiveRecord::Base
       'Spam Report',
       'Transport Contract',
       'Vehicle loan inquiry',
-      'Warehouse', 'Franchise']
+      'Warehouse inquiry', 'Franchise inquiry']
 	after_create :send_email_to_user
 
 	def send_email_to_user
