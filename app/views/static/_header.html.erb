@@ -72,7 +72,19 @@
               </li>         
             </ul>
           </li>
-					<li><a href="#team">Team</a></li>
+					<li class="has-dropdown"><a href="#">Services</a>
+            <ul class="dropdown">
+              <li>
+                <%= link_to "Warehouse Inquiry", warehouse_inquiry_path %>
+              </li>
+              <li>
+                <%= link_to "Franchise Inquiry", franchise_inquiry_path %>
+              </li>
+              <li>
+                <%= link_to "Vehicle Load Inquiry", vehicle_load_inquiry_path %>
+              </li> 
+            </ul>
+          </li>
 					<li class="has-dropdown"><a href="#blog">Blog</a>
 						<ul class="dropdown">
 							<li><a href="/">blog post</a></li>

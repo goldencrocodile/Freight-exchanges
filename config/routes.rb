@@ -3,11 +3,15 @@ FreightExchange::Application.routes.draw do
   resources :contact
   resources :loads
   resources :trucks
+  resources :services
   # devise_for :users
   devise_for :users, :controllers => {:registrations => "registrations", confirmations: 'confirmations' }
   get "welcome/index"
   get 'distance_calculation' => 'loads#distance_calculation', as: :distance_calculation
   get 'root_direction' => 'loads#root_direction', as: :root_direction
+  get 'warehouse-inquiry' => 'services#warehouse_inquiry', as: :warehouse_inquiry
+  get 'franchise-inquiry' => 'services#franchise_inquiry', as: :franchise_inquiry
+  get 'vehicle-load-inquiry' => 'services#vehicle_load_inquiry', as: :vehicle_load_inquiry
   ## Redirect to root url for unknown path ###
   match '*path' => redirect('/'), via: :get
   # The priority is based upon order of creation: first created -> highest priority.

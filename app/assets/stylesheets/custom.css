@@ -37,8 +37,5 @@
 .map-div{width: 1000px;}
 #map {height: 50%;}
 #truck-type{display: block;}
-/*#load_source_pin_code{display: none;}
-#load_destination_pin_code{display: none;}
-#pin-code-destination{display: none;}
-#pin-code-source{display: none;}
-*/
+/*warehouse -inquiry page*/
+.header-font{text-align: center;font-size: 32px;}
