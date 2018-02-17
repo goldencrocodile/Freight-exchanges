@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180201102915) do
+ActiveRecord::Schema.define(version: 20180213061741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20180201102915) do
     t.text     "messsage"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mobile_number"
   end
 
   create_table "loads", force: true do |t|
@@ -42,6 +43,9 @@ ActiveRecord::Schema.define(version: 20180201102915) do
     t.date     "load_schedule_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "load_type"
+    t.string   "source_pin_code"
+    t.string   "destination_pin_code"
   end
 
   create_table "roles", force: true do |t|
