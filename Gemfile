@@ -6,7 +6,7 @@ gem 'rails', '4.0.4'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'pg', '~> 0.11', group: [:development, :production]
-gem 'rails_12factor', group: :production
+# gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -22,7 +22,7 @@ gem 'pry-rails', group: [:development, :test]
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # quite assets
-gem 'quiet_assets', group: :development
+# gem 'quiet_assets', group: :development
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem 'devise'
