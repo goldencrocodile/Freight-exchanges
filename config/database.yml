@@ -21,11 +21,10 @@
 production:
   adapter: postgresql
   encoding: unicode
-  database: freight_exchange
+  database: freight_exchange_production
+  pool: 5
   username: postgres
-  password: root
-  host: localhost
-  port: 5432
+  password:
 
 development:
   adapter: postgresql
