@@ -8,15 +8,15 @@ FreightExchange::Application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
-
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   # config.assets.quiet = true
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :smtp
-
 # //SMPT setting email
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
