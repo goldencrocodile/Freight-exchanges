@@ -44,7 +44,20 @@ FreightExchange::Application.configure do
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
+# //SMPT setting email
 
+  config.action_mailer.default_url_options = { :host => 'https://freight-exchange.herokuapp.com' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default :charset => "utf-8"
+    ActionMailer::Base.smtp_settings = {
+      :address => "smtp.gmail.com", 
+      :port => 587,
+      :user_name => "schourey1988@gmail.com",
+      :password => "9754431024chourey",
+      :authentication => "plain",
+      :domain => "heroku.com",
+      :enable_starttls_auto => true
+    }
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
