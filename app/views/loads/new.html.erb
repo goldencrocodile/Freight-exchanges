@@ -4,6 +4,7 @@
   <p>Plese fill the following form to load  post details</p>
   <fieldset><legend>Basic Details</legend></fieldset>
     <%= form_for @load, url: {action: "create"}, html: {class: "form-inline"} do |f| %>
+    <div class="error-set">
       <% if @load.errors.full_messages.any? %>
         <% @load.errors.full_messages.each do |error_message| %>
           <div class="error_msg">
@@ -11,6 +12,7 @@
           </div>
         <% end %>
       <% end %>
+    </div>
      <div class="form-group form-margin-6">
       <label for="from">Load Type<span>*</span></label>
         <%= f.select :load_type, options_for_select(Load::LOAD_TYPE.map {|k| [k.humanize.capitalize]}, :selected=> params[:load].present? ? params[:load][:load_type] : ''  ), :prompt=>"Select Load Type" %>      
@@ -42,12 +44,6 @@
       </div>
       <br>
       <% if params[:load].present? and params[:load][:load_type] != "Part load" %>
-        <div class="form-group form-margin-8 " id="truck-type">
-          <label for="from">Truck Type<span>*</span></label>
-            <%= f.select :load_truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}, :selected=> params[:load].present? ? params[:load][:load_truck_type] : ''), :prompt=>"Truck Type" %>
-        </div>
-      <% end %>
-      <% if params[:load].present? and params[:load][:load_type] != "Part load" %>
         <div class="form-group form-margin-6 no-of-truck">
           <label for="from">No. of Truck<span>*</span></label>
             <%= f.select :load_no_of_truck, options_for_select(Load::NO_OF_TRUCKS.map {|k| [k.humanize.capitalize]}, :selected=> params[:load].present? ? params[:load][:load_no_of_truck] : ''), :prompt=>"No. of Truck" %>
@@ -61,6 +57,12 @@
         <label for="from">Destination pin code<span>*</span></label>
          <%= f.text_field :destination_pin_code, class: "input control-label col-sm-4", :class=> "form-control", :placeholder=> "Destination pin code" %>
       </div>
+      <% if params[:load].present? and params[:load][:load_type] != "Part load" %>
+        <div class="form-group form-margin-8 " id="truck-type">
+          <label for="from">Truck Type<span>*</span></label>
+            <%= f.select :load_truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}, :selected=> params[:load].present? ? params[:load][:load_truck_type] : ''), :prompt=>"Truck Type" %>
+        </div>
+      <% end %>
       <div>
         <%= f.submit "Send Post", class: "main-btn" %>
       </div>
@@ -76,12 +78,11 @@
       if ($("#load_load_type").val() == "Part load") {
         $('#weight-of-load').hide();
         $('.no-of-truck').hide();
-        $('.truck-type').css("display","none");
         $('#load_source_pin_code').show();
         $('#load_destination_pin_code').show();
         $('#pin-code-source').css("display","block");
         $('#pin-code-destination').css("display","block");
-        $('#truck-type').hide();
+        $('#truck-type').show();
     } else {
         $('#weight-of-load').css("display","block");
         $('.no-of-truck').css("display","block");

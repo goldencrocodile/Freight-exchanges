@@ -40,3 +40,6 @@
 /*warehouse -inquiry page*/
 .header-font{text-align: center;font-size: 32px;}
 .flash{color: red;}
+#spnTruckStatus{display: none;}
+/*Error Load page*/
+.error-set{border: 0.5px solid red;}

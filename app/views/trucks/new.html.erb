@@ -5,6 +5,7 @@
   <p>Plese fill the following form to load  truck details</p>
   <fieldset><legend>Basic Details</legend></fieldset>
     <%= form_for @truck, url: {action: "create"}, html: {class: "form-inline"} do |f| %>
+    <div class="error-set">
       <% if @truck.errors.full_messages.any? %>
         <% @truck.errors.full_messages.each do |error_message| %>
           <div class="error_msg">
@@ -12,26 +13,27 @@
           </div>
         <% end %>
       <% end %>
+    </div>
       <div class="form-group ">
         <label for="from">Vehicle Number<span>*</span></label>
-         <%= f.text_field :vehicle_number, class: "input control-label col-sm-4", :class=> "form-control", :placeholder=> "Vehicle Number" %>
+         <%= f.text_field :vehicle_number, class: "input control-label col-sm-4",:placeholder=> "Vehicle Number" %>
       </div>
       <div class="form-group">
         <label for="to">Driver Name<span>*</span></label>
-          <%= f.text_field :driver_name, class: "input control-label col-sm-4", :class=> "form-control", :placeholder=> "Driver Name" %>
+          <%= f.text_field :driver_name, class: "input control-label col-sm-4", :placeholder=> "Driver Name" %>
       </div>
       <br>
       <div class="form-group">
         <label for="from">Driver Mobile Number<span>*</span></label>
-         <%= f.text_field :driver_mobile_no, class: "input control-label col-sm-4", :class=> "form-control", :placeholder=> "Contact Number" %>
+         <%= f.text_field :driver_mobile_no, class: "input control-label col-sm-4", :placeholder=> "Contact Number" %>
       </div>
       <div class="form-group">
         <label for="from">Weight(Metric Ton)<span>*</span></label>
-        <%= f.select :truck_weight, options_for_select(Load::LOAD_WEIGHT.map {|k| [k.humanize.capitalize]}), :prompt=>"Select Weight" %>
+        <%= f.select :truck_weight, options_for_select(Load::LOAD_WEIGHT.map {|k| [k.humanize.capitalize]}),:prompt=>"Select Weight" %>
       </div>
       <div class="form-group">
         <label for="from">Truck Type<span>*</span></label>
-          <%= f.select :truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}), :prompt=>"Truck type" %>
+          <%= f.select :truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}),:prompt=>"Truck type" %>
       </div>
       <!--  -->
       <br>
@@ -55,3 +57,30 @@
 <script type="text/javascript">
   $( "#datepicker" ).datepicker({ minDate: 0, dateFormat: 'yy-mm-dd' });
 </script>
+<!-- <script>
+  $(document).ready(function(){
+  // $("#truck_vehicle_number").blur(function(){
+  //   var filter = ^[A-Za-z]{2,3}(-\d{2}(-[A-Za-z]{1,2})?)?-\d{3,4}$;
+  //   var truck_val = $("#truck_vehicle_number").val();
+  //   alert(truck_val.test(filter));
+  //   if (truck_val.test(filter)) {
+  //     alert("fff");
+  //     $('#spnTruckStatus').html('Valid');
+  //     $('#spnTruckStatus').css('color', 'green');
+  //   }
+  //   else{
+  //     alert("fffail");
+  //   }
+  // });
+  });
+  // function validateTruckNumber(txtPhone) {
+  //   var a = document.getElementById(truck_vehicle_number).value;
+  //   var filter = [A-Z]{2}\s[0-9|\s]{1,2}\s[A-Z|\s]{1,2}\s[0-9]{1,4};
+  //   if (filter.test(a)) {
+  //       return true;
+  //   }
+  //   else {
+  //       return false;
+  //   }
+  // }
+</script> -->
