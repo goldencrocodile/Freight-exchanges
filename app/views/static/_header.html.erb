@@ -1,7 +1,10 @@
 <!-- Header -->
- 	<header id="home">
+  <% home_id = params[:action] =="index" && params[:controller] =="welcome" ? "home" : "home-without-homepage" %>
+ 	<header id=<%= home_id %>>
  		<!-- Background Image -->
- 		<div class="bg-img" style="background-image: url('/assets/bgimage.jpg');">
+    <% if params[:action] =="index" && params[:controller] =="welcome" %>
+      <div class="bg-img" style="background-image: url('/assets/bgimage.jpg');">
+    <% end %> 
  			<div class="overlay"></div>
  		</div>
  		<!-- /Background Image -->
@@ -111,16 +114,14 @@
  					</li>
  				</ul>
  				<!-- /Main navigation -->
- 
  			</div>
  		</nav>
  		<!-- /Nav -->
- 
+  <% if params[:action] =="index" && params[:controller] =="welcome" %>
  		<!-- home wrapper -->
  		<div class="home-wrapper">
  			<div class="container">
  				<div class="row">
- 
  					<!-- home content -->
  					<div class="col-md-10 col-md-offset-1">
  						<div class="home-content">
@@ -136,6 +137,7 @@
  				</div>
  			</div>
  		</div>
+  <% end %>  
  		<!-- /home wrapper -->
  
  	</header>

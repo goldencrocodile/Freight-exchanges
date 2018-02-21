@@ -28,7 +28,7 @@
 .form-width-40{width: 40%;}
 .text-data{color: red; text-align: center;}
 .board_header {background-color: none repeat scroll 0 0 #00468c !important;}
-.calculate-data{display: none;}
+.calculate-data{display: none;margin: 30px; margin-left: 0px;}
 #error_distance_from{display: none;color: red}
 #error_distance_to{display: none;color: red}
 #contact_subject {margin-right: 538px; margin-bottom: 20px;}
@@ -43,3 +43,6 @@
 #spnTruckStatus{display: none;}
 /*Error Load page*/
 .error-set{border: 0.5px solid red;}
+.post-form-msg{padding-top:20px;}
+.container.container-padding-top{padding-top: 100px;}
+.header-text{padding: 20px;}

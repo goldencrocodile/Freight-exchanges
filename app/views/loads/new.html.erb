@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<div class="container">
+<div class="container container-padding-top">
   <h2>Post a Load</h2>
-  <p>Plese fill the following form to load  post details</p>
+  <p class="post-form-msg">Plese fill the following form to load  post details</p>
   <fieldset><legend>Basic Details</legend></fieldset>
     <%= form_for @load, url: {action: "create"}, html: {class: "form-inline"} do |f| %>
     <div class="error-set">
