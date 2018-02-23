@@ -1,10 +1,19 @@
 <div id="floating-panel">
-  <div class="col-75">
-      <%= select_tag 'distance_from', options_for_select(country_list.flatten.collect{ |u| [u] }), :class=> "input control-label col-sm-4", :prompt=>"Distance from" %>
-    </div>
-  <div class="col-75">
-      <%= select_tag 'distance_to', options_for_select(country_list.flatten.collect{ |u| [u] }), :class=> "input control-label col-sm-4", :prompt=>"Distance to" %>
-    </div>
+  <h2>Find Root Direction</h2>
+  <table cellpadding="1" cellspacing="1" class="tblstyle">
+    <tr>
+      <td>
+    <div class="col-75">
+        <%= select_tag 'distance_from', options_for_select(country_list.flatten.collect{ |u| [u] }), :class=> "input control-label col-sm-4", :prompt=>"Distance from" %>
+      </div>
+      </td>
+      <td>
+      <div class="col-75">
+        <%= select_tag 'distance_to', options_for_select(country_list.flatten.collect{ |u| [u] }), :class=> "input control-label col-sm-4", :prompt=>"Distance to" %>
+      </div>
+      </td>
+      </tr>
+  </table> 
   </div>
   <div id="map"></div>
   <script>
@@ -33,7 +42,7 @@
         if (status === 'OK') {
           directionsDisplay.setDirections(response);
         } else {
-          // window.alert('Directions request failed due to ' + status);
+          window.alert('Directions request failed due to ' + status);
         }
       });
     }
@@ -41,19 +50,3 @@
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwzFICznWaTiSDezTgXy9TNj0amM9oWaM&callback=initMap">
   </script>
-
-  <style>
-    /* Always set the map height explicitly to define the size of the div
-     * element that contains the map. */
-    #map {
-      height: 100%;
-      margin-top:40px;
-    }
-    /* Optional: Makes the sample page fill the window. */
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  #floating-panel {margin-top: 10px; margin-left: 10px;}
-  </style>

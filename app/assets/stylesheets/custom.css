@@ -28,7 +28,7 @@
 .form-width-40{width: 40%;}
 .text-data{color: red; text-align: center;}
 .board_header {background-color: none repeat scroll 0 0 #00468c !important;}
-.calculate-data{display: none;margin: 30px; margin-left: 0px;}
+.calculate-data{display: none;margin-right: 70px;}
 #error_distance_from{display: none;color: red}
 #error_distance_to{display: none;color: red}
 #contact_subject {margin-right: 538px; margin-bottom: 20px;}
@@ -46,3 +46,35 @@
 .post-form-msg{padding-top:20px;}
 .container.container-padding-top{padding-top: 100px;}
 .header-text{padding: 20px;}
+.map-align{padding-top:20px;}
+.color_orange{color: #fd4404;}
+.font-32{font-size: 32px;}
+.font-24{font-size: 24px;}
+/*#distance-from{float: left;width: 40%;}*/
+
+.container-wid75{width: 100%;}
+.ddlalign{width:150px;}
+#distance_from{width: 200px;}
+#distance_to{width: 200px;}
+
+.tblstyle{
+	
+border-spacing: 10px;
+
+border-collapse: separate;
+}
+.tblstyle-load{width: 80%;}
+.flt-lft{margin-left:90px;float:left;}
+.calculation-btn{padding-top:16px;}
+/*Root Direction map*/
+#map {
+      height: 100%;
+      margin-top:40px;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  #floating-panel {margin-top: 10px; margin-left: 10px;}

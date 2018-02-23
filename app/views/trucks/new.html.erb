@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<div class="container container-padding-top">
+<div class="container">
   <h2>Post a Truck</h2>
   <p>Plese fill the following form to load  truck details</p>
   <fieldset><legend>Basic Details</legend></fieldset>
@@ -14,73 +14,80 @@
         <% end %>
       <% end %>
     </div>
-      <div class="form-group ">
+      <table cellpadding="1" cellspacing="1" class="tblstyle">
+        <tr >
+        <td>
+          <div class="form-group ">
         <label for="from">Vehicle Number<span>*</span></label>
          <%= f.text_field :vehicle_number, class: "input control-label col-sm-4",:placeholder=> "Vehicle Number" %>
       </div>
+        </td>
+        <td>
       <div class="form-group">
         <label for="to">Driver Name<span>*</span></label>
           <%= f.text_field :driver_name, class: "input control-label col-sm-4", :placeholder=> "Driver Name" %>
       </div>
-      <br>
-      <div class="form-group">
+        </td>
+        <td>
+          <div class="form-group">
         <label for="from">Driver Mobile Number<span>*</span></label>
          <%= f.text_field :driver_mobile_no, class: "input control-label col-sm-4", :placeholder=> "Contact Number" %>
       </div>
-      <div class="form-group">
+        </td>
+      </tr>
+      <tr>
+        <td>   </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
         <label for="from">Weight(Metric Ton)<span>*</span></label>
         <%= f.select :truck_weight, options_for_select(Load::LOAD_WEIGHT.map {|k| [k.humanize.capitalize]}),:prompt=>"Select Weight" %>
       </div>
-      <div class="form-group">
+        </td>
+        <td>
+          <div class="form-group">
         <label for="from">Truck Type<span>*</span></label>
           <%= f.select :truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}),:prompt=>"Truck type" %>
       </div>
-      <!--  -->
-      <br>
-        <div class="form-group">
-         <label for="from">Scheduled Date </span></label>
-          <span> <%= f.text_field :schedule_date, :id=> "datepicker" %></span>
-        </div>
-        <div class="form-group form-margin-20">
+        </td>
+      </tr>
+      <tr>
+        <td >  </td>
+      </tr>
+      <tr>
+        <td>
+      <div class="form-group">
+               <label for="from">Scheduled Date </span></label>
+                <span> <%= f.text_field :schedule_date, :id=> "datepicker" %></span>
+              </div>
+              </td>
+              <td>
+      <div class="form-group">
         <label for="from">From<span>*</span></label>
           <%= f.select 'truck_from', options_for_select(country_list.collect{ |u| [u] }), :class=> "input control-label col-sm-4", :prompt=>"Truck from" %>
       </div>
-      <div class="form-group">
+        </td>
+        <td>
+          <div class="form-group">
         <label for="to">To <span>*</span></label>
           <%= f.select 'truck_to', options_for_select(country_list.collect{ |u| [u] }), :prompt=>"Truck to" %>
       </div>
-      <div>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <div>
         <%= f.submit "Send Post", class: "main-btn" %>
       </div>
+        </td>
+      </tr>
+      </table>
     <% end -%>
 </div>
 <script type="text/javascript">
   $( "#datepicker" ).datepicker({ minDate: 0, dateFormat: 'yy-mm-dd' });
 </script>
-<!-- <script>
-  $(document).ready(function(){
-  // $("#truck_vehicle_number").blur(function(){
-  //   var filter = ^[A-Za-z]{2,3}(-\d{2}(-[A-Za-z]{1,2})?)?-\d{3,4}$;
-  //   var truck_val = $("#truck_vehicle_number").val();
-  //   alert(truck_val.test(filter));
-  //   if (truck_val.test(filter)) {
-  //     alert("fff");
-  //     $('#spnTruckStatus').html('Valid');
-  //     $('#spnTruckStatus').css('color', 'green');
-  //   }
-  //   else{
-  //     alert("fffail");
-  //   }
-  // });
-  });
-  // function validateTruckNumber(txtPhone) {
-  //   var a = document.getElementById(truck_vehicle_number).value;
-  //   var filter = [A-Z]{2}\s[0-9|\s]{1,2}\s[A-Z|\s]{1,2}\s[0-9]{1,4};
-  //   if (filter.test(a)) {
-  //       return true;
-  //   }
-  //   else {
-  //       return false;
-  //   }
-  // }
-</script> -->

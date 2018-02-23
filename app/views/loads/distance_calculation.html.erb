@@ -2,33 +2,37 @@
   <h1>Calculate <span class="color_orange">Distance</span></h1>
   <p>Please enter source city and destination city to calculate distance.</p>
 </div>
-<div class="container"> 
-  <%= form_tag("/distance_calculation", method: "get", id:"distance-from", remote: true ) do %>
-    <div class="row">
-      <div class="col-25">
-        <label for="fname">Source City: </label>
+<div style="width: 100%;height:300px !important;">
+  <div class="flt-lft"> 
+    <%= form_tag("/distance_calculation", method: "get", id:"distance-from", remote: true ) do %>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Source City: </label>
+        </div>
+        <div class="col-75" ">
+          <%= select_tag 'distance_from', options_for_select(country_list.flatten.collect{ |u| [u] }), :class=> "input control-label col-sm-4 ddlalign", :prompt=>"Distance from" %>
+        </div>
+        <span id="error_distance_from">Please select source city.</span>
       </div>
-      <div class="col-75">
-        <%= select_tag 'distance_from', options_for_select(country_list.flatten.collect{ |u| [u] }), :class=> "input control-label col-sm-4", :prompt=>"Distance from" %>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Destination City: </label>
+        </div>
+        <div class="col-75" ">
+          <%= select_tag 'distance_to', options_for_select(country_list.flatten.collect{ |u| [u] }), :class=> "input control-label col-sm-4 ddlalign", :prompt=>"Distance to" %>
+        </div>
+        <span id="error_distance_to">Please select destination city.</span>
       </div>
-      <span id="error_distance_from">Please select source city.</span>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Destination City: </label>
-      </div>
-      <div class="col-75">
-        <%= select_tag 'distance_to', options_for_select(country_list.flatten.collect{ |u| [u] }), :class=> "input control-label col-sm-4", :prompt=>"Distance to" %>
-      </div>
-      <span id="error_distance_to">Please select destination city.</span>
-    </div>
-     <div class="row">
-      <br>
-        <div><%= submit_tag 'Calculate' %></div>
-  <% end %>
-</div>
-<div class="calculate-data">
-  <%= render partial: 'distance_calculation', locals: {response: @response}  %>
+      <div class="row calculation-btn">
+          <div>
+            <%= submit_tag "Calculate", class: "main-btn" %>
+          </div>
+      </div>    
+    <% end %>
+  </div>
+  <div class="calculate-data" style="float:right;margin-right: :40px;">
+    <%= render partial: 'distance_calculation', locals: {response: @response}  %>
+  </div>
 </div>
 
 <script type="text/javascript">
