@@ -1,4 +1,5 @@
 FreightExchange::Application.routes.draw do
+  # get "orders/purchase_status"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get "help_center/our_network"=> 'help_center#our_network', as: :our_network
@@ -14,6 +15,7 @@ FreightExchange::Application.routes.draw do
   get 'warehouse-inquiry' => 'services#warehouse_inquiry', as: :warehouse_inquiry
   get 'franchise-inquiry' => 'services#franchise_inquiry', as: :franchise_inquiry
   get 'vehicle-loan-inquiry' => 'services#vehicle_loan_inquiry', as: :vehicle_loan_inquiry
+  post '/purchase' => 'orders#purchase_status'
   ## Redirect to root url for unknown path ###
   match '*path' => redirect('/'), via: :get
   # The priority is based upon order of creation: first created -> highest priority.

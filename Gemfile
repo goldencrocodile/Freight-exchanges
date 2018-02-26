@@ -9,6 +9,8 @@ gem 'rails', '4.0.4'
 gem 'pg', '~> 0.11', group: [:development, :production]
 gem 'rails_12factor', group: :production
 gem 'activeadmin', '~> 1.0.0.pre2'
+gem 'razorpay'
+gem 'figaro'
 # gem "meta_search", '>= 1.1.0.pre'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'

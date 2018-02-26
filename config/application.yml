@@ -1,0 +1,7 @@
+production:
+  MERCHANT_KEY_ID:  'rzp_test_1KIVhsT0nQpGZ3'
+  MERCHANT_KEY_SECRET:  'FuuUUlW5nHE4GDCal4aRxOK6'
+
+development:
+  MERCHANT_KEY_ID:  'rzp_test_1KIVhsT0nQpGZ3'
+  MERCHANT_KEY_SECRET:  'FuuUUlW5nHE4GDCal4aRxOK6'
