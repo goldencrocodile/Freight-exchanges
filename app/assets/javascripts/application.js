@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require toastr
+//= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
 //= require underscore

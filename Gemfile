@@ -8,6 +8,8 @@ gem 'rails', '4.0.4'
 # gem 'pg'
 gem 'pg', '~> 0.11', group: [:development, :production]
 gem 'rails_12factor', group: :production
+gem 'activeadmin', '~> 1.0.0.pre2'
+# gem "meta_search", '>= 1.1.0.pre'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -21,7 +23,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'pry-rails', group: [:development, :test]
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 4.2.1'
 # quite assets
 gem 'quiet_assets', group: :development
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

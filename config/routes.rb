@@ -1,4 +1,6 @@
 FreightExchange::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get "help_center/our_network"=> 'help_center#our_network', as: :our_network
   resources :contact
   resources :loads

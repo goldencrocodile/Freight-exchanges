@@ -10,4 +10,5 @@ class Truck < ActiveRecord::Base
   validates :driver_mobile_no,:presence => true,
                  :numericality => true,
                  :length => { :minimum => 10, :maximum => 15 }
+  # default_scope { where(truck_enabled: true) }
 end

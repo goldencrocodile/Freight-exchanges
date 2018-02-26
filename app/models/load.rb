@@ -40,4 +40,5 @@ validates :destination_pin_code, :presence => {:message => "can't be blank."}
 validates :source_pin_code, :destination_pin_code ,:presence => true,
                  :numericality => true,
                  :length => { :minimum => 6, :maximum => 6 }
+# default_scope { where(load_enabled: true) }
 end
