@@ -13,7 +13,7 @@ module ApplicationHelper
   def country_list
     cities = [] 
     states = CS.states(:in) 
-    states.keys.last(36).each do |state| 
+    states.except(:AN,:DN).keys.last(36).each do |state|
     cities << CS.cities(state.to_sym, :IN)   
     end
     return cities.flatten
