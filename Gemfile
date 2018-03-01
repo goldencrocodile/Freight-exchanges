@@ -11,6 +11,7 @@ gem 'rails_12factor', group: :production
 gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'razorpay'
 gem 'figaro'
+gem "paperclip"
 # gem "meta_search", '>= 1.1.0.pre'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'

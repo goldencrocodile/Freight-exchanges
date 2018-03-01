@@ -63,6 +63,7 @@
 						<%#= f.text_field :subject, class: "input", placeholder:"Subject*" , :required => true %>
             <%= f.select :subject, options_for_select(Contact::CONTACT_CATEGORY.map {|k| [k.humanize.capitalize]}), :prompt=>"Please Select Subject" %>
 						<%= f.text_area :messsage, class: "input", placeholder:"Write Message *" , :required => true %>
+						<br>
 						<%= f.submit "Send message", class: "main-btn" %>
 					<% end %>
 				</div>

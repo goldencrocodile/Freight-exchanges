@@ -21,7 +21,11 @@ validates :address_pin_code,   :presence => {:message => 'Pin number with 6 digi
   validates :company_type,:presence => true
   validates :company_pan_no,:presence => true
   validates :role_id,:presence => true
-  validates :other_detail_aadhaar_no, :presence => {:message => 'Aadhaar card number should be 12 digit!'}, :numericality => true,
-  :length => {:maximum => 12, :minimum=> 12}
+  has_attached_file :aadhaar_no_image, :default_url => ":style/rails1.jpg", validate_media_type: false
+  validates_attachment_content_type :aadhaar_no_image, content_type: /\Aimage\/.*\z/
+  # Validate content type
+  # validates_attachment_content_type :aadhaar_no_image, content_type: /\Aimage\/.*\z/
+  # validates :other_detail_aadhaar_no, :presence => {:message => 'Aadhaar card number should be 12 digit!'}, :numericality => true,
+  # :length => {:maximum => 12, :minimum=> 12}
   validates :email, :password, presence: true
 end
