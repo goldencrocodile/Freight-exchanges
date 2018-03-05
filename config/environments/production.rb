@@ -55,7 +55,7 @@ FreightExchange::Application.configure do
       :address => "smtp.gmail.com", 
       :port => 587,
       :user_name => "schourey1988@gmail.com",
-      :password => "9754431024chourey",
+      :password => "9754431024sandeep",
       :authentication => "plain",
       :domain => "heroku.com",
       :enable_starttls_auto => true

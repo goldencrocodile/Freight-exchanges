@@ -5,7 +5,7 @@ class Contact < ActiveRecord::Base
 	validates :messsage,:presence => true
   validates :mobile_number,   :presence => {:message => 'Mobile number with 10 digit!'},
                      :numericality => true,
-                     :length => { :minimum => 10, :maximum => 11}
+                     :length => { :minimum => 10, :maximum => 13}
 	CONTACT_CATEGORY = ['Advertise on the website',
       'Complaint',
       'Customer Service',
@@ -25,6 +25,6 @@ class Contact < ActiveRecord::Base
 	after_create :send_email_to_user
 
 	def send_email_to_user
-		Contactus.contact_mail(self).deliver
+		Contactus.contact_mail(self).deliver!
 	end
 end
