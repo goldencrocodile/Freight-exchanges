@@ -68,9 +68,9 @@ border-collapse: separate;
 .calculation-btn{padding-top:16px;}
 /*Root Direction map*/
 #map {
-      height: 100%;
-      margin-top:40px;
-    }
+  height: 100%;
+  margin-top:40px;
+}
     /* Optional: Makes the sample page fill the window. */
     html, body {
       height: 100%;
@@ -82,3 +82,11 @@ border-collapse: separate;
 .main-nav>li>a {
   color: #ffffff !important;
 }
+/*Distance calculation page css*/
+.header-title {float:right;}
+.align-head{width: 100%;height:300px !important;}
+/*Css for trucks index page*/
+.fix-min-height{min-height: 17px;}
+.hide-alert-msg{display: none;}
+/*Css for loads index page*/
+.load-counter-data{font-size:25px !important;}
