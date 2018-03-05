@@ -78,3 +78,7 @@ border-collapse: separate;
       padding: 0;
     }
   #floating-panel {margin-top: 10px; margin-left: 10px;}
+/*CSS for header has-dropdown*/
+.main-nav>li>a {
+  color: #ffffff !important;
+}
