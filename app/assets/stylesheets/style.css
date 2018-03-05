@@ -319,8 +319,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 #nav.nav-transparent {
-    /*background: transparent;*/
-    background: #1C1D21 !important;
+  background: #1C1D21 !important;
 }
 
 

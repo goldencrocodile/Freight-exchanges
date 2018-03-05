@@ -90,3 +90,7 @@ border-collapse: separate;
 .hide-alert-msg{display: none;}
 /*Css for loads index page*/
 .load-counter-data{font-size:25px !important;}
+/*Header css*/
+#nav.nav-transparent {
+  background: #1C1D21 !important;
+}
