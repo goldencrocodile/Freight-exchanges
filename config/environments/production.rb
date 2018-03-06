@@ -36,7 +36,7 @@ FreightExchange::Application.configure do
   config.assets.version = '1.0'
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
-  config.assets.precompile += %w[active_admin.css active_admin.js]
+  # config.assets.precompile += %w[active_admin.css active_admin.js]
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
