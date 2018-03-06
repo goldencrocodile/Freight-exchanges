@@ -94,4 +94,6 @@ border-collapse: separate;
 #nav.nav-transparent {
   background: #1C1D21 !important;
 }
-.btn-white-color{color: #ffffff !important;}
+.btn-white-color{
+  color: #ffffff !important;
+}
