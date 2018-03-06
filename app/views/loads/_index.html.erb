@@ -28,8 +28,11 @@
         <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_schedule_date.to_formatted_s(:long) %>><%= load.load_schedule_date.to_formatted_s(:long)%></span>
       </td>
       <td>
-        <!-- <a class="btn-xs btn-danger" onclick="CheckGuest(this)" href="#">Book</a> -->
-        <%= link_to "Book", send_booked_mail_path(load.id), :class=>"btn-xs btn-danger" %>
+        <% if load.booked %>
+          <%= link_to "Booked", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
+        <% else %>
+          <%= link_to "Book", send_booked_mail_path(:id=> load.id), :class=>"btn-xs btn-danger btn-white-color" %>
+        <% end %>  
         </td>
     </td>
 <% end %>

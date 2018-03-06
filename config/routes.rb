@@ -10,7 +10,8 @@ FreightExchange::Application.routes.draw do
   # devise_for :users
   devise_for :users, :controllers => {:registrations => "registrations", confirmations: 'confirmations' }
   get "welcome/index"
-  get 'send_booked_mail' => 'loads#send_booked_mail', as: :send_booked_mail
+  get 'send_booked_mail' => 'loads#send_booked_mail'
+  get 'send_truck_booked_mail' => 'trucks#send_truck_booked_mail'
   get 'distance_calculation' => 'loads#distance_calculation', as: :distance_calculation
   get 'root_direction' => 'loads#root_direction', as: :root_direction
   get 'warehouse-inquiry' => 'services#warehouse_inquiry', as: :warehouse_inquiry

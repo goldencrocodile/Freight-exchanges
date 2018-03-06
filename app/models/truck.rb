@@ -12,4 +12,8 @@ class Truck < ActiveRecord::Base
                  :numericality => true,
                  :length => { :minimum => 10, :maximum => 15 }
   # default_scope { where(truck_enabled: true) }
+  def booked(truck)
+    if truck.truck_booked == true
+    end
+  end
 end

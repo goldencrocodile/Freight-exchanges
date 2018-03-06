@@ -13,6 +13,9 @@ permit_params :load_from, :load_to, :load_material, :load_weight, :load_truck_ty
 #   permitted << :other if resource.something?
 #   permitted
 # end
-
+def booked(load)
+	if load.booked == true
+	end
+end
 
 end
