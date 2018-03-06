@@ -24,5 +24,98 @@ Things you may want to cover:
 * ...
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+# <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Actor" rel="stylesheet" type="text/css">
+# <div class="container">
+#   <div class="row">
+#     <div class="col-lg-2">
+#     </div>
+#     <div class="col-xs-4">
+#       <div class="product-place">
+#       <img src="/assets/3SC.png" width="230px" height="219px">
+#       </div>
+#     </div>
+#     <div class="col-xs-4">
+#       <div class="product-summary">
+#         <h3>3sc</h3>
+#         <p class="description">razorpay pay for 3SC</p>
+#         <h3>Automatic checkout</h3>
+#         <!-- <form action="/purchase" method="POST"> -->
+# 				<%= form_tag("/purchase", method: "POST" ) do %>
+# 	        <script
+# 	            src="https://checkout.razorpay.com/v1/checkout.js"
+# 	            data-key="<%= "#{Figaro.env.MERCHANT_KEY_ID}" %>"
+# 	            data-amount="100"
+# 	            data-name="3SC Solution"
+# 	            data-description="Freight exchange"
+# 	            data-image="/assets/3SC.png"
+# 	            data-prefill.name="chourey12"
+# 	            data-prefill.email="sandeep.chourey@gmail.com"
+# 	            data-theme.color="#F37254"
+# 	        >
+# 	        </script>
+#         <input type="hidden" value="200" name="product_id">
+#         <input type="hidden" value="123" name="user_id">
+#         <% end %>
+#       </div>
+#     <div>
+#   </div>
+#   </div>
+#   </div>
+# </div>
+# <script>
+# $(document).ready(function(){
+#   var options = {
+#       "key": "<%= "#{Figaro.env.MERCHANT_KEY_ID}" %>",
+#       "amount": "500",
+#       "name": "qwerty",
+#       "description": "qwerty desc",
+#       "image": "/images/product.jpg",
+#       "handler": function (response){
+#         var mapForm = document.createElement("form");
+#         mapForm.target = "_self";
+#         mapForm.method = "POST"; // or "post" if appropriate
+#         mapForm.action = "/purchase";
+
+#         var mapInput = document.createElement("input");
+#         mapInput.type = "text";
+#         mapInput.name = "payment_id";
+#         mapInput.value = response.razorpay_payment_id;
+#         mapForm.appendChild(mapInput);
+
+#         var mapInput2 = document.createElement("input");
+#         mapInput2.type = "text";
+#         mapInput2.name = "user_id";
+#         mapInput2.value = "10";
+
+#         var mapInput3 = document.createElement("input");
+#         mapInput3.type = "text";
+#         mapInput3.name = "product_id";
+#         mapInput3.value = "50";
+
+#         mapForm.appendChild(mapInput);
+#         mapForm.appendChild(mapInput2);
+#         mapForm.appendChild(mapInput3);
+
+#         mapForm.submit();
+
+#       },
+#       "prefill": {
+#           "name": "sandeep",
+#           "email": "sandeep@gmail.com"
+#       },
+#       "notes": {
+#           "address": "Hello World"
+#       },
+#       "theme": {
+#           "color": "#198F69"
+#       }
+#   };
+#   $("#rzp-button1").click(function(e){
+#     var rzp1 = new Razorpay(options);
+#       rzp1.open();
+#       e.preventDefault();
+#   });
+
+# });
+# </script>

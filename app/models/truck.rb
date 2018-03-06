@@ -1,4 +1,5 @@
 class Truck < ActiveRecord::Base
+  belongs_to :user
 	validates :vehicle_number,   :presence => {:message => "can't be blank."}
   validates :driver_name,   :presence => {:message => "can't be blank."}
   # validates :driver_mobile_no,   :presence => {:message => "can't be blank."}

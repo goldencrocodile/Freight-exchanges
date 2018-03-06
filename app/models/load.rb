@@ -1,4 +1,5 @@
 class Load < ActiveRecord::Base
+  belongs_to :user
   LOAD_MATERIAL = ['Auto Parts', 'Bardana jute or plastic','Building Materials','Cement','Chemicals','Coal And Ash','Container',
 'Cotton seed','Electronics Consumer Durables','Fertilizers','Fruits And Vegetables','Furniture And Wood Products','House Hold Goods','Industrial Equipments',
 'Iron sheets or bars or scraps','Liquids in drums','Liquids/Oil','Machinery new or old','Medicals',

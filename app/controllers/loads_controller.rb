@@ -1,5 +1,6 @@
 class LoadsController < ApplicationController
   respond_to :html, :json, :js
+  before_filter :authenticate_user!
   def index
     if params[:selectbox1_selectedvalue].present?
       @loads = Load.where(:load_truck_type=> params[:selectbox1_selectedvalue])
@@ -36,10 +37,13 @@ class LoadsController < ApplicationController
     end
   end
 
+  def send_booked_mail
+    binding.pry
+  end
   def root_direction
   end
    private
     def load_params
-      params.require(:load).permit(:load_from, :load_to, :load_material, :load_weight, :load_truck_type, :load_no_of_truck, :load_schedule_date, :load_type, :source_pin_code,:destination_pin_code, :load_enabled)
+      params.require(:load).permit(:load_from, :load_to, :load_material, :load_weight, :load_truck_type, :load_no_of_truck, :load_schedule_date, :load_type, :source_pin_code,:destination_pin_code, :load_enabled, :user_id)
     end
 end

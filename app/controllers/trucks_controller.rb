@@ -1,5 +1,6 @@
 class TrucksController < ApplicationController
   respond_to :html, :json, :js
+  before_filter :authenticate_user!, only: [:index]
   def index
     if params[:selectbox1_selectedvalue].present?
       @trucks = Truck.where(:truck_type=> params[:selectbox1_selectedvalue])
@@ -24,6 +25,6 @@ class TrucksController < ApplicationController
   
    private
     def truck_params
-			params.require(:truck).permit(:vehicle_number, :driver_name, :driver_mobile_no, :truck_weight, :truck_type, :schedule_date, :truck_from, :truck_to)
+			params.require(:truck).permit(:vehicle_number, :driver_name, :driver_mobile_no, :truck_weight, :truck_type, :schedule_date, :truck_from, :truck_to, :user_id)
     end
 end
