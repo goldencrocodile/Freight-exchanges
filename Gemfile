@@ -8,7 +8,7 @@ gem 'rails', '4.0.4'
 # gem 'pg'
 gem 'pg', '0.20.0'
 # gem 'pg', '~> 0.11', group: [:development, :production]
-gem 'rails_12factor', group: :production
+# gem 'rails_12factor', group: :production
 gem "activeadmin", "~> 1.0.0.pre2"
 gem 'razorpay'
 gem 'figaro'
