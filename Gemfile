@@ -9,13 +9,16 @@ gem 'rails', '4.0.4'
 gem 'pg', '0.20.0'
 # gem 'pg', '~> 0.11', group: [:development, :production]
 gem 'rails_12factor', group: :production
-gem 'activeadmin', '~> 1.0.0.pre2'
+gem "activeadmin", "~> 1.0.0.pre2"
 gem 'razorpay'
 gem 'figaro'
 gem "paperclip"
+gem "country-select"
 # gem "meta_search", '>= 1.1.0.pre'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
+group :assets do
+	gem 'sass-rails', '~> 4.0.2'
+end
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

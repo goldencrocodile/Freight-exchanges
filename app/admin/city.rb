@@ -5,6 +5,7 @@ ActiveAdmin.register City do
 #
 # permit_params :list, :of, :attributes, :on, :model
 permit_params :city_name, :city_state
+config.filters = false
 #
 # or
 #

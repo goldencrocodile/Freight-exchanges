@@ -12,6 +12,7 @@ permit_params :name,:role_enabled
 #   permitted << :other if resource.something?
 #   permitted
 # end
+config.filters = false
 
 
 end
