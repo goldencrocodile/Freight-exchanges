@@ -9,14 +9,14 @@ class TrucksController < ApplicationController
     end
   end
 	def new
-  	@truck =Truck.new
+    @truck =Truck.new
   end
   def create
     @truck =Truck.new(truck_params)
   	 if @truck.save
       ###  call deliver method for send email ###
       respond_to do |format|
-       format.html { redirect_to root_path, success: 'Truck was successfully created.' }
+       format.html { redirect_to root_path, success: 'Truck was successfully created, please check mail..!' }
       end
     else
       render "trucks/new"
@@ -28,7 +28,7 @@ class TrucksController < ApplicationController
      @truck.update_attributes(:truck_booked =>true) if @truck.present?
      TruckBook.truck_booking_email(@truck.user).deliver! if @truck.user.present?
      respond_to do |format|
-       format.html { redirect_to :back, success: 'Truck successfully booked...' }
+       format.html { redirect_to :back, success: 'Truck successfully booked, please check mail..!' }
      end
     end
   end
