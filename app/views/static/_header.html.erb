@@ -37,22 +37,30 @@
  					</li>
  					<li class="has-dropdown"><a href="#">Post</a>
              <ul class="dropdown">
+              <% if current_user.role.name == "Load Provider" and user_signed_in? %>
                <li>	
                  <%= link_to "Post a Load", new_load_path, :class=> "post-load" %>
                </li>
-               <li>
-                 <%= link_to "Post a Truck", new_truck_path, :class=> "post-truck" %>
-               </li>         
+              <% end %>
+               <% if current_user.role.name == "Truck Owner" and user_signed_in? %>
+                 <li>
+                   <%= link_to "Post a Truck", new_truck_path, :class=> "post-truck" %>
+                 </li>
+                <% end %>          
              </ul>
            </li>
  					<li class="has-dropdown"><a href="#">Board</a>
              <ul class="dropdown">
-               <li>
-                 <%= link_to "Load Board", loads_path %>
-               </li>
-               <li>
-                 <%= link_to "Truck Board", trucks_path %>
-               </li>         
+              <% if current_user.role.name == "Truck Owner" and user_signed_in? %>
+                <li>
+                  <%= link_to "Find a Load", loads_path %>
+                </li>
+              <% end %> 
+               <% if current_user.role.name == "Load Provider" and user_signed_in? %>
+                <li>
+                  <%= link_to "Find a Truck", trucks_path %>
+                </li>
+              <% end %>        
              </ul>
            </li>
            <li class="has-dropdown"><a href="#">Calculation</a>

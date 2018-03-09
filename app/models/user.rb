@@ -30,7 +30,7 @@ validates :address_pin_code,   :presence => {:message => 'Pin number with 6 digi
   # validates :other_detail_aadhaar_no, :presence => {:message => 'Aadhaar card number should be 12 digit!'}, :numericality => true,
   # :length => {:maximum => 12, :minimum=> 12}
   validates :email, :password, presence: true
-  def fullname
+  def full_name
     "#{first_name} #{last_name}"
   end
 end
