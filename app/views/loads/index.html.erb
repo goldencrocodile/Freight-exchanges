@@ -328,42 +328,30 @@
 </div>
                         </div>
                     </div>
-                
 </div>
-                <span id="cphContent_tmTruckBoard" style="visibility:hidden;display:none;"></span>
                 <div class="row load-counter">
                   <%= render "loads_title", loads: @loads  %>
                     <br>
                 </div>
-                <div id="divBlurData" style="display: none;">
-                    <a>
-                        <img class="img-responsive" src="/Images/TruckBoardBlur.jpg" alt="TruckBoardBlur"></a>
+                <div>
+                  <%= form_tag loads_path, :method => 'get' do %>
+                    <%= select_tag 'load_from', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:load_from].present? ? params[:load_from] : ''), :class=> "input control-label col-sm-4 width-20", :prompt=>"Source" %>
+                  <%= select_tag 'load_to', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:load_to].present? ? params[:load_to] : ''), :prompt=>"Destination", :class=> "filter-type width-20" %>
+                  <%= select_tag :load_material, options_for_select(Load::LOAD_MATERIAL.map {|k| [k.humanize.capitalize]}, :selected=> params[:load_material].present? ? params[:load_material] : ''), :prompt=>"Material", :class=> "filter-type width-20" %>
+                  <%= submit_tag "Search", :name => nil %>
+                <% end %>
                 </div>
                 <div id="cphContent_divAuthorisedElements" class="divMain">
                     <div id="cphContent_pnlSearchFilters" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'cphContent_btnSearch')">
 	
                         <div class="form-group ">
                             <div class="row">
-                                <div class="col-md-2 col-sm-4 hide">
-                                    <label>Posted Id</label>
-                                    <input name="ctl00$cphContent$txtPostedId" type="text" id="cphContent_txtPostedId" class="form-control" placeholder="Ex-TSPT00001">
-                                    <span id="cvPostingId" class="display-hide color-red">Invalid posting id.</span>
-                                </div>
+                                
                                 <div class="col-md-2 col-sm-4 hide divSourceCity">
                                     <label> </label>
                                     <input name="ctl00$cphContent$txtFromCity" type="text" id="cphContent_txtFromCity" placeholder="Source City" class="form-control ac_input" autocomplete="off">
                                     <input type="hidden" name="ctl00$cphContent$hfldFromCityId" id="cphContent_hfldFromCityId">
                                     <span id="cvFromCity" class="display-hide color-red">Invalid city.</span>
-                                </div>
-                                <div class="col-md-2 col-sm-4 hide divDestinationCity">
-                                    <label>Destination City</label>
-                                    <input name="ctl00$cphContent$txtDestination" type="text" id="cphContent_txtDestination" placeholder="Destination City" class="form-control ac_input" autocomplete="off">
-                                    <input type="hidden" name="ctl00$cphContent$hfldDestinationId" id="cphContent_hfldDestinationId">
-                                    <span id="cvDestination" class="display-hide color-red">Invalid city.</span>
-                                </div>
-                                <div class="col-md-2 col-sm-4 divTruckType">
-                                    <label>Truck Type</label>
-                                    <%= select_tag :load_truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}), :prompt=>"Truck type", :class=>"load_type_change" %>
                                 </div>
                                 <div class="col-md-2 col-sm-4 divScheduledDate" style="display: none;">
                                     <label>Scheduled Date</label>
@@ -381,35 +369,6 @@
                         </div>
                     
 </div>
-                    <div class="row">
-                        <div class="form-group">
-                            <div class="col-lg-2 col-sm-2 address">
-                                <div class="custom-side-detail">
-                                    <div class="custom-bg divSearchTruck">
-                                        <h5 class="mar-all-0"></h5>
-                                        <div id="cphContent_pnlSideSearchFilters" class="form-group">
-                                            <div class="mar-bot-15 hide">
-                                                <div id="cphContent_pnlSearchByPinCode" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'cphContent_btnSearchByPinCode')">
-                                                    <label>Search By Pincode</label>
-                                                    <div class="input-group">
-                                                        <input name="ctl00$cphContent$txtPinCode" type="text" maxlength="6" id="cphContent_txtPinCode" class="form-control" placeholder="Ex. 201020">
-                                                        <span class="input-group-btn">
-                                                            <input type="submit" name="ctl00$cphContent$btnSearchByPinCode" value="Go!" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cphContent$btnSearchByPinCode&quot;, &quot;&quot;, true, &quot;SearchByPinCode&quot;, &quot;&quot;, false, false))" id="cphContent_btnSearchByPinCode" class="btn btn-danger">
-                                                        </span>
-                                                    </div>
-                                                    <span id="cphContent_revPinCode" style="color:Red;display:none;">Invalid Pincode</span>
-                                                    
-                                                    <span id="lblMessagePinCode" class="color-red"></span>
-                                                
-</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-10 col-sm-10 custom-border-left divDirectory">
-                                <div class="table-responsive">
-                                    <div>
 	<table class="table table-hover table-striped table-condensed" cellspacing="0" rules="all" border="1" id="cphContent_grdTruckPost" style="border-collapse:collapse;">
     <tbody class="truck-index">
       <%= render "index", loads: @loads  %>

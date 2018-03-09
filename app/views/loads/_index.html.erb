@@ -1,3 +1,4 @@
+<% if loads.present? %>
  <tr class="board_header">
   <th scope="col" >Source City</th>
   <th scope="col">Destination City</th>
@@ -5,34 +6,41 @@
   <th scope="col">Weight (Metric Ton)</th>
   <th scope="col">Truck Type</th>
   <th scope="col">Schedule Date</th>
-  <th scope="col">Detail</th>
-</tr>
-<% loads.each do |load| %>
-  <tr>
-    <td>
-      <span id="cphContent_grdTruckPost_lblFrom_23" title=<%= load.load_from %>><%= load.load_from %></span>
+  <th scope="col">Willing to shared truck</th>
+  <th scope="col">Action</th>
+  </tr>
+  <% loads.each do |load| %>
+    <tr>
+      <td>
+        <span id="cphContent_grdTruckPost_lblFrom_23" title=<%= load.load_from %>><%= load.load_from %></span>
+          </td>
+        <td>
+          <span id="cphContent_grdTruckPost_lblTo_23" title=<%= load.load_to %>><%= load.load_to %></span>
         </td>
-      <td>
-        <span id="cphContent_grdTruckPost_lblTo_23" title=<%= load.load_to %>><%= load.load_to %></span>
-      </td>
-      <td>
-        <span id="cphContent_grdTruckPost_lblWeight_23"><%= load.load_material %></span>
-      </td>
-      <td>
-        <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_weight %>><%= load.load_weight %></span>
-      </td>
-      <td>
-        <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_truck_type %>><%= load.load_truck_type %></span>
-      </td>
-      <td>
-        <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_schedule_date.to_formatted_s(:long) %>><%= load.load_schedule_date.to_formatted_s(:long)%></span>
-      </td>
-      <td>
-        <% if load.booked %>
-          <%= link_to "Booked", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
-        <% else %>
-          <%= link_to "Book", send_booked_mail_path(:id=> load.id), :class=>"btn-xs btn-danger btn-white-color" %>
-        <% end %>  
+        <td>
+          <span id="cphContent_grdTruckPost_lblWeight_23"><%= load.load_material %></span>
         </td>
-    </td>
+        <td>
+          <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_weight %>><%= load.load_weight %></span>
+        </td>
+        <td>
+          <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_truck_type %>><%= load.load_truck_type %></span>
+        </td>
+        <td>
+          <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_schedule_date.to_formatted_s(:long) %>><%= load.load_schedule_date.to_formatted_s(:long)%></span>
+        </td>
+        <td>
+          <span> <%= load.load_sharing(load) %></span>
+        </td>
+        <td>
+          <% if load.booked %>
+            <%= link_to "Booked", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
+          <% else %>
+            <%= link_to "Book", send_booked_mail_path(:id=> load.id), :class=>"btn-xs btn-danger btn-white-color" %>
+          <% end %>  
+          </td>
+      </td>
+  <% end %>
+<% else %>
+  <tr><h3 class='text-data'>No data found</h3></tr>
 <% end %>

@@ -51,22 +51,28 @@
           <%= f.select :truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}),:prompt=>"Truck type" %>
       </div>
         </td>
+        <td>
+          <div class="form-group">
+           <label for="from">Expected Price <span>*</span></span></label>
+            <%= f.text_field :expected_price, class: "input control-label col-sm-4", :placeholder=> "Expected Price" %>
+          </div>
+        </td>
       </tr>
       <tr>
         <td >  </td>
       </tr>
       <tr>
         <td>
-      <div class="form-group">
-               <label for="from">Scheduled Date </span></label>
-                <span> <%= f.text_field :schedule_date, :id=> "datepicker" %></span>
-              </div>
-              </td>
-              <td>
-      <div class="form-group">
-        <label for="from">From<span>*</span></label>
-          <%= f.select 'truck_from', options_for_select(country_list.collect{ |u| [u] }), :class=> "input control-label col-sm-4", :prompt=>"Truck from" %>
-      </div>
+        <div class="form-group">
+         <label for="from">Scheduled Date </span></label>
+          <span> <%= f.text_field :schedule_date, :id=> "datepicker" %></span>
+        </div>
+        </td>
+      <td>
+        <div class="form-group">
+          <label for="from">From<span>*</span></label>
+            <%= f.select 'truck_from', options_for_select(country_list.collect{ |u| [u] }), :class=> "input control-label col-sm-4", :prompt=>"Truck from" %>
+        </div>
         </td>
         <td>
           <div class="form-group">
@@ -81,7 +87,7 @@
       <tr>
         <td colspan="3">
           <div>
-        <%= f.submit "Send Post", class: "main-btn" %>
+        <%= f.submit "Post truck", class: "main-btn" %>
       </div>
         </td>
       </tr>

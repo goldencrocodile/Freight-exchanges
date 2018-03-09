@@ -2,30 +2,29 @@
   <th scope="col">Source City</th>
   <th scope="col">Destination City</th>
   <th scope="col">Weight (MT)</th>
-  <th scope="col">Truck Type</th><th scope="col">Gps Enable</th>
-  <th scope="col">Details</th>
-  <th scope="col">Premium Member</th>
+  <th scope="col">Truck Type</th>
+  <th scope="col">Action</th>
 </tr>
 <% trucks.each do |truck| %>
   <tr>
     <td>
       <span id="cphContent_grdTruckPost_lblFrom_23" title=<%= truck.truck_from %>><%= truck.truck_from %></span>
-        </td><td>
-            <span id="cphContent_grdTruckPost_lblTo_23" title=<%= truck.truck_to %>><%= truck.truck_to %></span>
-        </td><td>
-            <span id="cphContent_grdTruckPost_lblWeight_23"><%= truck.truck_weight %></span>
-        </td><td>
-            <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= truck.truck_type %>><%= truck.truck_type %></span>
-        </td><td>
-        </td><td>
-          <% if truck.truck_booked == true %>
-            <%= link_to "Booked", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
-          <% else %>
-            <%= link_to "Book", send_truck_booked_mail_path(:id=> truck.id), :class=>"btn-xs btn-danger btn-white-color" %>
-          <% end %>  
-        </td>
-            <!-- <a class="btn-xs btn-danger" onclick="CheckGuest(this)" href="#">Book</a> -->
-        </td>
-      <td>
     </td>
+    <td>
+        <span id="cphContent_grdTruckPost_lblTo_23" title=<%= truck.truck_to %>><%= truck.truck_to %></span>
+    </td>
+    <td>
+      <span id="cphContent_grdTruckPost_lblWeight_23"><%= truck.truck_weight %></span>
+    </td>
+    <td>
+      <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= truck.truck_type %>><%= truck.truck_type %></span>
+    </td>
+    <td>
+      <% if truck.truck_booked == true %>
+        <%= link_to "Booked", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
+      <% else %>
+        <%= link_to "Book", send_truck_booked_mail_path(:id=> truck.id), :class=>"btn-xs btn-danger btn-white-color" %>
+      <% end %>  
+    </td>
+  </tr>
 <% end %>

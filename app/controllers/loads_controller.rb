@@ -2,8 +2,9 @@ class LoadsController < ApplicationController
   respond_to :html, :json, :js
   before_filter :authenticate_user!
   def index
-    if params[:selectbox1_selectedvalue].present?
-      @loads = Load.where(:load_truck_type=> params[:selectbox1_selectedvalue])
+    if (params[:load_from].present? or params[:load_from].present? or params[:load_material].present?)
+      # @loads = Load.where(:load_truck_type=> params[:selectbox1_selectedvalue])
+      @loads = Load.search(params)
     else
       @loads = Load.all
     end
@@ -12,9 +13,10 @@ class LoadsController < ApplicationController
   	@load =Load.new
   end
   def create
-    @load =Load.new(load_params)
+    user = current_user if user_signed_in?
+    @load =user.loads.build(load_params)
   	 if @load.save
-      ###  call deliver method for send email ###
+      ###  call deliver method after save send email ###
       respond_to do |format|
        format.html { redirect_to root_path, success: 'Load was successfully created.' }
      end
@@ -49,8 +51,12 @@ class LoadsController < ApplicationController
   end
   def root_direction
   end
+
+  def user_profile
+    @user = User.find_by_id(params[:user_id])
+  end
    private
     def load_params
-      params.require(:load).permit(:load_from, :load_to, :load_material, :load_weight, :load_truck_type, :load_no_of_truck, :load_schedule_date, :load_type, :source_pin_code,:destination_pin_code, :load_enabled, :user_id, :booked)
+      params.require(:load).permit(:load_from, :load_to, :load_material, :load_weight, :load_truck_type, :load_no_of_truck, :load_schedule_date, :load_type, :source_pin_code,:destination_pin_code, :load_enabled, :user_id, :booked, :sharing, :expected_price)
     end
 end

@@ -1,5 +1,4 @@
 class Load < ActiveRecord::Base
-  belongs_to :user
   LOAD_MATERIAL = ['Auto Parts', 'Bardana jute or plastic','Building Materials','Cement','Chemicals','Coal And Ash','Container',
 'Cotton seed','Electronics Consumer Durables','Fertilizers','Fruits And Vegetables','Furniture And Wood Products','House Hold Goods','Industrial Equipments',
 'Iron sheets or bars or scraps','Liquids in drums','Liquids/Oil','Machinery new or old','Medicals',
@@ -27,19 +26,37 @@ LOAD_TRUCK_TYPE = ['canter jumbo',
     'Truck 24/25MT   / 14 wheel',
     'Truck 9MT / 6 wheel'
 ]
-LOAD_TYPE = ['Full Load','Part Load']
-validates :load_from, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
-validates :load_to, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
-validates :load_material, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
-validates :load_schedule_date,   :presence => {:message => "can't be blank."}
-validates :load_weight, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
-validates :load_no_of_truck, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
-validates :load_truck_type, :if => Proc.new{|f|  f.load_type == "Full load"},   :presence => {:message => "can't be blank."}
-validates :source_pin_code, :presence => {:message => "can't be blank."}
-validates :load_type, :presence => {:message => "can't be blank."}
-validates :destination_pin_code, :presence => {:message => "can't be blank."}
-validates :source_pin_code, :destination_pin_code ,:presence => true,
-                 :numericality => true,
-                 :length => { :minimum => 6, :maximum => 6 }
-# default_scope { where(load_enabled: true) }
+  LOAD_TYPE = ['Full Load','Part Load']
+  LOAD_SHARE = { Yes: 1, No: 0 }
+  validates :load_from, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
+  validates :load_to, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
+  validates :load_material, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
+  validates :load_schedule_date,   :presence => {:message => "can't be blank."}
+  validates :load_weight, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
+  validates :load_no_of_truck, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
+  validates :load_truck_type, :if => Proc.new{|f|  f.load_type == "Full load"},   :presence => {:message => "can't be blank."}
+  validates :source_pin_code, :presence => true
+  validates :load_type, :presence => {:message => "can't be blank."}
+  validates :destination_pin_code, :presence => true
+  # validates :source_pin_code, :destination_pin_code ,:presence => true,
+                   # :numericality => true,
+                   # :length => { :minimum => 6, :maximum => 6 }
+  validates :expected_price, :presence => true, 
+    :format => { :with => /\A(\$)?(\d+)(\.|,)?\d{0,2}?\z/ }
+  belongs_to :user
+
+  def load_sharing(load)
+    if load.sharing == true
+      return "Yes"
+    else 
+      return "No"
+    end
+  end
+  def self.search(params)
+    if params
+       find(:all, :conditions => ['load_from LIKE ? AND load_to LIKE ? AND load_material LIKE ?', "%#{params[:load_from]}%","%#{params[:load_to]}%","%#{params[:load_material]}%"])
+    else
+      find(:all)
+    end
+  end
 end

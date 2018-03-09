@@ -1,7 +1,7 @@
-<% if @loads.present? %>
-	$(".truck-index").html("<%= escape_javascript(render partial: 'index', locals: { loads: @loads } ) %>");
-	$(".load-counter").html("<%= escape_javascript(render partial: 'loads_title', locals: { loads: @loads } ) %>");
-<% else %>
-	$(".truck-index").html("<h3 class='text-data'>No data found</h3>");
-	$(".load-counter").html("<%= escape_javascript(render partial: 'loads_title', locals: { loads: @loads } ) %>");
-<% end %>
+<%# if @loads.present? %>
+	// $(".truck-index").html("<%= escape_javascript(render partial: 'index', locals: { loads: @loads } ) %>");
+	// $(".load-counter").html("<%= escape_javascript(render partial: 'loads_title', locals: { loads: @loads } ) %>");
+<%# else %>
+	// $(".truck-index").html("<h3 class='text-data'>No data found</h3>");
+	// $(".load-counter").html("<%= escape_javascript(render partial: 'loads_title', locals: { loads: @loads } ) %>");
+<%# end %>

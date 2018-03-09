@@ -3,6 +3,7 @@ FreightExchange::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get "help_center/our_network"=> 'help_center#our_network', as: :our_network
+  get "loads/user_profile"=> 'loads#user_profile', as: :user_profile
   resources :contact
   resources :loads
   resources :trucks

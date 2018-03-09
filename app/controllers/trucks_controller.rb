@@ -12,7 +12,8 @@ class TrucksController < ApplicationController
     @truck =Truck.new
   end
   def create
-    @truck =Truck.new(truck_params)
+    user = current_user if user_signed_in?
+    @truck = user.trucks.build(truck_params)
   	 if @truck.save
       ###  call deliver method for send email ###
       respond_to do |format|
@@ -35,6 +36,6 @@ class TrucksController < ApplicationController
   
   private
     def truck_params
-			params.require(:truck).permit(:vehicle_number, :driver_name, :driver_mobile_no, :truck_weight, :truck_type, :schedule_date, :truck_from, :truck_to, :user_id, :truck_booked)
+			params.require(:truck).permit(:vehicle_number, :driver_name, :driver_mobile_no, :truck_weight, :truck_type, :schedule_date, :truck_from, :truck_to, :user_id, :truck_booked, :expected_price)
     end
 end
