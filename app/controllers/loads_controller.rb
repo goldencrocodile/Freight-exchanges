@@ -2,15 +2,26 @@ class LoadsController < ApplicationController
   respond_to :html, :json, :js
   before_filter :authenticate_user!
   def index
-    if (params[:load_from].present? or params[:load_from].present? or params[:load_material].present?)
-      # @loads = Load.where(:load_truck_type=> params[:selectbox1_selectedvalue])
-      @loads = Load.search(params)
+    if current_user.present? and current_user.role.name=="Truck Owner"
+      if (params[:load_from].present? or params[:load_from].present? or params[:load_material].present?)
+        @loads = Load.search(params)
+      else
+        @loads = Load.paginate(page: params[:page], per_page: 10) 
+      end
     else
-      @loads = Load.all
-    end
+      respond_to do |format|
+        format.html { redirect_to root_path, success: 'You are not authorised for this service!' }
+      end
+    end 
   end
 	def new
-  	@load =Load.new
+    if current_user.role.name == "Load Provider"
+  	 @load =Load.new
+    else
+      respond_to do |format|
+        format.html { redirect_to root_path, success: 'You are not authorised for this service!' }
+      end
+    end
   end
   def create
     user = current_user if user_signed_in?

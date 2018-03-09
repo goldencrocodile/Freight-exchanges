@@ -2,25 +2,43 @@ class TrucksController < ApplicationController
   respond_to :html, :json, :js
   before_filter :authenticate_user!, only: [:index]
   def index
-    if params[:selectbox1_selectedvalue].present?
-      @trucks = Truck.where(:truck_type=> params[:selectbox1_selectedvalue])
+    if current_user.present? and current_user.role.name=="Load Provider"
+      if (params[:truck_from].present? or params[:truck_to].present? or params[:vehicle_number].present?)
+        @trucks = Truck.search(params)
+      else
+        @trucks = Truck.paginate(:page => params[:page], :per_page => 10)
+      end
     else
-      @trucks = Truck.all
+      respond_to do |format|
+       format.html { redirect_to root_path, success: 'You are not authorised for this service!' }
+      end
     end
   end
 	def new
-    @truck =Truck.new
+    if current_user.present? and current_user.role.name=="Truck Owner"
+      @truck =Truck.new
+    else
+      respond_to do |format|
+        format.html { redirect_to root_path, success: 'You are not authorised for this service!' }
+      end
+    end
   end
   def create
-    user = current_user if user_signed_in?
-    @truck = user.trucks.build(truck_params)
-  	 if @truck.save
-      ###  call deliver method for send email ###
-      respond_to do |format|
-       format.html { redirect_to root_path, success: 'Truck was successfully created, please check mail..!' }
+    if current_user.present? and current_user.role.name=="Truck Owner"
+      user = current_user if user_signed_in?
+      @truck = user.trucks.build(truck_params)
+    	 if @truck.save
+        ###  call deliver method for send email ###
+        respond_to do |format|
+         format.html { redirect_to root_path, success: 'Truck was successfully created, please check mail..!' }
+        end
+      else
+        render "trucks/new"
       end
     else
-      render "trucks/new"
+      respond_to do |format|
+        format.html { redirect_to root_path, success: 'You are not authorised for this service!' }
+      end
     end
   end
   def send_truck_booked_mail

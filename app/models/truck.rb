@@ -16,4 +16,11 @@ class Truck < ActiveRecord::Base
     if truck.truck_booked == true
     end
   end
+  def self.search(params)
+    if params
+       find(:all, :conditions => ['truck_from LIKE ? AND truck_to LIKE ? AND vehicle_number LIKE ?', "%#{params[:truck_from]}%","%#{params[:truck_to]}%","%#{params[:vehicle_number]}%"])
+    else
+      find(:all)
+    end
+  end
 end

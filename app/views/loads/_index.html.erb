@@ -41,13 +41,14 @@
         </td>
         <td>
           <% if load.booked %>
-            <%= link_to "Booked", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
+            <%= link_to "Accepted", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
           <% else %>
-            <%= link_to "Book", send_booked_mail_path(:id=> load.id), :class=>"btn-xs btn-danger btn-white-color" %>
+            <%= link_to "Accept", send_booked_mail_path(:id=> load.id), :class=>"btn-xs btn-danger btn-white-color" %>
           <% end %>  
           </td>
       </td>
   <% end %>
+  <%= will_paginate loads  if loads.count > 10 %>
 <% else %>
   <tr><h3 class='text-data'>No data found</h3></tr>
 <% end %>

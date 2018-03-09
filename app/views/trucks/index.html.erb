@@ -330,52 +330,15 @@
                   <%= render "truck_title", trucks: @trucks  %>
                     <br>
                 </div>
-                <div id="divBlurData" style="display: none;">
-                    <a>
-                        <img class="img-responsive" src="/Images/TruckBoardBlur.jpg" alt="TruckBoardBlur"></a>
+                <div>
+                  <%= form_tag trucks_path, :method => 'get' do %>
+                    <%= select_tag 'truck_from', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:truck_from].present? ? params[:truck_from] : ''), :class=> "input control-label col-sm-4 width-20", :prompt=>"Source" %>
+                  <%= select_tag 'truck_to', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:truck_to].present? ? params[:truck_to] : ''), :prompt=>"Destination", :class=> "filter-type width-20" %>
+                  <%= select_tag :vehicle_number, options_for_select(Truck.pluck(:vehicle_number).map {|k| [k]}, :selected=> params[:vehicle_number].present? ? params[:vehicle_number] : ''), :prompt=>"Vehicle Number", :class=> "filter-type width-20" %>
+                  <%= submit_tag "Search", :name => nil %>
+                <% end %>
                 </div>
                 <div id="cphContent_divAuthorisedElements" class="divMain">
-                    <div id="cphContent_pnlSearchFilters" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'cphContent_btnSearch')">
-	
-                        <div class="form-group ">
-                            <div class="row">
-                                <div class="col-md-2 col-sm-4 hide">
-                                    <label>Posted Id</label>
-                                    <input name="ctl00$cphContent$txtPostedId" type="text" id="cphContent_txtPostedId" class="form-control" placeholder="Ex-TSPT00001">
-                                    <span id="cvPostingId" class="display-hide color-red">Invalid posting id.</span>
-                                </div>
-                                <div class="col-md-2 col-sm-4 hide divSourceCity">
-                                    <label> </label>
-                                    <input name="ctl00$cphContent$txtFromCity" type="text" id="cphContent_txtFromCity" placeholder="Source City" class="form-control ac_input" autocomplete="off">
-                                    <input type="hidden" name="ctl00$cphContent$hfldFromCityId" id="cphContent_hfldFromCityId">
-                                    <span id="cvFromCity" class="display-hide color-red">Invalid city.</span>
-                                </div>
-                                <div class="col-md-2 col-sm-4 hide divDestinationCity">
-                                    <label>Destination City</label>
-                                    <input name="ctl00$cphContent$txtDestination" type="text" id="cphContent_txtDestination" placeholder="Destination City" class="form-control ac_input" autocomplete="off">
-                                    <input type="hidden" name="ctl00$cphContent$hfldDestinationId" id="cphContent_hfldDestinationId">
-                                    <span id="cvDestination" class="display-hide color-red">Invalid city.</span>
-                                </div>
-                                <div class="col-md-2 col-sm-4 divTruckType">
-                                    <label>Truck Type</label>
-                                    <%= select_tag :truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}), :prompt=>"Truck type", :class=>"truck_type_change" %>
-                                </div>
-                                <div class="col-md-2 col-sm-4 divScheduledDate" style="display: none;">
-                                    <label>Scheduled Date</label>
-                                    <div class="input-group date form_datetime-component">
-                                        <input name="ctl00$cphContent$txtDate" type="text" maxlength="10" id="cphContent_txtDate" class="form-control hasDatepicker" readonly="readonly"><span class="data-clear-picker" onclick="$(this).parent().find('.hasDatepicker:enabled').val('');">×</span>
-                                        <span class="input-group-btn">
-                                            <button id="datePicker" class="btn btn-danger date-set" type="button" onclick="$(this).parent().parent().find(':text:enabled').focus();"><i class="fa fa-calendar"></i></button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-sm-4 mar-top-30 ">
-                                    <input type="submit" name="ctl00$cphContent$btnClear" value="Clear" id="cphContent_btnClear" title="Clear your details" class="btn btn-danger btn-xs divClear cleat-btn">
-                                </div>
-                            </div>
-                        </div>
-                    
-</div>
                     <div class="row">
                         <div class="form-group">
                             <div class="col-lg-2 col-sm-2 address">
@@ -402,10 +365,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-10 col-sm-10 custom-border-left divDirectory">
-                                <div class="table-responsive">
-                                    <div>
-	<table class="table table-hover table-striped table-condensed" cellspacing="0" rules="all" border="1" id="cphContent_grdTruckPost" style="border-collapse:collapse;">
+                           <div class="col-md-2 col-sm-4 mar-top-30 ">
+                           </div>
+                                    <!-- <input type="submit" name="ctl00$cphContent$btnClear" value="Clear" id="cphContent_btnClear" title="Clear your details" class="btn btn-danger btn-xs divClear cleat-btn"> -->
+                                    <%= link_to "Clear", trucks_path, :class=> "btn btn-danger btn-xs divClear cleat-btn"%>
+                            </div>
+	<table class="table table-hover table-striped table-condensed" cellspacing="0" rules="all" border="1" id="cphContent_grdTruckPost">
     <tbody class="truck-index">
       <%= render "index", trucks: @trucks  %>
   </tbody>
