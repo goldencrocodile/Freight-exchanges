@@ -48,7 +48,7 @@
           </td>
       </td>
   <% end %>
-  <%= will_paginate loads  if loads.count > 10 %>
+  <%= will_paginate loads  if loads.present? and loads.count > 10 %>
 <% else %>
   <tr><h3 class='text-data'>No data found</h3></tr>
 <% end %>

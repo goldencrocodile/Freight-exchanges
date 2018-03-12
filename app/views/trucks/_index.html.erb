@@ -4,6 +4,7 @@
     <th scope="col">Destination City</th>
     <th scope="col">Weight (MT)</th>
     <th scope="col">Truck Type</th>
+    <th scope="col">Schedule Date</th>
     <th scope="col">Vehicle Number</th>
     <th scope="col">Map</th>
     <th scope="col">Action</th>
@@ -21,6 +22,9 @@
       </td>
       <td>
         <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= truck.truck_type %>><%= truck.truck_type %></span>
+      </td>
+      <td>
+        <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= truck.schedule_date.present? ? truck.schedule_date.to_formatted_s(:long) : '' %>><%= truck.schedule_date.present? ? truck.schedule_date.to_formatted_s(:long) : '' %></span>
       </td>
       <td>
         <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= truck.vehicle_number if truck.vehicle_number.present? %>><%= truck.vehicle_number if truck.vehicle_number.present? %></span>

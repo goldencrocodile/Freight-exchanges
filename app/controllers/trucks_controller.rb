@@ -3,8 +3,9 @@ class TrucksController < ApplicationController
   before_filter :authenticate_user!, only: [:index]
   def index
     if current_user.present? and current_user.role.name=="Load Provider"
-      if (params[:truck_from].present? or params[:truck_to].present? or params[:vehicle_number].present?)
-        @trucks = Truck.search(params)
+      if (params[:truck_from].present? or params[:truck_to].present? or params[:vehicle_number].present? or params[:schedule_date].present?)
+        # @trucks = Truck.where("schedule_date = ?",params[:schedule_date]) if params[:schedule_date].present?
+        @trucks = params[:schedule_date].present? ? Truck.where("schedule_date = ?",params[:schedule_date]).search(params) : Truck.search(params)
       else
         @trucks = Truck.paginate(:page => params[:page], :per_page => 10)
       end
@@ -30,7 +31,7 @@ class TrucksController < ApplicationController
     	 if @truck.save
         ###  call deliver method for send email ###
         respond_to do |format|
-         format.html { redirect_to root_path, success: 'Truck was successfully created, please check mail..!' }
+         format.html { redirect_to trucks_path, success: 'Truck was successfully created, please check mail..!' }
         end
       else
         render "trucks/new"
@@ -54,6 +55,6 @@ class TrucksController < ApplicationController
   
   private
     def truck_params
-			params.require(:truck).permit(:vehicle_number, :driver_name, :driver_mobile_no, :truck_weight, :truck_type, :schedule_date, :truck_from, :truck_to, :user_id, :truck_booked, :expected_price)
+			params.require(:truck).permit(:vehicle_number, :driver_name, :driver_mobile_no, :truck_weight, :truck_type, :schedule_date, :truck_from, :truck_to, :user_id, :truck_booked, :expected_price, :transit_time, :documentation,:sharing)
     end
 end

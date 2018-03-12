@@ -102,11 +102,6 @@
                </li> 
              </ul>
            </li>
- 					<li class="has-dropdown"><a href="#blog">Truck</a>
- 						<ul class="dropdown">
- 							<li><a href="/">Find a truck</a></li>
- 						</ul>
- 					</li>
  					<li>
  						<%= link_to "Contact", new_contact_path %>
  					</li>
@@ -115,7 +110,7 @@
  							<% if user_signed_in? %>
  								<li>
                   <%= link_to('Profile', user_profile_path(user_id:current_user.id))  %>
- 									<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+ 									<%= link_to "Sign Out" + " "+"#{current_user.email}", destroy_user_session_path, :method => :delete %>
  								</li>
  							<% else %>
  								<li>

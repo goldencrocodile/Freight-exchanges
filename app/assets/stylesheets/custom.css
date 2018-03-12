@@ -64,4 +64,7 @@ border-collapse: separate;
   color: #ffffff !important;
 }
 .filter-type{margin-left:74px;}
-.width-20{width: 20%;}
+.width-20{width: 15%;margin-left:15px;}
+.note-docs{font-size: 10px;}
+.mar-lft-15{margin-left: 15px;}
+.width-15-date{width: 15% !important;}

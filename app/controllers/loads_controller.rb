@@ -3,10 +3,12 @@ class LoadsController < ApplicationController
   before_filter :authenticate_user!
   def index
     if current_user.present? and current_user.role.name=="Truck Owner"
-      if (params[:load_from].present? or params[:load_from].present? or params[:load_material].present?)
-        @loads = Load.search(params)
+      if (params[:load_from].present? or params[:load_from].present? or params[:load_material].present? or params[:load_schedule_date].present?)
+        # @loads = Load.where('load_schedule_date = ?',params[:load_schedule_date]) if params[:load_schedule_date].present?
+        @loads = params[:load_schedule_date].present? ? Load.where('load_schedule_date = ?',params[:load_schedule_date]).search(params) : Load.search(params) 
+        # @loads = @loads.search(params)
       else
-        @loads = Load.paginate(page: params[:page], per_page: 10) 
+        @loads = Load.paginate(page: params[:page], per_page: 10)
       end
     else
       respond_to do |format|
@@ -71,3 +73,5 @@ class LoadsController < ApplicationController
       params.require(:load).permit(:load_from, :load_to, :load_material, :load_weight, :load_truck_type, :load_no_of_truck, :load_schedule_date, :load_type, :source_pin_code,:destination_pin_code, :load_enabled, :user_id, :booked, :sharing, :expected_price)
     end
 end
+
+# # find(:all, :conditions => ['load_from LIKE ? AND load_to LIKE ? AND load_material LIKE ? AND load_schedule_date = ?', "%#{params[:load_from]}%","%#{params[:load_to]}%","%#{params[:load_material]}%","#{params[:schedule_date]}"])

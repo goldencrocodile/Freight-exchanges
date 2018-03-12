@@ -11,6 +11,8 @@ class Truck < ActiveRecord::Base
   validates :driver_mobile_no,:presence => true,
                  :numericality => true,
                  :length => { :minimum => 10, :maximum => 15 }
+  validates :transit_time,   :presence => true
+PROVIDE_DOCS = { Yes: 1, No: 0 }
   # default_scope { where(truck_enabled: true) }
   def booked(truck)
     if truck.truck_booked == true
@@ -18,7 +20,7 @@ class Truck < ActiveRecord::Base
   end
   def self.search(params)
     if params
-       find(:all, :conditions => ['truck_from LIKE ? AND truck_to LIKE ? AND vehicle_number LIKE ?', "%#{params[:truck_from]}%","%#{params[:truck_to]}%","%#{params[:vehicle_number]}%"])
+      find(:all, :conditions=>["truck_from LIKE ? AND truck_to LIKE ? AND vehicle_number LIKE ?", "%#{params[:truck_from]}%","%#{params[:truck_to]}%","%#{params[:vehicle_number]}%"])
     else
       find(:all)
     end

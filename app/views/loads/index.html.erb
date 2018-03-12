@@ -1,6 +1,7 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <div id="divContentBody" class="pad-top-5 " style="min-height: 17px;">
-                    
-    <div class="container">
+  <div class="container">
         <div id="cphContent_upTruckBoard">
                 <div id="divLoginMessage" class="alert alert-info" style="display: none;">
                     <button id="btnHideMessage" type="button" class="close">×</button><strong>Info! </strong>Please click
@@ -336,9 +337,11 @@
                 <div>
                   <%= form_tag loads_path, :method => 'get' do %>
                     <%= select_tag 'load_from', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:load_from].present? ? params[:load_from] : ''), :class=> "input control-label col-sm-4 width-20", :prompt=>"Source" %>
-                  <%= select_tag 'load_to', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:load_to].present? ? params[:load_to] : ''), :prompt=>"Destination", :class=> "filter-type width-20" %>
-                  <%= select_tag :load_material, options_for_select(Load::LOAD_MATERIAL.map {|k| [k.humanize.capitalize]}, :selected=> params[:load_material].present? ? params[:load_material] : ''), :prompt=>"Material", :class=> "filter-type width-20" %>
-                  <%= submit_tag "Search", :name => nil %>
+                    <%= select_tag 'load_to', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:load_to].present? ? params[:load_to] : ''), :prompt=>"Destination", :class=> "width-20" %>
+                    <%= select_tag :load_material, options_for_select(Load::LOAD_MATERIAL.map {|k| [k.humanize.capitalize]}, :selected=> params[:load_material].present? ? params[:load_material] : ''), :prompt=>"Material", :class=> "width-20" %>
+                    <%= text_field_tag :load_schedule_date, "", class: 'width-15-date', id: "datepicker", :placeholder=>"Scheduled Date", value: params[:load_schedule_date].present? ? "#{params[:load_schedule_date]}" : '' %>
+        </div>
+                  <%= submit_tag "Search", :name => nil, :class=> "mar-lft-15" %>
                 <% end %>
                 </div>
                 <div id="cphContent_divAuthorisedElements" class="divMain">
@@ -390,3 +393,6 @@
     </div>
 </div>
 <script src="/assets/custom.js"></script>
+<script type="text/javascript">
+  $( "#datepicker" ).datepicker({ minDate: 0, dateFormat: 'yy-mm-dd' });
+</script>
