@@ -3,10 +3,8 @@ class LoadsController < ApplicationController
   before_filter :authenticate_user!
   def index
     if current_user.present? and current_user.role.name=="Truck Owner"
-      if (params[:load_from].present? or params[:load_from].present? or params[:load_material].present? or params[:load_schedule_date].present?)
-        # @loads = Load.where('load_schedule_date = ?',params[:load_schedule_date]) if params[:load_schedule_date].present?
-        @loads = params[:load_schedule_date].present? ? Load.where('load_schedule_date = ?',params[:load_schedule_date]).search(params) : Load.search(params) 
-        # @loads = @loads.search(params)
+      if (params[:load_from].present? or params[:load_from].present? or params[:load_material].present? or params[:load_schedule_date].present? or params[:load_truck_type].present?)
+        @loads = params[:load_schedule_date].present? ? Load.where('load_schedule_date = ?',params[:load_schedule_date]).search(params) : Load.search(params)
       else
         @loads = Load.paginate(page: params[:page], per_page: 10)
       end

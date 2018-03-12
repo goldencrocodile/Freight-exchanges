@@ -54,8 +54,7 @@ LOAD_TRUCK_TYPE = ['canter jumbo',
   end
   def self.search(params)
     if params
-    # where("load_from LIKE ? AND load_to LIKE ? AND load_material LIKE ? AND load_truck_type LIKE ? ", params[:load_from],params[:load_to],params[:load_material], params[:load_truck_type])
-    find(:all, :conditions=>["load_from LIKE ? AND load_to LIKE ? AND load_material LIKE ?", "%#{params[:load_from]}%","%#{params[:load_to]}%","%#{params[:load_material]}%"])
+    find(:all, :conditions=>["load_from LIKE ? AND load_to LIKE ? AND load_material LIKE ? AND load_truck_type LIKE ?", "%#{params[:load_from]}%","%#{params[:load_to]}%","%#{params[:load_material]}%", "%#{params[:load_truck_type]}%"])
     else
       find(:all)
     end
