@@ -3,7 +3,31 @@
     <meta content=‘text/html; charset=UTF-8’ http–equiv=‘Content-Type’ />
   </head>
   <body>
-		<h1>Hi <%= @user.fullname %></h1>
-    <h3>Your truck status is booked.</h3>
+		<h1>Hi <%= @load.user.email %></h1>
+		<h3>You gives the offer for a load.</h3>
+<h1>Load provider details </h1>
+ 
+<table border="1">
+  <tr>
+    <th>Load from</th>
+    <th>Load_to</th>
+    <th>Load_material</th>
+    <th>Load_weight</th>
+    <th>Load_schedule_date</th>
+    <th>Source area</th>
+    <th>Destination area</th>
+  </tr>
+ 
+  <%# @load_user.each do |load_user| %>
+    <tr>
+      <td><%= @load.load_from %></td>
+      <td><%= @load.load_to %></td>
+      <td><%= @load.load_material  %></td>
+      <td><%= @load.load_weight %></td>
+      <td><%= @load.load_schedule_date %></td>
+      <td><%= @load.source_pin_code %></td>
+      <td><%= @load.destination_pin_code %></td>
+    </tr>
+  </table>
   </body>
 </html>

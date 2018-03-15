@@ -3,7 +3,29 @@
     <meta content=‘text/html; charset=UTF-8’ http–equiv=‘Content-Type’ />
   </head>
   <body>
-		<h1>Hi <%= @user.fullname %></h1>
-    <h3>Your load status is booked.</h3>
+		<h1>Hi <%= @load.user.email %></h1>
+		<h3>You get affer from a truck owner.</h3>
+<h1>truck owner details </h1>
+ 
+<table border="1">
+	  <tr>
+	    <th>Vehicle number</th>
+	    <th>Driver name</th>
+	    <th>Schedule date</th>
+	    <th>Truck from</th>
+	    <th>Truck to</th>
+	    <th>Transit time</th>
+	    <th>Documentation</th>
+	  </tr>
+    <tr>
+      <td><%= @truck.vehicle_number %></td>
+      <td><%= @truck.driver_name %></td>
+      <td><%= @truck.schedule_date  %></td>
+      <td><%= @truck.truck_from %></td>
+      <td><%= @truck.truck_to %></td>
+      <td><%= @truck.transit_time %></td>
+      <td><%= @truck.documentation %></td>
+    </tr>
+  </table>
   </body>
 </html>

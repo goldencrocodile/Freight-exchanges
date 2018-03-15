@@ -68,3 +68,6 @@ border-collapse: separate;
 .note-docs{font-size: 10px;}
 .mar-lft-15{margin-left: 15px;}
 .width-15-date{width: 15% !important;}
+.text-data-align{font-size: 25px;
+text-align: left;}
+.confirm-btn{font-size: 20px;}

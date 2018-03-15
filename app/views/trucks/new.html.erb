@@ -87,7 +87,7 @@
         <td>
           <div class="form-group">
             <label for="to">Transit time <span>*</span></label>
-            <span> <%= f.text_field :transit_time, :class=> "timepicker" %></span>
+            <%= f.select 'transit_time', options_for_select(Truck::TRANSIT_TIME.collect{ |k,v| [k] }), :prompt=>"Transit time" %>
           <!-- <input type="text" class="timepicker" name="time"/> -->
           </div>
         </td>
@@ -103,6 +103,14 @@
           <%= f.select :sharing, options_for_select(Load::LOAD_SHARE.map {|k,v| [k,v]}, :selected=>  params[:truck].present? ? params[:truck][:sharing] : ''  ) %>      
       </div>
       </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+          <label for="from">Frequency<span>*</span></label>
+            <%= f.select :frequency, options_for_select(Truck::FREQUENCY.map {|k,v| [k,v]}),:prompt=>"Frequency" %>
+          </div>
+        </td>
       </tr>
       <tr>
         <td colspan="3">

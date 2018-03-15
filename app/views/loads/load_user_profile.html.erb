@@ -1,0 +1,392 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<div id="divContentBody" class="pad-top-5 fix-min-height">
+    <div class="container">
+        <div id="cphContent_upTruckBoard">
+                <div id="divLoginMessage" class="alert alert-info hide-alert-msg">
+                    <button id="btnHideMessage" type="button" class="close">×</button><strong>Info! </strong>Please click
+                                            <a id="cphContent_lnkLoginToContinue" href="javascript:__doPostBack('ctl00$cphContent$lnkLoginToContinue','')">HERE</a>
+                    to login to book truck.
+                </div>
+                <div id="cphContent_pnlLogin" class="modalPopup modalPopup-login" style="display: none; position: fixed; z-index: 100001; left: 636.5px; top: 295px;">
+                    <input type="submit" name="ctl00$cphContent$btnforLoginPopupRef" value="" id="cphContent_btnforLoginPopupRef" style="display: none;">
+                    
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>Login Before Continue</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden" name="ctl00$cphContent$hfldLoggedInUserMemberRoleId" id="cphContent_hfldLoggedInUserMemberRoleId" value="0">
+<div class="row">
+    <div class="col-lg-12">
+        <span id="cphContent_ucLogin_lblLoginPopupMsg"></span>
+        <div id="cphContent_ucLogin_upLoginDetails">
+                <div class="mar-top-30">
+                    <div id="cphContent_ucLogin_loginPanel" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'cphContent_ucLogin_btnLogin')">
+      
+                        <div class="form-group ">
+                            <h4>
+                                Log in with your TruckSuvidha account details</h4>
+                            <div class="row mar-top-30">
+                                <div class="col-sm-12">
+                                    <label>
+                                        Mobile No<i>*</i>
+                                    </label>
+                                    <div class="custom-iconic-input">
+                                        <i>
+                                            <img src="/Images/flag_of_india-small.png" alt="Indian National Flag" title="flag of India"><span> +91</span></i>
+                                        <input name="ctl00$cphContent$ucLogin$txtUserName" type="text" maxlength="10" id="cphContent_ucLogin_txtUserName" class="form-control" placeholder="Enter Mobile Number">
+                                        <span id="cphContent_ucLogin_rfvUserName" style="color:Red;display:none;">Please provide your mobile number</span>
+                                        
+                                        <span id="cphContent_ucLogin_revUserName" style="color:Red;display:none;">Please provide valid mobile number.</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <label>
+                                        Password<i>*</i>
+                                    </label>
+                                    <input name="ctl00$cphContent$ucLogin$txtPassword" type="password" id="cphContent_ucLogin_txtPassword" class="form-control" placeholder="Enter Password">
+                                    <span id="cphContent_ucLogin_rfvPassword" style="color:Red;display:none;">Please provide your password</span><br>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-xs-12 pull-right text-right">
+                                    <label>
+                                        <a href="ForgotPassword.aspx">Forgot Password?</a>
+                                    </label>
+                                </div>
+                                <div class="col-xs-12 text-right">
+                                    <input type="submit" name="ctl00$cphContent$ucLogin$btnLogin" value="Sign In" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cphContent$ucLogin$btnLogin&quot;, &quot;&quot;, true, &quot;Login&quot;, &quot;&quot;, false, false))" id="cphContent_ucLogin_btnLogin" class="btn btn-danger">
+                                </div>
+                                <div class="col-xs-12 custom_login_text">
+                                    Don't have an account with TruckSuvidha? <a class="color_orange" href="Register.aspx" title="Register on TruckSuvidha">Sign up here</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+    </div>
+                </div>
+                <div id="cphContent_ucLogin_TandC" class="modalPopup closeDisabled" style="display: none; width: 60%; height: auto; position: fixed; z-index: 100001; left: 636.5px; top: 295px;">
+      
+                    <input type="submit" name="ctl00$cphContent$ucLogin$btnforPopupRef" value="" id="cphContent_ucLogin_btnforPopupRef" style="display: none">
+                    
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>Terms and conditions</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <div id="cphContent_ucLogin_divRepliedInquiry" class="table-responsive" style="min-width: 100px; max-height: 400px; overflow-x: hidden; overflow-y: auto">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-sm-12 ">
+                                            <div class="about">
+                                                <h1>Terms of <span class="color_orange">Service</span></h1>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-sm-12">
+                                            <p>
+                                                Before using <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> for any purpose,
+                                                                    we request you read the terms and conditions of the agreement below.
+                                                                    By using the website, you are implying that you agree with all the policies of
+                                                                    <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> Once you become a member of <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a>, you will automatically enter a contract and acknowledge that you have read and accepted the agreement, which will apply to your use of our website.
+                                            </p>
+                                            <p>
+                                                The agreement between a user and website is subject to change with any prior to notice at any point of time. We may modify or change the terms and conditions and the new agreement shall be in effect as soon as it is updated on the website. We recommend you to read the document carefully every time you use the website.
+                                            </p>
+                                            <p><a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> provides a venue/platform for its users to meet and coordinate for business needs. We do not actually take part in the actual coordination that takes place between two parties. Hence, all communication is the sole responsibility of the members only. <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> is not responsible for any dispute or fall out that may occur between two parties at any point of time.</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="about ">
+                                                <h3>General Terms</h3>
+                                                <p>
+                                                    The content of the pages of this website is for your general information and use only. It is subject to change without notice.
+                                                </p>
+                                            </div>
+                                            <div class="about content panel-body">
+                                                <h3>Disclaimer and Warranties</h3>
+                                                <p>Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law. <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> accepts no responsibility for checking/verifying the accuracy of reports or data files submitted by the Visitors. Customers, who are buying/renting property/properties through <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a>, must verify details the property/properties as well as its right, title, ownership, lien etc. on their own. Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.<a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> is not involved in any transaction between any parties who are using our website. There are risks, which the Visitor/Customer assumes when dealing with people who might be acting under false presences and the same shall be borne by the Visitor/Customer. The website is a venue only and do not screen or/and censor or/and otherwise control the postings offered to other Visitors, nor does <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> screen or/and censor or/and otherwise control the Visitors of its service. <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> cannot and does not control the behavior of the participants on this site.</p>
+                                                <p>It is extremely important that the user takes care throughout his dealings with other people, users on this site. <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> does not accept or/and assume responsibility for the content or/and context of the visitor comment. The Visitor/Customer understands and agrees that any information or/and material and/or goods or/and services obtained through this website is done at Visitor's/Customer’s own discretion and risk and that Visitor/Customer shall be solely responsible for any damage/s or/and cost or/and any other consequence/s resulting from any transaction. No advice or or/any information, whether oral or/and written, obtained by the Visitors/Customers from <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> or/and through or/and from the service shall be construed as recommendations and shall create any warranty not expressly stated herein. We as a merchant shall be under no liability whatsoever in respect of any loss or damage arising directly or indirectly out of the decline of authorization for any Transaction, on Account of the Cardholder having exceeded the preset limit mutually agreed by us with our acquiring bank from time to time".</p>
+                                                <p>TO THE FULLEST EXTENT POSSIBLE BY LAW, IN NO EVENT SHALL TRUCKSUVIDHA.COM, ITS SUPPLIERS, OR ANY THIRD PARTIES MENTIONED ON TRUCKSUVIDHA.COM BE LIABLE FOR ANY DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, INCIDENTAL AND CONSEQUENTIAL DAMAGES, LOST PROFITS, OR DAMAGES RESULTING FROM LOST DATA, LOST EMPLOYMENT OPPORTUNITY OR BUSINESS INTERRUPTION) RESULTING FROM THE USE OR INABILITY TO USE ANY TRUCKSUVIDHA.COM AND THE TRUCKSUVIDHA.COM CONTENT, WHETHER BASED ON WARRANTY, CONTRACT, TORT, OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT TRUCKSUVIDHA.COM IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+                                            </div>
+                                            <div class="about content panel-body">
+                                                <h3>Software</h3>
+                                                <p>Any software made available to operate this Site and/or to download materials from it (the "Software") is the copyrighted work of <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> and/or its associates. You are licensed to use this Software on a non-exclusive basis solely for the purpose of visiting the Site and/or downloading materials from it. You may use this Software only for this purpose. Under no circumstances, you shall redistribute, sell, disassemble or otherwise deal with the Software.</p>
+                                            </div>
+                                            <div class="about content panel-body">
+                                                <h3>Limitation of Liability</h3>
+                                                <p>You assume all the responsibilities and risk for the use of this site and the Internet in general. Under no circumstances, shall <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a>. or its affiliates be liable for any direct, special, indirect, or consequential damages or any damages whatsoever. including but not limited to loss of use, data, or profits, without regard to the form of any action, including but not limited to contract, negligence, or other tort actions, arising out of or in connection with the use, copying, or display of the content resulting from access to or use of this site, or the internet generally, under contract, tort or any other cause of action or legal theory.</p>
+                                                <p><a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> believes the entire content to be accurate, complete, and current, to the best of its knowledge. Under no circumstances, shall <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> make any warranty as to the accuracy, completeness or currency of the content. As such, it remains your sole responsibility to verify any information before relying on it.</p>
+                                                <p>However, <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> agrees that the content of this site may include technical inaccuracies or typographical errors. From time to time, changes are made to the content herein.</p>
+                                            </div>
+                                            <div class="about content panel-body">
+                                                <h3>Termination </h3>
+                                                <p>Most contents and some of the features on the web site are made available to visitors free of cost. However, we reserve the rights to terminate access to certain areas or features of the web site (to paying or registered users) at any time for any reason, with or without notice. We also reserve the universal right to deny access to particular users to any/all of its services/content without any prior notice/explanation in order to protect the interests of the website and/or other visitors to the web site. We have the right to limit, deny or create different access to the web site and its features with respect to different users, or to change any of the features or introduce new features without prior notice. </p>
+                                                <p>We have the right to temporary or permanent termination of membership of any user for any of the following reasons: </p>
+                                                <ul class="custom_list">
+                                                    <li>If it concludes that the users have provided any false information in connection with the member account to, or are engaged in fraudulent or illegal activities.</li>
+                                                    <li>The user breaches any provisions of the terms and conditions of use agreement and/or Agreement of web site.</li>
+                                                    <li>Utilize web site to send spam messages or repeatedly publish the same product information.</li>
+                                                    <li>Impersonate or unlawfully use another business’s name to post information or conduct business of any form.</li>
+                                                    <li>Any unauthorized access, use, modification, or control of the web site data base, network or related services.</li>
+                                                    <li>Obtain by any means, web site members, user name and/or password.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="panel-body">If <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> terminates a user’s membership, he/she will not have the right to re-enroll or join the website under a new account or name unless formally invited to do so. In any case of termination, no membership charges will be refunded. Users acknowledge that inability to use the web site wholly or partially for whatever reason may have adverse effect on its business. Users, hereby, agree that in no event the web site shall be liable to the users or any third parties for any inability to use the web site (whether due to disruption, limited access, changes to or termination of any features on the web site or otherwise), any delays, errors or omissions with respect to any communication or transmission, or any damage (direct, indirect, consequential or otherwise) arising from the use of or inability to use the web site or any of its features.                                                                                                                                                    </div>
+                                            <div class="about content panel-body">
+                                                <h3>User Eligibility
+                                                </h3>
+                                                <p>By user, <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> implies any individual or business entity/organization that legally operates in India or in the other countries. Our services are available only to those individuals or companies who can form legally binding contracts under the applicable law. Therefore, all users of <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> must not be a minor as per Indian Law.i.e. user(s) must be at least 18 years of age to be eligible to use our services.</p>
+                                            </div>
+                                            <div class="about content panel-body">
+                                                <h3>Registered Users
+                                                </h3>
+                                                <p>
+                                                    To become a Registered User with our website, there is a proper procedure designed by us, which is for the convenience of users so that they can easily log-in and log-out.
+                            An individual can become a registered user by filling an on-line registration form on the web site by giving desired information (name, contact information, details of its business, etc.). We will establish an account ("Account") for the user(s) upon registration and assign a user alias ("User ID") and password ("Password") for log-in access to your Account. Web site may or may not assign a user upon registration a web-based email/message account with limited storage space to send or receive email/messages. Users will be responsible for the content of all the messages communicated through the Email Account, as well as the consequences of any such message.
+                                                </p>
+                                                <p>By registering to the TruckSuvidha Website and providing your email/mobile number, you expressly agree to receive promotional content from TruckSuvidha, by mail/email or SMS, from time to time. If you provide TruckSuvidha with your phone number (at any stage of use of the Services), TruckSuvidha shall be entitled to call you or send you promotional SMS notices from time to time. If you wish not to receive such promotional content / notices, you may notify TruckSuvidha at any time.</p>
+                                                If you register on the behalf of a business entity, you represent that business entity and
+                                                                    <ul class="custom_list">
+                                                                        <li>You have the authority to bind the entity to terms and condition of use and/or this Agreement.</li>
+                                                                        <li>The address you use when registering is the principal place of business of such business entity.</li>
+                                                                        <li>All other information submitted to <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> during the registration process is true, accurate, current and complete. For purposes of this provision, a branch or representative office will not be considered a separate entity and its principal place of business will be deemed to be that of its head office.</li>
+                                                                    </ul>
+                                            </div>
+                                            <div class="about content panel-body">
+                                                <h3>No Resale or Unauthorized Commercial Use
+                                                </h3>
+                                                <p>You agree not to resell or assign your rights or obligations under these Terms. You also agree not to make any unauthorized commercial use of <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a>.</p>
+                                            </div>
+                                            <div class="about content panel-body">
+                                                <h3>Posting Content on <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a>
+                                                </h3>
+                                                <p>Some of the content displayed on the website is provided or posted by third parties. Users can post their content on some of the sections/services of the web site using the self-help, submit and edit tools provided at the respective section. Users may need to register and/or pay for some of these services. <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> in such case is not the author. The content here is contributed by anonymous, registered or paid user. Neither our website nor any of its affiliates, directors, officers or employees has entered into sale agency relationship with such third party by virtue of our display of the Third Party Content on the website. Any Third Party content is the sole responsibility of the party who has provided the content. We are not responsible for the accuracy, propriety, lawfulness or truthfulness of any Third Party content, and shall not be liable to any user in connection with his/her reliance on such Third Party content. In addition, we are not responsible for the conduct of user’s activities on the web site and shall not be liable to any person in connection with any damage suffered by any person as a result of any such user's conduct.</p>
+                                            </div>
+                                            <div class="about content panel-body">
+                                                <h3>Information posted on <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> by user’s will not:
+                                                </h3>
+                                                <ul class="custom_list">
+                                                    <li>Contain fraudulent information or make fraudulent offers of items or involve the sale or attempted sale of counterfeit or stolen items or items whose sales and/or marketing is prohibited by applicable law, or otherwise promote other illegal activities.</li>
+                                                    <li>Be part of a scheme to defraud other users of the web site or for any other unlawful purpose.</li>
+                                                    <li>Relate to sale of products or services that infringe or otherwise abet or encourage the infringement or violation of any third party's copyright, patent, trademarks, trade secret or other proprietary right or rights of publicity or privacy, or any other Third Party Rights.</li>
+                                                    <li>Violate any applicable law, statute, ordinance or regulation (including without limitation those governing export control, consumer protection, unfair competition, anti-discrimination or false advertising.)</li>
+                                                    <li>Be defamatory, libelous, unlawfully threatening or harassing.</li>
+                                                    <li>Contain any material that constitutes unauthorized advertising or harassment (including but not limited to spamming), invades anyone's privacy or encourages conduct that would constitute a criminal offense, give rise to civil liability, or otherwise violate any law or regulation.</li>
+                                                    <li>Contain any computer viruses or other destructive devices and codes that have the effect of damaging, interfering with, intercepting or expropriating any software or hardware system, data or personal information.</li>
+                                                    <li>Link directly or indirectly to or include descriptions of goods or services that are prohibited under the prevailing law.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="about content panel-body">
+                                                <h3>Cancellation and Refunds
+                                                </h3>
+                                                <p>There shall be no cancellation of payments made via online payment (except for payments through Cheque / Demand Draft). Cancellation requests for orders placed via Cheque/ Demand Draft can be made only before such payment is realized by <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a>. In case <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> receives a payment for a failed transaction, <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> shall refund the same. However, <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> offers no guarantees whatsoever for the accuracy or timeliness of the refunds reaching the Customers card/bank accounts. Such refunds involve the multiple organizations where <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> does not have any control; <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> shall reserve the exclusive right to cancel any content whatsoever from being published or reflected on its website or in any other mode. The payment of refunds for this shall be at sole discretion of <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a>. <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> is not obliged to make any refund under whatsoever circumstances.</p>
+                                            </div>
+                                            <div class="about content panel-body">
+                                                <h3>Maintenance and System Failures
+                                                </h3>
+                                                <p>While <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> shall take all reasonable efforts for data backup and business resumption, you will be solely responsible for retaining back-up copies of all information, photographs and other materials furnished/submitted to <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a>. <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> may also suspend the operation of <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> for support or technical upgradation, maintenance work, in order to update the content or for any other reason. Your use of this website and any dispute arising out of such use of the website is subject to the laws of India or other regulatory authority.</p>
+                                            </div>
+                                            <div class="about content panel-body">
+                                                <h3>Disclaimer
+                                                </h3>
+                                                <p>This website is provided by <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> and it makes no representations or warranties of any kind, express or implied, as to the operation of this website or the information included on such website. <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> disclaims all warranties, express or implied, including, but not limited to, the warranties of merchantability, fitness for a particular purpose, non-infringement, title, custom, trade, quiet enjoyment, system integration and freedom from computer virus. <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> does not represent or warrant that the functions contained in this website will be error-free or uninterrupted, that defects will be corrected, or that the website or the server that makes the website available are free from any harmful components including viruses. <a href="http://trucksuvidha.com/" title="India's freight and truck matching portal. Book truck load online.">www.trucksuvidha.com</a> does not make any representations or warranties that the information on this website is accurate, complete, correct, adequate, useful, timely, reliable or otherwise. You acknowledge, by your use of this website, that your use is at your sole risk.</p>
+                                            </div>
+                                            <div class="about content panel-body">
+                                                <h3>Grievance Officer
+                                                </h3>
+                                                <p>If there are any questions regarding this privacy policy you may <a href="ContactUs.aspx" title="Get in touch with TruckSuvidha">contact us</a> using the information below or drop us a mail with subject line-Terms of use:</p>
+                                                <strong>Sarvodaya Infotech Pvt. Ltd.</strong><br>
+
+                                                <strong>Address:</strong>
+                                                2nd Floor, Kamla Nagar, Jagadhri Road, Near Telephone Exchange, Yamunanagar, Haryana, India,135001
+                                                                    <br>
+                                                <strong>Contact No: </strong>+91-8882-08-08-08 / 9996-40-17-32
+                                                                    <br>
+                                                <strong>E-mail: </strong><a href="mailto:info@trucksuvidha.com" title="TruckSuvidha Email-id">info@trucksuvidha.com</a><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" name="ctl00$cphContent$ucLogin$f" value="OK" id="cphContent_ucLogin_f" class="btn btn-danger pull-right">
+                            <input type="hidden" name="ctl00$cphContent$ucLogin$hfldTnC" id="cphContent_ucLogin_hfldTnC">
+                        </div>
+                    </div>
+                
+    </div>
+                <div id="cphContent_ucLogin_pnlActivationRequest" class="modalPopup" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'cphContent_ucLogin_lnkSaveActivationRequest')" style="display: none; width: 50%; height: auto; position: fixed; z-index: 100001; left: 636.5px; top: 295px;">
+      
+                    <input type="submit" name="ctl00$cphContent$ucLogin$Button1" value="" id="cphContent_ucLogin_Button1" style="display: none">
+                    
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>Account Activation Request</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="From">Remarks</label>
+                                        <input name="ctl00$cphContent$ucLogin$txtActivationReason" type="text" id="cphContent_ucLogin_txtActivationReason" class="form-control">
+                                        <input type="hidden" name="ctl00$cphContent$ucLogin$hfldRequistingId" id="cphContent_ucLogin_hfldRequistingId">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a id="cphContent_ucLogin_lnkSaveActivationRequest" class="btn btn-danger" href="javascript:__doPostBack('ctl00$cphContent$ucLogin$lnkSaveActivationRequest','')">
+                            <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;Submit</a>
+                            <a id="cphContent_ucLogin_lnkCancelActivationRequest" class="btn btn-danger" href="javascript:__doPostBack('ctl00$cphContent$ucLogin$lnkCancelActivationRequest','')">
+                                <span class="glyphicon glyphicon-remove-sign"></span>&nbsp;Cancel</a>
+                        </div>
+                    </div>
+                
+    </div>
+                <div id="cphContent_ucLogin_pnlActivationRequestedAlready" class="modalPopup closeDisabled" style="display: none; width: 50%; height: auto; position: fixed; z-index: 100001; left: 636.5px; top: 295px;">
+      
+                    <input type="submit" name="ctl00$cphContent$ucLogin$ButtonRequestedAlready" value="" id="cphContent_ucLogin_ButtonRequestedAlready" style="display: none">
+                    
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>Account Activation Request</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Your request is already in the queue. Please wait till our executives are working on it.</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a id="cphContent_ucLogin_lnkActivationRequestedAlready" class="btn btn-danger" href="javascript:__doPostBack('ctl00$cphContent$ucLogin$lnkActivationRequestedAlready','')">
+                                <span class="glyphicon glyphicon-ok"></span>&nbsp;OK</a>
+                        </div>
+                    </div>
+                
+    </div>
+                <div id="cphContent_ucLogin_pnlResetPass" class="modalPopup" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'cphContent_ucLogin_btnSavePassword')" style="display: none; width: 30%; height: auto; position: fixed; z-index: 100001; left: 636.5px; top: 295px;">
+      
+                    <input type="submit" name="ctl00$cphContent$ucLogin$btnrefResetPass" value="" id="cphContent_ucLogin_btnrefResetPass" style="display: none">
+                    
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>Reset Password</h4>
+                        </div>
+                        <span id="cphContent_ucLogin_lblResetPassMessage"></span>
+                        <div class="modal-body">
+                            <div class="alert alert-info mar-bot-15"><strong>Info! </strong>Your password has been expired. Please update it.</div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <label for="exampleInputOldPassword">Old Password<i>*</i></label>
+                                        <input name="ctl00$cphContent$ucLogin$txtOldPassword" type="password" id="cphContent_ucLogin_txtOldPassword" class="form-control" placeholder="Enter Old Password">
+                                        <span id="cphContent_ucLogin_rfvOldPassword" style="color:Red;display:none;">Please provide your old password.</span>
+                                        <span id="cphContent_ucLogin_cvSereverPass" style="color:Red;display:none;">Old password is not correct.</span>
+                                        <input type="hidden" name="ctl00$cphContent$ucLogin$hfldOldPassword" id="cphContent_ucLogin_hfldOldPassword">
+                                        <input type="hidden" name="ctl00$cphContent$ucLogin$hfldLoginId" id="cphContent_ucLogin_hfldLoginId">
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <label for="exampleInputNewPassword">New Password<i>*</i></label>
+                                        <input name="ctl00$cphContent$ucLogin$txtNewPassword" type="password" id="cphContent_ucLogin_txtNewPassword" class="form-control" placeholder="Enter New Password">
+                                        <span id="cphContent_ucLogin_rfvNewPassword" style="color:Red;display:none;">Please provide your new password.</span>
+                                        <span id="cphContent_ucLogin_cvOldPassword" style="color:Red;display:none;">New password and Old password cannot be same.</span>
+                                        <span id="cphContent_ucLogin_cvNewPassword" style="color:Red;display:none;">Password should be minimum 6 characters.</span>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <label for="exampleInputConfirmPassword">Confirm Password<i>*</i></label>
+                                        <input name="ctl00$cphContent$ucLogin$txtConfirmPassword" type="password" id="cphContent_ucLogin_txtConfirmPassword" class="form-control" placeholder="Confirm New Password">
+                                        <span id="cphContent_ucLogin_rfvConfirmPassword" style="color:Red;display:none;">Please confirm your new password.</span>
+                                        <span id="cphContent_ucLogin_cvConfirmPassword" style="color:Red;display:none;">New password and confirm password must match.</span>
+                                        <span id="cphContent_ucLogin_cvConfirmPasswordValidator" style="color:Red;display:none;">Password should be minimum 6 characters.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a id="cphContent_ucLogin_btnSavePassword" class="btn btn-danger" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$cphContent$ucLogin$btnSavePassword", "", true, "ResetPassword", "", false, true))'><span class="glyphicon glyphicon-ok"></span>&nbsp;Save</a>
+                            <a id="cphContent_ucLogin_btnCancel" class="btn btn-danger" href="javascript:__doPostBack('ctl00$cphContent$ucLogin$btnCancel','')"><span class="glyphicon glyphicon-remove"></span>&nbsp;Cancel</a>
+                        </div>
+                    </div>
+                
+    </div>
+                <script type="text/javascript" language="javascript">
+                    Sys.Application.add_load(function () { ValidateCaptcha(); });
+                </script>
+  <div id="cphContent_ucLogin_popupTandC_backgroundElement" class="modalBackground closeDisabled" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000; width: 1273px; height: 1509px;"></div><div id="cphContent_ucLogin_popupActivationRequest_backgroundElement" class="modalBackground" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000; width: 1273px; height: 1509px;"></div><div id="cphContent_ucLogin_popupActivationRequestedAlready_backgroundElement" class="modalBackground closeDisabled" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000; width: 1273px; height: 1509px;"></div><div id="cphContent_ucLogin_popupResetPassword_backgroundElement" class="modalBackground" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000; width: 1273px; height: 1509px;"></div></div>
+    </div>
+</div>
+                        </div>
+                    </div>
+</div>
+                <span id="cphContent_tmTruckBoard" style="visibility:hidden;display:none;"></span>
+                <div class="row truck-counter">
+                  <%= render "loads_title", loads: @loads  %>
+                    <br>
+                </div>
+                <div class="text-data-align">You have <%= Load.where(:booked=> "requesting").count %> request pending from truck owner </div>
+                <div>
+                  <%= form_tag trucks_path, :method => 'get' do %>
+                    <%= select_tag 'truck_from', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:truck_from].present? ? params[:truck_from] : ''), :class=> "input control-label col-sm-4 width-20", :prompt=>"Source" %>
+                  <%= select_tag 'truck_to', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:truck_to].present? ? params[:truck_to] : ''), :prompt=>"Destination", :class=> "filter-type width-20" %>
+                  <%= select_tag :vehicle_number, options_for_select(Truck.pluck(:vehicle_number).map {|k| [k]}, :selected=> params[:vehicle_number].present? ? params[:vehicle_number] : ''), :prompt=>"Vehicle Number", :class=> "filter-type width-20" %>
+                  <%= text_field_tag :schedule_date, "", class: 'width-15-date', id: "datepicker", :placeholder=>"Scheduled Date", value: params[:schedule_date].present? ? "#{params[:schedule_date]}" : '' %>
+                  <%= submit_tag "Search", :name => nil %>
+                <% end %>
+                </div>
+                <div id="cphContent_divAuthorisedElements" class="divMain">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-lg-2 col-sm-2 address">
+                                <div class="custom-side-detail">
+                                    <div class="custom-bg divSearchTruck">
+                                        <h5 class="mar-all-0"></h5>
+                                        <div id="cphContent_pnlSideSearchFilters" class="form-group">
+                                            <div class="mar-bot-15 hide">
+                                                <div id="cphContent_pnlSearchByPinCode" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'cphContent_btnSearchByPinCode')">
+                                                    <label>Search By Pincode</label>
+                                                    <div class="input-group">
+                                                        <input name="ctl00$cphContent$txtPinCode" type="text" maxlength="6" id="cphContent_txtPinCode" class="form-control" placeholder="Ex. 201020">
+                                                        <span class="input-group-btn">
+                                                            <input type="submit" name="ctl00$cphContent$btnSearchByPinCode" value="Go!" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cphContent$btnSearchByPinCode&quot;, &quot;&quot;, true, &quot;SearchByPinCode&quot;, &quot;&quot;, false, false))" id="cphContent_btnSearchByPinCode" class="btn btn-danger">
+                                                        </span>
+                                                    </div>
+                                                    <span id="cphContent_revPinCode" style="color:Red;display:none;">Invalid Pincode</span>
+                                                    
+                                                    <span id="lblMessagePinCode" class="color-red"></span>
+                                                
+</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           <div class="col-md-2 col-sm-4 mar-top-30 ">
+                           </div>
+                                    <!-- <input type="submit" name="ctl00$cphContent$btnClear" value="Clear" id="cphContent_btnClear" title="Clear your details" class="btn btn-danger btn-xs divClear cleat-btn"> -->
+                                    <%= link_to "Clear", trucks_path, :class=> "btn btn-danger btn-xs divClear cleat-btn"%>
+                            </div>
+  <table class="table table-hover table-striped table-condensed" cellspacing="0" rules="all" border="1" id="cphContent_grdTruckPost">
+    <tbody class="truck-index">
+      <%= render "index_loader", loads: @loads  %>
+  </tbody>
+  </table>
+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div id="cphContent_popupLogin_backgroundElement" style="display: none; position: fixed; left: 0px; top: 0px; z-index: 10000; width: 1273px; height: 1509px;"></div></div>
+    </div>
+</div>
+<script src="/assets/custom.js"></script>
+<script type="text/javascript">
+  $( "#datepicker" ).datepicker({ minDate: 0, dateFormat: 'yy-mm-dd' });
+</script>

@@ -1,0 +1,11 @@
+<span align="center" style="border:1px solid red;">
+<div class="align-confirm-btn">
+	<%= link_to "Accept", load_status_path(:result=>"accept", :load_id=> params[:load_id]), :class=>"btn-xs btn-success btn-white-color confirm-btn" %>
+</div>
+<div class="align-confirm-btn">
+	<%= link_to "Bargaining rate", load_status_path(:result=>"barganning", :load_id => params[:load_id]), :class=>"btn-xs btn-success btn-white-color confirm-btn" %>
+</div>
+<div class="align-confirm-btn">
+	<%= link_to "Cancel", load_status_path(:result=>"cancel", :load_id=> params[:load_id]), :class=>"btn-xs btn-success btn-white-color confirm-btn" %>
+</div>
+</span>

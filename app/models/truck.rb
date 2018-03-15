@@ -13,6 +13,9 @@ class Truck < ActiveRecord::Base
                  :length => { :minimum => 10, :maximum => 15 }
   validates :transit_time,   :presence => true
 PROVIDE_DOCS = { Yes: 1, No: 0 }
+FREQUENCY = { monthly: 1, weekly: 2, daily: 3 }
+TRANSIT_TIME = {'1': 1,'2':2,'3':3,'4':4,'5':5, '6':6, '7':7,'8':8,'9':9}
+TRUCK_STATUS = { request: 0, requesting: 1, accept_request:2 }
   # default_scope { where(truck_enabled: true) }
   def booked(truck)
     if truck.truck_booked == true

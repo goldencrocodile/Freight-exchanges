@@ -109,7 +109,13 @@
  						<ul class="dropdown">
  							<% if user_signed_in? %>
  								<li>
-                  <%= link_to('Profile', user_profile_path(user_id:current_user.id))  %>
+                  <% if current_user.role.name == "Truck Owner" %>
+                    <%= link_to('Truck Owner Profile', truck_user_profile_path(user_id:current_user.id))  %>
+                  <% elsif current_user.role.name == "Load Provider"
+                     %> 
+                    <%= link_to("Load Provider Profile", load_user_profile_path(user_id:current_user.id))  %>
+                  <% else %>
+                  <% end %> 
  									<%= link_to "Sign Out" + " "+"#{current_user.email}", destroy_user_session_path, :method => :delete %>
  								</li>
  							<% else %>

@@ -14,19 +14,19 @@
   <% loads.each do |load| %>
     <tr>
       <td>
-        <span id="cphContent_grdTruckPost_lblFrom_23" title=<%= load.load_from %>><%= load.load_from if load.load_from.present? %></span>
+        <span id="cphContent_grdTruckPost_lblFrom_23" title=<%= load.load_from %>><%= load.load_from %></span>
           </td>
         <td>
-          <span id="cphContent_grdTruckPost_lblTo_23" title=<%= load.load_to %>><%= load.load_to if load.load_to.present? %></span>
+          <span id="cphContent_grdTruckPost_lblTo_23" title=<%= load.load_to %>><%= load.load_to %></span>
         </td>
         <td>
-          <span id="cphContent_grdTruckPost_lblWeight_23"><%= load.load_material if load.load_material.present? %></span>
+          <span id="cphContent_grdTruckPost_lblWeight_23"><%= load.load_material %></span>
         </td>
         <td>
-          <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_weight %>><%= load.load_weight if load.load_weight.present? %></span>
+          <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_weight %>><%= load.load_weight %></span>
         </td>
         <td>
-          <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_truck_type %>><%= load.load_truck_type if load.load_truck_type.present? %></span>
+          <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_truck_type %>><%= load.load_truck_type %></span>
         </td>
         <td>
           <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_schedule_date.to_formatted_s(:long) %>><%= load.load_schedule_date.to_formatted_s(:long)%></span>
@@ -50,7 +50,7 @@
             <%= link_to "Accepted request", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
              %>
           <% else %>
-            <%= link_to "Accept", send_booked_mail_path(:id=> load.id, :truck_id=> @trucks.present? ? @trucks.first.id : ''), :confirm =>'Are you sure?', :class=>"btn-xs btn-danger btn-white-color" %>
+            <%= link_to "Accept", send_booked_mail_path(:id=> load.id, :truck_id=> @trucks.present? ? @trucks.first.id : ''), :class=>"btn-xs btn-danger btn-white-color" unless current_user.present? %>
           <% end %>  
           </td>
       </td>

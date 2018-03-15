@@ -19,6 +19,10 @@ FreightExchange::Application.routes.draw do
   get 'franchise-inquiry' => 'services#franchise_inquiry', as: :franchise_inquiry
   get 'vehicle-loan-inquiry' => 'services#vehicle_loan_inquiry', as: :vehicle_loan_inquiry
   post '/purchase' => 'orders#purchase_status'
+  get '/truck_user_profile' => 'trucks#truck_user_profile'
+  get '/load_user_profile' => 'loads#load_user_profile'
+  get '/make_confirmation_load' => 'loads#make_confirmation_load'
+  get '/load_status' => 'loads#load_status'
   ## Redirect to root url for unknown path ###
   match '*path' => redirect('/'), via: :get
   # The priority is based upon order of creation: first created -> highest priority.
