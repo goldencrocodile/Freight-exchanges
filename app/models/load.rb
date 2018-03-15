@@ -26,6 +26,7 @@ LOAD_TRUCK_TYPE = ['canter jumbo',
     'Truck 24/25MT   / 14 wheel',
     'Truck 9MT / 6 wheel'
 ]
+# LOAD_TRUCK_TYPE = ['Tata 407 '=> '2.5MT',]
   LOAD_TYPE = ['Full Load','Part Load']
   LOAD_SHARE = { Yes: 1, No: 0 }
   LOAD_STATUS = { request: 0, requesting: 1, accept_request:2, barganning:3 }

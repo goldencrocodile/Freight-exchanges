@@ -50,7 +50,7 @@
         <td>
           <div class="form-group">
         <label for="from">Truck Type<span>*</span></label>
-          <%= f.select :truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}),:prompt=>"Truck type" %>
+          <%= f.select :truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k,v| [k]}),:prompt=>"Truck type" %>
       </div>
         </td>
         <td>

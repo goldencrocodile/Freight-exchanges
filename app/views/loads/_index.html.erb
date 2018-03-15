@@ -51,7 +51,7 @@
              %>
           <% else %>
             <%= link_to "Accept", send_booked_mail_path(:id=> load.id, :truck_id=> @trucks.present? ? @trucks.first.id : ''), :confirm =>'Are you sure?', :class=>"btn-xs btn-danger btn-white-color" %>
-          <% end %>  
+          <% end %>
           </td>
       </td>
   <% end %>

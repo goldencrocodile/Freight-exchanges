@@ -102,8 +102,16 @@
           <%= f.select :sharing, options_for_select(Load::LOAD_SHARE.map {|k,v| [k,v]}, :selected=> params[:sharing].present? ? params[:load][:sharing] : ''  ) %>      
       </div>
       </td>
-</tr>
-<tr>
+      <tr>
+        <td>
+          <div class="form-group" id="pin-code-destination">
+            <label for="from">Information (if any)</label>
+             <%= f.text_area :information, class: "input control-label col-sm-4", :class=> "information-text form-control", :placeholder=> "Information" %>
+          </div>
+    </td>
+      </tr>
+    </tr>
+  <tr>
         <td>   </td>
       </tr>
       <tr>

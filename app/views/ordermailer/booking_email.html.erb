@@ -16,15 +16,23 @@
 	    <th>Truck to</th>
 	    <th>Transit time</th>
 	    <th>Documentation</th>
+      <th>Truck weight</th>
+      <th>Truck type</th>
+      <th>Expected price(inr)</th>
+      <th>Transit time(days)</th>
 	  </tr>
     <tr>
-      <td><%= @truck.vehicle_number %></td>
+      <td><%= @truck.vehicle_number  %></td>
       <td><%= @truck.driver_name %></td>
       <td><%= @truck.schedule_date  %></td>
       <td><%= @truck.truck_from %></td>
       <td><%= @truck.truck_to %></td>
       <td><%= @truck.transit_time %></td>
       <td><%= @truck.documentation %></td>
+      <td><%= @truck.truck_weight %></td>
+      <td><%= @truck.truck_type %></td>
+      <td><%= @truck.expected_price %></td>
+      <td><%= @truck.transit_time %></td>
     </tr>
   </table>
   </body>

@@ -62,7 +62,7 @@ class LoadsController < ApplicationController
      # @login_user = current_user if current_user.present?
      # @load_user = @load.user if @load.user.present?
     Ordermailer.booking_email(@truck,@load).deliver! if @load.present?
-     TruckBook.truck_booking_email(@truck, @load).deliver! if @load.present?
+    TruckBook.truck_booking_email(@truck, @load).deliver! if @load.present?
      respond_to do |format|
        format.html { redirect_to root_path, success: 'You have requested to load provider..! ' }
      end
@@ -96,6 +96,6 @@ class LoadsController < ApplicationController
   end
    private
     def load_params
-      params.require(:load).permit(:load_from, :load_to, :load_material, :load_weight, :load_truck_type, :load_no_of_truck, :load_schedule_date, :load_type, :source_pin_code,:destination_pin_code, :load_enabled, :user_id, :booked, :sharing, :expected_price)
+      params.require(:load).permit(:load_from, :load_to, :load_material, :load_weight, :load_truck_type, :load_no_of_truck, :load_schedule_date, :load_type, :source_pin_code,:destination_pin_code, :load_enabled, :user_id, :booked, :sharing, :expected_price, :information)
     end
 end

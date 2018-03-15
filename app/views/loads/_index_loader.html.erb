@@ -50,12 +50,12 @@
             <%= link_to "Accepted request", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
              %>
           <% else %>
-            <%= link_to "Accept", send_booked_mail_path(:id=> load.id, :truck_id=> @trucks.present? ? @trucks.first.id : ''), :class=>"btn-xs btn-danger btn-white-color" unless current_user.present? %>
+            <%= link_to "Accept", send_booked_mail_path(:id=> load.id, :truck_id=> @trucks.present? ? @trucks.first.id : ''), :class=>"btn-xs btn-danger btn-white-color" %>
           <% end %>  
           </td>
       </td>
   <% end %>
-  <%= will_paginate loads  if loads.present? %>
+  <%#= will_paginate loads  if loads.present? %>
 <% else %>
   <tr><h3 class='text-data'>No data found</h3></tr>
 <% end %>
