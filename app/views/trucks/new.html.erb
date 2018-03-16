@@ -99,7 +99,7 @@
       </td>
       <td>
       <div class="form-group form-margin-6">
-        <label for="from">Are you wiling to share<span>*</span></label>
+        <label for="from">Sharing truck</label>
           <%= f.select :sharing, options_for_select(Load::LOAD_SHARE.map {|k,v| [k,v]}, :selected=>  params[:truck].present? ? params[:truck][:sharing] : ''  ) %>      
       </div>
       </td>

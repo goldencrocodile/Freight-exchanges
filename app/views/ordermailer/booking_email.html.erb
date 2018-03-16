@@ -20,19 +20,22 @@
       <th>Truck type</th>
       <th>Expected price(inr)</th>
       <th>Transit time(days)</th>
+      <th>Sharing</th>
+      <th>Information</th>
 	  </tr>
     <tr>
-      <td><%= @truck.vehicle_number  %></td>
-      <td><%= @truck.driver_name %></td>
-      <td><%= @truck.schedule_date  %></td>
-      <td><%= @truck.truck_from %></td>
-      <td><%= @truck.truck_to %></td>
-      <td><%= @truck.transit_time %></td>
-      <td><%= @truck.documentation %></td>
-      <td><%= @truck.truck_weight %></td>
-      <td><%= @truck.truck_type %></td>
-      <td><%= @truck.expected_price %></td>
-      <td><%= @truck.transit_time %></td>
+      <td><%= @truck.vehicle_number if @truck.vehicle_number.present? %></td>
+      <td><%= @truck.driver_name if @truck.driver_name.present? %></td>
+      <td><%= @truck.schedule_date  if @truck.schedule_date.present?%></td>
+      <td><%= @truck.truck_from if @truck.truck_from.present? %></td>
+      <td><%= @truck.truck_to if @truck.truck_to.present? %></td>
+      <td><%= @truck.transit_time if @truck.transit_time.present? %></td>
+      <td><%= @truck.documentation if @truck.documentation.present? %></td>
+      <td><%= @truck.truck_weight if @truck.truck_weight.present? %></td>
+      <td><%= @truck.truck_type if @truck.truck_type.present? %></td>
+      <td><%= @truck.expected_price if @truck.expected_price.present? %></td>
+      <td><%= @truck.sharing if @truck.sharing.present? %></td>
+      <td><%= @truck.information if @truck.information.present? %></td>
     </tr>
   </table>
   </body>

@@ -6,7 +6,7 @@
   <th scope="col">Weight (Metric Ton)</th>
   <th scope="col">Truck Type</th>
   <th scope="col">Schedule Date</th>
-  <th scope="col">Willing to shared truck</th>
+  <th scope="col">Shared truck</th>
   <th scope="col">Map</th>
   <th scope="col">Action</th>
   </tr>
@@ -46,9 +46,8 @@
             <% else %>
               <%= link_to "Accepting", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
             <% end %>
-          <% elsif load.booked == "accept_request"%>
+          <% elsif load.booked == "accept_request" %>
             <%= link_to "Accepted request", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
-             %>
           <% else %>
             <%= link_to "Accept", send_booked_mail_path(:id=> load.id, :truck_id=> @trucks.present? ? @trucks.first.id : ''), :confirm =>'Are you sure?', :class=>"btn-xs btn-danger btn-white-color" %>
           <% end %>

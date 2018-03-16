@@ -19,14 +19,14 @@
     <th>Load material</th>
   </tr>
     <tr>
-      <td><%= @load.load_from %></td>
-      <td><%= @load.load_to %></td>
-      <td><%= @load.load_material  %></td>
-      <td><%= @load.load_weight %></td>
-      <td><%= @load.load_schedule_date %></td>
-      <td><%= @load.source_pin_code %></td>
-      <td><%= @load.destination_pin_code %></td>
-      <td><%= @load.load_material %></td>
+      <td><%= @load.load_from  if @load.load_from.present? %></td>
+      <td><%= @load.load_to if @load.load_to.present? %></td>
+      <td><%= @load.load_material  if @load.load_material.present? %></td>
+      <td><%= @load.load_weight if @load.load_weight.present? %></td>
+      <td><%= @load.load_schedule_date if @load.load_schedule_date.present? %></td>
+      <td><%= @load.source_pin_code if @load.source_pin_code.present? %></td>
+      <td><%= @load.destination_pin_code if @load.destination_pin_code.present? %></td>
+      <td><%= @load.load_material if @load.load_material.present? %></td>
     </tr>
   </table>
   </body>

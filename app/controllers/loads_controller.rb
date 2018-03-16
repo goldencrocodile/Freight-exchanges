@@ -4,7 +4,7 @@ class LoadsController < ApplicationController
   before_filter :authenticate_user!
   def index
     if current_user.present? and current_user.role.name=="Truck Owner"
-      if (params[:load_from].present? or params[:load_from].present? or params[:load_material].present? or params[:load_schedule_date].present? or params[:load_truck_type].present?)
+      if (params[:load_from].present? or params[:load_from].present? or params[:load_material].present? or params[:load_schedule_date].present? or params[:load_truck_type].present? or params[:sharing].present?)
         @loads = params[:load_schedule_date].present? ? Load.where('load_schedule_date = ?',params[:load_schedule_date]).search(params) : Load.search(params)
         @trucks = params[:load_schedule_date].present? ? current_user.trucks.where('schedule_date = ?',params[:load_schedule_date]) : current_user.trucks.find(:all, :conditions=>["truck_from LIKE ? AND truck_to LIKE ? AND truck_type LIKE ?", "%#{params[:load_from]}%","%#{params[:load_to]}%", "%#{params[:load_truck_type]}%"])
       else
