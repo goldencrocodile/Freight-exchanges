@@ -12,7 +12,7 @@ class TrucksController < ApplicationController
       @trucks = @trucks.paginate(page: params[:page], per_page: 10)
     else
       respond_to do |format|
-       format.html { redirect_to root_path, success: 'You are not authorised for this service!' }
+       format.html { redirect_to root_path }
       end
     end
   end

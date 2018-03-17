@@ -72,3 +72,8 @@ border-collapse: separate;
 .confirm-btn{font-size: 20px;}
 #datepicker{font-weight: 500;border: 2px solid gray !important;}
 .information-text{width: 100% !important;}
+#validate-msg-mobile, #validate-msg-vehicle-number{
+  display:block;
+  margin:1em 0;
+  color: red;
+}
