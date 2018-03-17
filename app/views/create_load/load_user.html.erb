@@ -3,10 +3,9 @@
     <meta content=‘text/html; charset=UTF-8’ http–equiv=‘Content-Type’ />
   </head>
   <body>
-		<h1>Hi <%= @load.user.email %></h1>
-		<h3>You gives the offer for a load.</h3>
-<h1>Load provider details </h1>
- 
+		<h1>Hi <%= @load.user.full_name.present? ? @load.user.full_name : @load.user.email %></h1>
+		<h3>You have created load</h3>
+<h1>With following details </h1>
 <table border="1">
   <tr>
     <th>Load from</th>

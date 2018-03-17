@@ -31,6 +31,7 @@ class LoadsController < ApplicationController
     user = current_user if user_signed_in?
     @load =user.loads.build(load_params)
   	 if @load.save
+      CreateLoad.load_user(@load).deliver
       ###  call deliver method after save send email ###
       respond_to do |format|
        format.html { redirect_to root_path, success: 'Load was successfully created.' }

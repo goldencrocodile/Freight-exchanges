@@ -45,17 +45,18 @@
         </div>
       </td>
       <td>
-       <div class="form-group" id="weight-of-load">
-          <label for="from">Weight(Metric Ton)<span>*</span></label>
-            <%= f.select :load_weight, options_for_select(Load::LOAD_WEIGHT.map {|k| [k.humanize.capitalize]}, :selected=> params[:load].present? ? params[:load][:load_weight] : ''), :prompt=>"Weight" %>
-        </div> 
+        <div class="form-group  " id="truck-type">
+          <label for="from">Truck Type<span>*</span></label>s
+            <%= f.select :load_truck_type, options_for_select(Truck::TRUCK_CAPICITY.map {|k,v| [k,v]}, :selected=> params[:load].present? ? params[:load][:load_truck_type] : ''), :prompt=>"Truck Type" %>
+        </div>
       </td>
       <td>
-        <div class="form-group  " id="truck-type">
-          <label for="from">Truck Type<span>*</span></label>
-            <%= f.select :load_truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}, :selected=> params[:load].present? ? params[:load][:load_truck_type] : ''), :prompt=>"Truck Type" %>
-        </div>
-    </td>
+       <div class="form-group" id="weight-of-load">
+          <label for="from">Weight(Metric Ton)<span>*</span></label>
+            <%#= f.select :load_weight, options_for_select(Load::LOAD_WEIGHT.map {|k| [k.humanize.capitalize]}, :selected=> params[:load].present? ? params[:load][:load_weight] : ''), :prompt=>"Weight" %>
+            <%= f.select :load_weight, options_for_select(Truck::TRUCK_CAPICITY.map {|k,v| [v,v]}, :selected=> params[:truck].present? ? params[:truck][:load_weight] : ''), :prompt=>"Weight" %>
+        </div> 
+      </td>
     </tr>
     <tr>
         <td>   </td>
@@ -75,7 +76,7 @@
     </td>
     <td>
       <div class="form-group form-margin-4">
-        <label for="from">Expected Price <span>*</span></span></label>
+        <label for="from">Expected Price(INR) <span>*</span></span></label>
          <span> <%= f.text_field :expected_price, :id=> "datepicker", :placeholder=> "Expected Price" %></span>
       </div>
     </td>
@@ -126,30 +127,10 @@
 </div>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript">
-    $( "#datepicker" ).datepicker({ minDate: 0, dateFormat: 'yy-mm-dd' });
+    $("#datepicker").datepicker({ minDate: 0, dateFormat: 'yy-mm-dd' });
 </script>
-<!-- <script>
-  // $(document).ready(function(){
-  //   $("#load_load_type").change(function(){
-  //     if ($("#load_load_type").val() == "Part load") {
-  //       $('#weight-of-load').hide();
-  //       $('.no-of-truck').hide();
-  //       $('#load_source_pin_code').show();
-  //       $('#load_destination_pin_code').show();
-  //       $('#pin-code-source').css("display","block");
-  //       $('#pin-code-destination').css("display","block");
-  //       $('#truck-type').show();
-  //   } else {
-  //       $('#weight-of-load').css("display","block");
-  //       $('.no-of-truck').css("display","block");
-  //       $('.truck-type').css("display","block");
-  //       $('#pin-code-source').css("display","block");
-  //       $('#pin-code-destination').css("display","block");
-  //       $('#load_source_pin_code').css("display","block");
-  //       $('#load_destination_pin_code').css("display","show");
-  //       $('#material').css("display","show");
-  //       $('#truck-type').show();
-  //   }
-  //   });
-  // });
-</script> -->
+<script type="text/javascvript">
+  $("#load_load_truck_type").change(function(){
+    $("#load_load_weight").val($('#load_load_truck_type :selected').val());
+  });
+</script>

@@ -90,9 +90,11 @@ Load.create!("load_type"=>"Full load",
    "load_no_of_truck"=>"3",
    "load_schedule_date"=>"2018-03-29",
    "expected_price"=>"3456789",
-   "source_pin_code"=>"Indore",
+   "source_pin_code"=>"Delhi",
    "destination_pin_code"=>"Pune",
-   "sharing"=>"1")
+   "sharing"=>"1",
+   "user_id"=> 19
+   )
 
    Load.create!("load_type"=>"Full load",
    "load_from"=>"Rajkot",
@@ -105,19 +107,21 @@ Load.create!("load_type"=>"Full load",
    "expected_price"=>"123456",
    "source_pin_code"=>"Rajkot",
    "destination_pin_code"=>"Indore",
-   "sharing"=>"1")
+   "sharing"=>"1",
+   "user_id"=> 19
+   )
 
 Load.create!("load_type"=>"Full load",
-   "load_from"=>"Indore",
-   "load_to"=>"Pune",
-   "load_material"=>"Mill Jute Oil",
-   "load_weight"=>"Upto 5 mt",
-   "load_truck_type"=>"Truck 24/25mt   / 14 wheel",
-   "load_no_of_truck"=>"3",
-   "load_schedule_date"=>"2018-03-30",
-   "expected_price"=>"50000",
-   "source_pin_code"=>"Indore",
-   "destination_pin_code"=>"Pune",
-   "sharing"=>"0")
-
-
+  "load_from"=>"Indore",
+  "load_to"=>"Pune",
+  "load_material"=>"Mill Jute Oil",
+  "load_weight"=>"Upto 5 mt",
+  "load_truck_type"=>"Truck 24/25mt   / 14 wheel",
+  "load_no_of_truck"=>"3",
+  "load_schedule_date"=>"2018-03-30",
+  "expected_price"=>"50000",
+  "source_pin_code"=>"Indore",
+  "destination_pin_code"=>"Pune",
+  "sharing"=>"0",
+  "user_id"=> 19
+)

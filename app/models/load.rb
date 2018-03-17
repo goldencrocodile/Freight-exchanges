@@ -28,7 +28,7 @@ LOAD_TRUCK_TYPE = ['canter jumbo',
 ]
 # LOAD_TRUCK_TYPE = ['Tata 407 '=> '2.5MT',]
   LOAD_TYPE = ['Full Load','Part Load']
-  LOAD_SHARE = { Yes: 1, No: 0 }
+  LOAD_SHARE = { Yes: 1, No: 0, Both: 2 }
   LOAD_STATUS = { request: 0, requesting: 1, accept_request:2, barganning:3 }
   validates :load_from, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
   validates :load_to, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}

@@ -342,7 +342,7 @@
                     <%= text_field_tag :load_schedule_date, "", class: 'width-15-date', id: "datepicker", :placeholder=>"Scheduled Date", value: params[:load_schedule_date].present? ? "#{params[:load_schedule_date]}" : '' %>
                     <%= select_tag :load_truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}, :selected=> params[:load_truck_type].present? ? params[:load_truck_type] : ''), :prompt=>"Truck Type" %>
                     <%= select_tag :sharing, options_for_select(Load::LOAD_SHARE.map {|k,v| [k,v]}, :selected=> params[:sharing].present? ? params[:sharing] : ''  ), :prompt=>"Sharing truck" %> 
-        </div>
+                </div>
                   <%= submit_tag "Search", :name => nil, :class=> "mar-lft-15" %>
                 <% end %>
                 </div>
