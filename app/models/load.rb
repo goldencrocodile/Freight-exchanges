@@ -48,15 +48,17 @@ LOAD_TRUCK_TYPE = ['canter jumbo',
   belongs_to :user
 
   def load_sharing(load)
-    if load.sharing == true
+    if load.sharing_load == 1
       return "Yes"
-    else 
+    elsif load.sharing_load == 0
       return "No"
+    else 
+      return "Both"
     end
   end
   def self.search(params)
     if params
-    find(:all, :conditions=>["load_from LIKE ? AND load_to LIKE ? AND load_material LIKE ? AND load_truck_type LIKE ? AND sharing = ? ", "%#{params[:load_from]}%","%#{params[:load_to]}%","%#{params[:load_material]}%", "%#{params[:load_truck_type]}%", "#{params[:sharing] == "1" ? 'true' : 'false'}"])
+      find(:all, :conditions=>["load_from LIKE ? AND load_to LIKE ? AND load_material LIKE ? AND load_truck_type LIKE ?", "%#{params[:load_from]}%","%#{params[:load_to]}%","%#{params[:load_material]}%", "%#{params[:load_truck_type]}%"])
     else
       find(:all)
     end

@@ -63,7 +63,7 @@
         </td>
         <td>
           <div class="form-group">
-           <label for="from">Expected Price <span>*</span></span></label>
+           <label for="from">Expected Price(INR) <span>*</span></span></label>
             <%= f.text_field :expected_price, class: "input control-label col-sm-4", :placeholder=> "Expected Price" %>
           </div>
         </td>
@@ -119,6 +119,14 @@
             <%= f.select :frequency, options_for_select(Truck::FREQUENCY.map {|k,v| [k,v]}),:prompt=>"Frequency" %>
           </div>
         </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group" id="pin-code-destination">
+            <label for="from">Information (if any)</label>
+             <%= f.text_area :information, class: "input control-label col-sm-4", :class=> "information-text form-control", :placeholder=> "Information" %>
+          </div>
+    </td>
       </tr>
       <tr>
         <td colspan="3">

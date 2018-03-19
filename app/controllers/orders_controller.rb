@@ -2,8 +2,9 @@ class OrdersController < ApplicationController
   def purchase_status
     begin
     	set_credentials = Razorpay.setup(Figaro.env.MERCHANT_KEY_ID, Figaro.env.MERCHANT_KEY_SECRET)
-    	order = Razorpay::Order.create amount: 5000, currency: 'INR', receipt: "sandeep.chourey@3scsolution.com"
-    	order_data = Order.new(product_id:params[:product_id],price:order.amount,payment_id:params[:razorpay_payment_id], user_id:User.last.id)
+    	pay_id = Razorpay::Payment.fetch(params[:razorpay_payment_id])
+      order = Razorpay::Order.create amount: pay_id.amount, currency: 'INR', receipt: "sandeep.chourey@3scsolution.com"
+    	order_data = Order.new(product_id:params[:product_id],price:order.amount,payment_id:params[:razorpay_payment_id], user_id:params[:user_id])
      	if order_data.save
         pay_id = Razorpay::Payment.fetch(params[:razorpay_payment_id]) if Rails.env.production?
         pay_id = pay_id.capture({amount:pay_id.amount}) if Rails.env.production?
@@ -15,5 +16,9 @@ class OrdersController < ApplicationController
     	flash[:alert] = "Unable to process payment."
   		redirect_to root_path
     end
+  end
+  def payment_data
+    @load = Load.find_by_id(params[:load_id])
+    @user = User.find_by_id(params[:load_id])
   end
 end

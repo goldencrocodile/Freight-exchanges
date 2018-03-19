@@ -4,7 +4,7 @@ class LoadsController < ApplicationController
   before_filter :authenticate_user!
   def index
     if current_user.present? and current_user.role.name=="Truck Owner"
-      if (params[:load_from].present? or params[:load_from].present? or params[:load_material].present? or params[:load_schedule_date].present? or params[:load_truck_type].present? or params[:sharing].present?)
+      if (params[:load_from].present? or params[:load_to].present? or params[:load_material].present? or params[:load_schedule_date].present? or params[:load_truck_type].present?)
         @loads = params[:load_schedule_date].present? ? Load.where('load_schedule_date = ?',params[:load_schedule_date]).search(params) : Load.search(params)
         @trucks = params[:load_schedule_date].present? ? current_user.trucks.where('schedule_date = ?',params[:load_schedule_date]) : current_user.trucks.find(:all, :conditions=>["truck_from LIKE ? AND truck_to LIKE ? AND truck_type LIKE ?", "%#{params[:load_from]}%","%#{params[:load_to]}%", "%#{params[:load_truck_type]}%"])
       else
@@ -60,8 +60,6 @@ class LoadsController < ApplicationController
      @load = Load.find_by_id(params[:id])
      @truck = Truck.find_by_id(params[:truck_id])
      @load.update_attributes(:booked => "requesting") if @load.present?
-     # @login_user = current_user if current_user.present?
-     # @load_user = @load.user if @load.user.present?
     Ordermailer.booking_email(@truck,@load).deliver! if @load.present?
     TruckBook.truck_booking_email(@truck, @load).deliver! if @load.present?
      respond_to do |format|
@@ -85,18 +83,24 @@ class LoadsController < ApplicationController
       load = Load.find_by_id(params[:load_id])
       if params[:result] == "accept"
         load.update_attributes(:booked=> "accept_request")
+        respond_to do |format|
+        format.html { redirect_to payment_data_path(:load_id=>load.id,:user_id=>current_user.id), success: "Load status has #{load.booked}!" }
+      end
       elsif  params[:result] == "barganning"
         load.update_attributes(:booked=> "barganning")
-      else
-        load.update_attributes(:booked=> "request")
-      end
-    end
-    respond_to do |format|
+        respond_to do |format|
         format.html { redirect_to root_path, success: "Load status has #{load.booked}!" }
       end
+      else
+        load.update_attributes(:booked=> "request")
+        respond_to do |format|
+        format.html { redirect_to root_path, success: "Load status has #{load.booked}!" }
+      end
+      end
+    end
   end
    private
     def load_params
-      params.require(:load).permit(:load_from, :load_to, :load_material, :load_weight, :load_truck_type, :load_no_of_truck, :load_schedule_date, :load_type, :source_pin_code,:destination_pin_code, :load_enabled, :user_id, :booked, :sharing, :expected_price, :information)
+      params.require(:load).permit(:load_from, :load_to, :load_material, :load_weight, :load_truck_type, :load_no_of_truck, :load_schedule_date, :load_type, :source_pin_code,:destination_pin_code, :load_enabled, :user_id, :booked, :sharing_load, :expected_price, :information)
     end
 end

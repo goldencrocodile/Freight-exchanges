@@ -340,8 +340,8 @@
                     <%= select_tag 'load_to', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:load_to].present? ? params[:load_to] : ''), :prompt=>"Destination", :class=> "width-20" %>
                     <%= select_tag :load_material, options_for_select(Load::LOAD_MATERIAL.map {|k| [k.humanize.capitalize]}, :selected=> params[:load_material].present? ? params[:load_material] : ''), :prompt=>"Material", :class=> "width-20" %>
                     <%= text_field_tag :load_schedule_date, "", class: 'width-15-date', id: "datepicker", :placeholder=>"Scheduled Date", value: params[:load_schedule_date].present? ? "#{params[:load_schedule_date]}" : '' %>
-                    <%= select_tag :load_truck_type, options_for_select(Load::LOAD_TRUCK_TYPE.map {|k| [k.humanize.capitalize]}, :selected=> params[:load_truck_type].present? ? params[:load_truck_type] : ''), :prompt=>"Truck Type" %>
-                    <%= select_tag :sharing, options_for_select(Load::LOAD_SHARE.map {|k,v| [k,v]}, :selected=> params[:sharing].present? ? params[:sharing] : ''  ), :prompt=>"Sharing truck" %> 
+                    <%= select_tag :load_truck_type, options_for_select(Truck::TRUCK_CAPICITY.map {|k,v| [k,v]}, :selected=> params[:load_truck_type].present? ? params[:load_truck_type] : ''), :prompt=>"Truck Type" %>
+                    <%#= select_tag :sharing_load, options_for_select(Load::LOAD_SHARE.map {|k,v| [k,v]}, :selected=> params[:sharing_load].present? ? params[:sharing_load] : ''  ), :prompt=>"Sharing truck" %> 
                 </div>
                   <%= submit_tag "Search", :name => nil, :class=> "mar-lft-15" %>
                 <% end %>

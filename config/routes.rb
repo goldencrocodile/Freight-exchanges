@@ -11,6 +11,7 @@ FreightExchange::Application.routes.draw do
   # devise_for :users
   devise_for :users, :controllers => {:registrations => "registrations", confirmations: 'confirmations' }
   get "welcome/index"
+  get 'payment_data' => 'orders#payment_data'
   get 'send_booked_mail' => 'loads#send_booked_mail'
   get 'send_truck_booked_mail' => 'trucks#send_truck_booked_mail'
   get 'distance_calculation' => 'loads#distance_calculation', as: :distance_calculation

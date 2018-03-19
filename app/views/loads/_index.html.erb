@@ -49,7 +49,8 @@
           <% elsif load.booked == "accept_request" %>
             <%= link_to "Accepted request", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
           <% else %>
-            <%= link_to "Accept", send_booked_mail_path(:id=> load.id, :truck_id=> @trucks.present? ? @trucks.first.id : ''), :confirm =>'Are you sure?', :class=>"btn-xs btn-danger btn-white-color" %>
+          <%# login_user_trucks = current_user.trucks if current_user.present? and current_user.trucks.present?  %>
+            <%= link_to "Accept", send_booked_mail_path(:id=> load.id, :truck_id=> Truck.search(params).present? ? Truck.search(params).first.id : ''), :confirm =>'Are you sure?', :class=>"btn-xs btn-danger btn-white-color" %>
           <% end %>
           </td>
       </td>

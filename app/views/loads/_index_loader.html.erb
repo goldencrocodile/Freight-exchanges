@@ -48,7 +48,6 @@
             <% end %>
           <% elsif load.booked == "accept_request"%>
             <%= link_to "Accepted request", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
-             %>
           <% else %>
             <%= link_to "Accept", send_booked_mail_path(:id=> load.id, :truck_id=> @trucks.present? ? @trucks.first.id : ''), :class=>"btn-xs btn-danger btn-white-color" %>
           <% end %>  
