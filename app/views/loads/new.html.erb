@@ -47,7 +47,7 @@
       <td>
         <div class="form-group  " id="truck-type">
           <label for="from">Truck Type<span>*</span></label>
-            <%= f.select :load_truck_type, options_for_select(Truck::TRUCK_CAPICITY.map {|k,v| [k]}, :selected=> params[:load].present? ? params[:load][:load_truck_type] : ''), :prompt=>"Truck Type" %>
+            <%= f.select :load_truck_type, options_for_select(Truck::TRUCK_CAPICITY.map {|k,v| [k,v]}, :selected=> params[:load].present? ? params[:load][:load_truck_type] : ''), :prompt=>"Truck Type" %>
         </div>
       </td>
       <td>
@@ -109,7 +109,13 @@
             <label for="from">Information (if any)</label>
              <%= f.text_area :information, class: "input control-label col-sm-4", :class=> "information-text form-control", :placeholder=> "Information" %>
           </div>
-    </td>
+        </td>
+        <td>
+          <div class="form-group">
+          <label for="from">Truck body</label>
+            <%= f.select :load_body, options_for_select(Load::LOAD_BODY.map {|k,v| [k,v]}),:prompt=>"Truck body" %>
+          </div>
+        </td>
       </tr>
     </tr>
   <tr>

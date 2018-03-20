@@ -16,6 +16,8 @@ PROVIDE_DOCS = { Yes: 1, No: 0 }
 FREQUENCY = { monthly: 1, weekly: 2, daily: 3 }
 TRANSIT_TIME = {'1': 1,'2':2,'3':3,'4':4,'5':5, '6':6, '7':7,'8':8,'9':9}
 TRUCK_STATUS = { request: 0, requesting: 1, accept_request:2 }
+TRUCK_BODY = { Open: 1,Close: 2}
+SHARE_DOCS = { No: 0,Yes: 1}
 TRUCK_CAPICITY = {'LCV (Tata 407)': '2.5 MT', 
   'LCV (Canter / Swaraj Mazda)': '3.5 MT',
   'LPT 709': '4.5 MT',

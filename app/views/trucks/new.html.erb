@@ -22,7 +22,7 @@
           <div class="form-group ">
         <label for="from">Vehicle Number<span>*</span></label>
          <%= f.text_field :vehicle_number, class: "input control-label col-sm-4",:placeholder=> "Vehicle Number", :maxlength => 13 %>
-         <span id="validate-msg-vehicle-number">12 characters remaining</span>
+         <!-- <span id="validate-msg-vehicle-number">12 characters remaining</span> -->
       </div>
         </td>
         <td>
@@ -35,7 +35,7 @@
           <div class="form-group">
         <label for="from">Driver Mobile Number<span>*</span></label>
          <%= f.text_field :driver_mobile_no, class: "input control-label col-sm-4", :placeholder=> "Contact Number", :maxlength => 13 %>
-         <span id="validate-msg-mobile">12 characters remaining</span>
+         <!-- <span id="validate-msg-mobile">12 characters remaining</span> -->
       </div>
         </td>
       </tr>
@@ -102,7 +102,7 @@
       <td>
       <div class="form-group form-margin-6">
         <label for="from">Document<span class="note-docs">(will you provide LR,POD)</span></label>
-          <%= f.select :documentation, options_for_select(Load::LOAD_SHARE.map {|k,v| [k,v]}, :selected => params[:truck].present? ? params[:truck][:documentation] : ''  ) %>
+          <%= f.select :documentation, options_for_select(Truck::SHARE_DOCS.map {|k,v| [k,v]}, :selected => params[:truck].present? ? params[:truck][:documentation] : ''  ) %>
       </div>
       </td>
       <td>
@@ -124,7 +124,13 @@
             <label for="from">Information (if any)</label>
              <%= f.text_area :information, class: "input control-label col-sm-4", :class=> "information-text form-control", :placeholder=> "Information" %>
           </div>
-    </td>
+        </td>
+        <td>
+          <div class="form-group">
+          <label for="from">Truck body</label>
+            <%= f.select :truck_body, options_for_select(Truck::TRUCK_BODY.map {|k,v| [k,v]}),:prompt=>"Truck body" %>
+          </div>
+        </td>
       </tr>
       <tr>
         <td colspan="3">

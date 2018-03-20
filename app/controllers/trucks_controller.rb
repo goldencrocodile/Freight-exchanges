@@ -64,6 +64,6 @@ class TrucksController < ApplicationController
   
   private
     def truck_params
-			params.require(:truck).permit(:vehicle_number, :driver_name, :driver_mobile_no, :truck_weight, :truck_type, :schedule_date, :truck_from, :truck_to, :user_id, :truck_booked, :expected_price, :transit_time, :documentation,:sharing, :frequency)
+			params.require(:truck).permit(:vehicle_number, :driver_name, :driver_mobile_no, :truck_weight, :truck_type, :schedule_date, :truck_from, :truck_to, :user_id, :truck_booked, :expected_price, :transit_time, :documentation,:sharing, :frequency, :truck_body, :information)
     end
 end

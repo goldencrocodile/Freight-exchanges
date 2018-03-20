@@ -21,7 +21,7 @@ none;color: red} #contact_subject {margin-right: 337px; margin-bottom: 20px;}
 400px;} .map-div{width: 1000px;} #map {height: 50%;} #truck-type{display:
 block;} /*warehouse -inquiry page*/ .header-font{text-align: center;font-size:
 32px;} .flash{color: red;} #spnTruckStatus{display: none;} /*Error Load page*/
-.error-set{border: 1px solid red; padding: 20px;
+.error-set{ padding: 20px;
   }
   .error-set1{border: 0.1px solid red padding:5px;
   }
