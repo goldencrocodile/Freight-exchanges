@@ -22,7 +22,11 @@ none;color: red} #contact_subject {margin-right: 337px; margin-bottom: 20px;}
 block;} /*warehouse -inquiry page*/ .header-font{text-align: center;font-size:
 32px;} .flash{color: red;} #spnTruckStatus{display: none;} /*Error Load page*/
 .error-set{border: 1px solid red; padding: 20px;
-  } .post-form-msg{padding-top:20px;}
+  }
+  .error-set1{border: 0.1px solid red padding:5px;
+  }
+
+   .post-form-msg{padding-top:20px;}
 .container.container-padding-top{padding-top: 100px;} .header-text{padding:
 20px;} .map-align{padding-top:20px;} .color_orange{color: #fd4404;} .font-32
 {font-size: 32px;} .font-24{font-size: 24px;} /*#distance-from{float:
