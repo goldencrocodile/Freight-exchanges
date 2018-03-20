@@ -46,8 +46,8 @@
       </td>
       <td>
         <div class="form-group  " id="truck-type">
-          <label for="from">Truck Type<span>*</span></label>s
-            <%= f.select :load_truck_type, options_for_select(Truck::TRUCK_CAPICITY.map {|k,v| [k,v]}, :selected=> params[:load].present? ? params[:load][:load_truck_type] : ''), :prompt=>"Truck Type" %>
+          <label for="from">Truck Type<span>*</span></label>
+            <%= f.select :load_truck_type, options_for_select(Truck::TRUCK_CAPICITY.map {|k,v| [k]}, :selected=> params[:load].present? ? params[:load][:load_truck_type] : ''), :prompt=>"Truck Type" %>
         </div>
       </td>
       <td>

@@ -7,6 +7,11 @@
   <th scope="col">Truck Type</th>
   <th scope="col">Schedule Date</th>
   <th scope="col">Shared truck</th>
+  <th scope="col">Load Type</th>
+  <th scope="col">Pick up point</th>
+  <th scope="col">Drop point</th>
+  <th scope="col">Expected Price(INR)</th>
+  <th scope="col">Information</th>
   <th scope="col">Map</th>
   <th scope="col">Action</th>
   </tr>
@@ -26,13 +31,28 @@
           <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_weight %>><%= load.load_weight if load.load_weight.present? %></span>
         </td>
         <td>
-          <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_truck_type %>><%= load.load_truck_type if load.load_truck_type.present? %></span>
+          <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_truck_type %>><%= Truck::TRUCK_CAPICITY.key(load.load_truck_type).present? ? Truck::TRUCK_CAPICITY.key(load.load_truck_type) : load.load_truck_type if load.load_truck_type.present? %></span>
         </td>
         <td>
           <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_schedule_date.to_formatted_s(:long) %>><%= load.load_schedule_date.to_formatted_s(:long)%></span>
         </td>
         <td>
           <span> <%= load.load_sharing(load) %></span>
+        </td>
+        <td>
+          <span> <%= load.load_type if load.load_type.present?  %></span>
+        </td>
+        <td>
+          <span> <%= load.source_pin_code if load.source_pin_code.present?  %></span>
+        </td>
+        <td>
+          <span> <%= load.destination_pin_code if load.destination_pin_code.present?  %></span>
+        </td>
+        <td>
+          <span> <%= load.expected_price if load.expected_price.present?  %></span>
+        </td>
+        <td>
+          <span> <%= load.information if load.information.present?  %></span>
         </td>
         <td>
           <center>

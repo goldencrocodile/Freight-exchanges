@@ -38,12 +38,12 @@
  					<li class="has-dropdown"><a href="#">Post</a>
              <ul class="dropdown">
               <% if current_user.present? %>
-                <% if current_user.role.name == "Load Provider" and user_signed_in? %>
+                <% if  user_signed_in? and current_user.role.present?  and current_user.role.name == "Load Provider"  %>
                  <li>	
                    <%= link_to "Post a Load", new_load_path, :class=> "post-load" %>
                  </li>
                 <% end %>
-                 <% if current_user.role.name == "Truck Owner" and user_signed_in? %>
+                 <% if user_signed_in? and current_user.role.present? and current_user.role.name == "Truck Owner" %>
                    <li>
                      <%= link_to "Post a Truck", new_truck_path, :class=> "post-truck" %>
                    </li>
@@ -54,14 +54,14 @@
  					<li class="has-dropdown"><a href="#">Board</a>
              <ul class="dropdown">
               <% if current_user.present? %>
-                <% if current_user.role.name == "Truck Owner" and user_signed_in? %>
+                <% if user_signed_in? and current_user.role.present? and current_user.role.name == "Truck Owner" %>
                   <li>
                     <%= link_to "Find a Load", loads_path %>
                   </li>
                 <% end %>
                <% end %>
                <% if current_user.present? %>
-                 <% if current_user.role.name == "Load Provider" and user_signed_in? %>
+                 <% if user_signed_in? and current_user.role.present? and current_user.role.name == "Load Provider" %>
                   <li>
                     <%= link_to "Find a Truck", trucks_path %>
                   </li>
@@ -109,9 +109,9 @@
  						<ul class="dropdown">
  							<% if user_signed_in? %>
  								<li>
-                  <% if current_user.role.name == "Truck Owner" %>
+                  <% if current_user.present? and current_user.role.present? and current_user.role.name == "Truck Owner" %>
                     <%= link_to('Truck Owner Profile', truck_user_profile_path(user_id:current_user.id))  %>
-                  <% elsif current_user.role.name == "Load Provider"
+                  <% elsif current_user.present? and current_user.role.present? and current_user.role.name == "Load Provider"
                      %> 
                     <%= link_to("Load Provider Profile", load_user_profile_path(user_id:current_user.id))  %>
                   <% else %>
