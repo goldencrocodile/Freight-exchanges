@@ -9,7 +9,6 @@
     <%= f.label :email %><span>*</span><br />
     <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
   </div>
-
   <div class="field user-form-width">
     <%= f.label :password %><span>*</span>
     <% if @minimum_password_length %>
@@ -56,15 +55,18 @@
   </div>
 <div class="field user-form-width">
   <%= f.label :country %><span>*</span><br />
-    <%= f.text_field :address_country , placeholder: "Country" %> 
+  <%= f.text_field :address_country, value: 'India', readonly: true %>
+    <%#= f.text_field :address_country , placeholder: "Country" %> 
   </div>
 <div class="field user-form-width">
   <%= f.label :state %><span>*</span><br />
-    <%= f.text_field :address_state, placeholder: "State" %> 
+  <%= f.select 'address_state', options_for_select(CS.states(:in).collect{ |k,v| [v] }), :class=> "input control-label col-sm-4", :prompt=>"State" %>
+    <%#= f.text_field :address_state, placeholder: "State" %> 
   </div>
 <div class="field user-form-width">
   <%= f.label :city %><span>*</span><br />
-    <%= f.text_field :address_city , placeholder: "City" %> 
+  <%= f.select 'address_city', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:load].present? ? params[:load][:load_from] : ''), :class=> "input control-label col-sm-4", :prompt=>"City" %>
+    <%#= f.text_field :address_city , placeholder: "City" %> 
   </div>
   <!-- Company info -->
   <h2>Company info</h2>
@@ -90,7 +92,7 @@
   <%= f.label "Upload Aadhaar card" %><br />
     <%= f.file_field :aadhaar_no_image %>
   </div>
-
+<br/>
   <div class="actions user-form-width">
     <%= f.submit "Sign up", class: "main-btn" %>
   </div>

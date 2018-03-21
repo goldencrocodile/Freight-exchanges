@@ -14,7 +14,8 @@ gem "activeadmin", "~> 1.0.0.pre2"
 gem 'razorpay'
 gem 'figaro'
 gem "paperclip"
-gem "country-select"
+gem 'country_select'
+gem 'city-state'
 # gem "meta_search", '>= 1.1.0.pre'
 # Use SCSS for stylesheets
 group :assets do
