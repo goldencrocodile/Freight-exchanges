@@ -30,6 +30,8 @@ class TrucksController < ApplicationController
       user = current_user if user_signed_in?
       @truck = user.trucks.build(truck_params)
     	 if @truck.save
+        driver = @truck.drivers.build(:name=> params[:truck][:driver_name],:transporter_name => params[:truck][:current_transporter_name],:truck_id => @truck.id,:lic_number => params[:truck][:licence_number])
+        driver.save if driver.present?
         ###  call deliver method for send email ###
         respond_to do |format|
          format.html { redirect_to trucks_path, success: 'Truck was successfully created, please check mail..!' }
@@ -64,6 +66,6 @@ class TrucksController < ApplicationController
   
   private
     def truck_params
-			params.require(:truck).permit(:vehicle_number, :driver_name, :driver_mobile_no, :truck_weight, :truck_type, :schedule_date, :truck_from, :truck_to, :user_id, :truck_booked, :expected_price, :transit_time, :documentation,:sharing, :frequency, :truck_body, :information)
+			params.require(:truck).permit(:vehicle_number, :driver_name, :driver_mobile_no, :truck_weight, :truck_type, :schedule_date, :truck_from, :truck_to, :user_id, :truck_booked, :expected_price, :transit_time, :documentation,:sharing, :frequency, :truck_body, :information,:licence_number, :current_transporter_name)
     end
 end

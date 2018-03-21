@@ -1,5 +1,6 @@
 class Truck < ActiveRecord::Base
   belongs_to :user
+  has_many :drivers
 	validates :vehicle_number,   :presence => {:message => "can't be blank."}
   validates :driver_name,   :presence => {:message => "can't be blank."}
   # validates :driver_mobile_no,   :presence => {:message => "can't be blank."}
@@ -11,7 +12,10 @@ class Truck < ActiveRecord::Base
   validates :driver_mobile_no,:presence => true,
                  :numericality => true,
                  :length => { :minimum => 10, :maximum => 15 }
+  validates :licence_number,:presence => true,
+                 :length => { :maximum => 15 }
   validates :transit_time,   :presence => true
+  validates :current_transporter_name,   :presence => true
 PROVIDE_DOCS = { Yes: 1, No: 0 }
 FREQUENCY = { monthly: 1, weekly: 2, daily: 3 }
 TRANSIT_TIME = {'1': 1,'2':2,'3':3,'4':4,'5':5, '6':6, '7':7,'8':8,'9':9}

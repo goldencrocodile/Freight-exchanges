@@ -61,12 +61,6 @@
             <%= f.select :truck_weight, options_for_select(Truck::TRUCK_CAPICITY.map {|k,v| [v,v]}),:prompt=>"Select Weight" %>
           </div>
         </td>
-        <td>
-          <div class="form-group">
-           <label for="from">Expected Price(INR) <span>*</span></span></label>
-            <%= f.text_field :expected_price, class: "input control-label col-sm-4", :placeholder=> "Expected Price" %>
-          </div>
-        </td>
       </tr>
       <tr>
         <td >  </td>
@@ -133,6 +127,26 @@
         </td>
       </tr>
       <tr>
+        <td>
+          <div class="form-group">
+           <label for="from">Expected Price(INR) <span>*</span></span></label>
+            <%= f.text_field :expected_price, class: "input control-label col-sm-4", :placeholder=> "Expected Price" %>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+           <label for="from">Driver licence number <span>*</span></span></label>
+            <%= f.text_field :licence_number, class: "input control-label col-sm-4", :placeholder=> "Driver licence number", :maxlength => 15 %>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+           <label for="from">Current transporter name <span>*</span></span></label>
+            <%= f.text_field :current_transporter_name, class: "input control-label col-sm-4", :placeholder=> "Current transporter name" %>
+          </div>
+        </td>
+      </tr>
+      <tr>
         <td colspan="3">
           <div>
         <%= f.submit "Post truck", class: "main-btn" %>
@@ -155,6 +169,8 @@
   $("#new_truck").submit(function(){
     var avali_capicity = $('#truck_truck_weight :selected').val();
     var max_capicity = $('#max-truck-capacity').val();
+    // alert(avali_capicity)
+    // alert(max_capicity)
     if (avali_capicity > max_capicity ){
       alert("Available truck capacity is greater then Max truck capacity");
       return false;
@@ -162,6 +178,7 @@
 });
   var maxmobileLength = 13;
   var maxtrucknumberLength = 13;
+  var maxLICnumberLength = 15
   $('#truck_driver_mobile_no').keyup(function() {
     var length = $(this).val().length;
     var length = maxmobileLength-length;
@@ -171,5 +188,10 @@
     var length = $(this).val().length;
     var length = maxtrucknumberLength-length;
     $('#validate-msg-vehicle-number').text(length);
+  });
+  $('#truck_licence_number').keyup(function() {
+    var length = $(this).val().length;
+    var length = maxLICnumberLength-length;
+    // $('#validate-msg-vehicle-number').text(length);
   });
 </script>
