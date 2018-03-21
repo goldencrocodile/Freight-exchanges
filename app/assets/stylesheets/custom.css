@@ -6,7 +6,7 @@
    padding:20px;
    border-style: inset;
    box-shadow: 10px 10px 5px grey;}
-
+.form-group{}
    user-form-width{ width: 40%;  } #error_explanation h2{ display: none;
 } #error_explanation ul li  {     color: red; } .error_msg {     color: red; }
 .contact-form .input:nth-child(2) {     width: calc(100% - 10px); } .form-
@@ -21,10 +21,12 @@ none;color: red} #contact_subject {margin-right: 337px; margin-bottom: 20px;}
 400px;} .map-div{width: 1000px;} #map {height: 50%;} #truck-type{display:
 block;} /*warehouse -inquiry page*/ .header-font{text-align: center;font-size:
 32px;} .flash{color: red;} #spnTruckStatus{display: none;} /*Error Load page*/
-.error-set{border: 1px solid red; padding: 20px;
+.error-set{border: 1px solid red padding: 20px;
   }
   .error-set1{border: 0.1px solid red padding:5px;
   }
+
+  .form-group{padding-top: 20px;padding-bottom: 20px;}
 
    .post-form-msg{padding-top:20px;}
 .container.container-padding-top{padding-top: 100px;} .header-text{padding:
