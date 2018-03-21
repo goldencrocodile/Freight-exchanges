@@ -1,8 +1,9 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<div class="user-form">
 <div class="container container-padding-top">
   <h2>Post a Load</h2>
-  <p class="post-form-msg">Plese fill the following form to load  post details</p>
-  <fieldset><legend>Basic Details</legend></fieldset>
+  <p class="post-form-msg"><b><u>Plese fill the following form to load  post details</u></b></p>
+  <fieldset><b><u>Basic Details</u></b></fieldset>
     <%= form_for @load, url: {action: "create"}, html: {class: "form-inline"} do |f| %>
     <div class="error-set">
       <% if @load.errors.full_messages.any? %>
@@ -16,15 +17,15 @@
     <table cellpadding="1" cellspacing="1" class="tblstyle tblstyle-load">
       <tr>
         <td>
-        <div class="form-group form-margin-6">
+        <div class="form-group">
           <label for="from">Load Type<span>*</span></label>
             <%= f.select :load_type, options_for_select(Load::LOAD_TYPE.map {|k| [k.humanize.capitalize]}, :selected=> params[:load].present? ? params[:load][:load_type] : ''  ), :prompt=>"Select Load Type" %>      
         </div>
       </td>
       <td>
-        <div class="form-group form-margin-20">
+        <div class="form-group ">
         <label for="from">From<span>*</span></label>
-        <%= f.select 'load_from', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:load].present? ? params[:load][:load_from] : ''), :class=> "input control-label col-sm-4", :prompt=>"Source" %>
+        <%= f.select 'load_from', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:load].present? ? params[:load][:load_from] : ''),  :prompt=>"Source" %>
       </div>
       </td>
       <td>
@@ -39,7 +40,7 @@
       </tr>
     <tr>
       <td>
-        <div class="form-group form-margin-6" id="material">
+        <div class="form-group " id="material">
           <label for="from">Material<span>*</span></label>
             <%= f.select :load_material, options_for_select(Load::LOAD_MATERIAL.map {|k| [k.humanize.capitalize]}, :selected=> params[:load].present? ? params[:load][:load_material] : ''), :prompt=>"Material" %>      
         </div>
@@ -62,20 +63,20 @@
         <td>   </td>
     <tr><td>
       <%# if params[:load].present? and params[:load][:load_type] != "Part load" %>
-        <div class="form-group form-margin-6 no-of-truck">
+        <div class="form-group no-of-truck">
           <label for="from">No. of Truck<span>*</span></label>
             <%= f.select :load_no_of_truck, options_for_select(Load::NO_OF_TRUCKS.map {|k| [k.humanize.capitalize]}, :selected=> params[:load].present? ? params[:load][:load_no_of_truck] : ''), :prompt=>"No. of Truck" %>
         </div>
       <%# end %>
     </td>
     <td>
-      <div class="form-group form-margin-4">
+      <div class="form-group ">
         <label for="from">Scheduled Date <span>*</span></span></label>
          <span> <%= f.text_field :load_schedule_date, :id=> "datepicker", :placeholder=> "Scheduled Date" %></span>
       </div>
     </td>
     <td>
-      <div class="form-group form-margin-4">
+      <div class="form-group ">
         <label for="from">Expected Price(INR) <span>*</span></span></label>
          <span> <%= f.text_field :expected_price, :id=> "datepicker", :placeholder=> "Expected Price" %></span>
       </div>
@@ -98,7 +99,7 @@
       </div>
     </td>
     <td>
-      <div class="form-group form-margin-6">
+      <div class="form-group ">
         <label for="from">Are you wiling to share<span>*</span></label>
           <%= f.select :sharing_load, options_for_select(Load::LOAD_SHARE.map {|k,v| [k,v]}, :selected=> params[:sharing].present? ? params[:load][:sharing_load] : ''  ) %>      
       </div>
@@ -124,6 +125,7 @@
       </tr>
       </table>
     <% end -%>
+</div>
 </div>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript">
