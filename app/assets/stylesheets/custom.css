@@ -29,7 +29,7 @@ block;} /*warehouse -inquiry page*/ .header-font{text-align: center;font-size:
 .error-set{ padding: 20px;}
     
 .para{color:green;}
-.error-set1{border: 0.1px solid:red; padding:5px;}
+/*.error-set1{border: 0.1px; solid: red; padding:5px;}*/
 
   .form-group{padding-top: 20px;padding-bottom: 20px;}
 
