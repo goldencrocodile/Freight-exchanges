@@ -127,12 +127,12 @@
         </td>
       </tr>
       <tr>
-        <td>
+        <!-- <td>
           <div class="form-group">
            <label for="from">Expected Price(INR) <span>*</span></span></label>
-            <%= f.text_field :expected_price, class: "input control-label col-sm-4", :placeholder=> "Expected Price" %>
+            <%#= f.text_field :expected_price, class: "input control-label col-sm-4", :placeholder=> "Expected Price" %>
           </div>
-        </td>
+        </td> -->
         <td>
           <div class="form-group">
            <label for="from">Driver licence number <span>*</span></span></label>
@@ -171,10 +171,10 @@
     var max_capicity = $('#max-truck-capacity').val();
     // alert(avali_capicity)
     // alert(max_capicity)
-    if (avali_capicity > max_capicity ){
-      alert("Available truck capacity is greater then Max truck capacity");
-      return false;
-    }
+    // if (avali_capicity > max_capicity ){
+    //   alert("Available truck capacity is greater then Max truck capacity");
+    //   return false;
+    // }
 });
   var maxmobileLength = 13;
   var maxtrucknumberLength = 13;
@@ -195,3 +195,5 @@
     // $('#validate-msg-vehicle-number').text(length);
   });
 </script>
+
+

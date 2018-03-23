@@ -3,6 +3,6 @@ class Ordermailer < ActionMailer::Base
   def booking_email(truck,load)
     @truck = truck
     @load = load
-    mail(to: @load.user.email, subject: "Load Booking mail")
+    mail(to: "sandeep.chourey@3scsolution.com", subject: "Load Booking mail")
   end
 end

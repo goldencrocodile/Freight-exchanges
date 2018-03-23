@@ -36,7 +36,7 @@ $(document).ready(function(){
           }
       });
     });
-  $('.cleat-btn,.signup-link').click(function() {
+  $('.cleat-btn,.signup-link,.find-load').click(function() {
     location.reload();
   });
 });

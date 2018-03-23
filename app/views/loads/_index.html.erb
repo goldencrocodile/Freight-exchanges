@@ -12,6 +12,7 @@
   <th scope="col">Drop point</th>
   <th scope="col">Expected Price(INR)</th>
   <th scope="col">Information</th>
+  <th scope="col">Truck Body</th>
   <th scope="col">Map</th>
   <th scope="col">Action</th>
   </tr>
@@ -49,10 +50,15 @@
           <span> <%= load.destination_pin_code if load.destination_pin_code.present?  %></span>
         </td>
         <td>
-          <span> <%= load.expected_price if load.expected_price.present?  %></span>
+          <% load_price = load.expected_price.to_i * 0.10 if load.expected_price.present? %>
+          <% load_price = load.expected_price.to_i - load_price.to_i %>
+          <span> <%= load_price  if load.expected_price.present?  %></span>
         </td>
         <td>
           <span> <%= load.information if load.information.present?  %></span>
+        </td>
+        <td>
+          <span> <%= load.load_body= true ? "Open" : "Close" if load.load_body.present? %></span>
         </td>
         <td>
           <center>

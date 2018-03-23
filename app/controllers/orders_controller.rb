@@ -21,4 +21,10 @@ class OrdersController < ApplicationController
     @load = Load.find_by_id(params[:load_id])
     @user = User.find_by_id(params[:load_id])
   end
+
+  def subscribe user
+  end
 end
+
+#subscription = Razorpay::Subscription.create plan_id: "plan_9pxNV2jyF7X9td", customer_id: "cust_9q09QqZX3pntVc",
+# start_at: (Time.now + (60 * 60 * 24)).to_i, total_count: 3

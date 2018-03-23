@@ -56,7 +56,7 @@
               <% if current_user.present? %>
                 <% if user_signed_in? and current_user.role.present? and current_user.role.name == "Truck Owner" %>
                   <li>
-                    <%= link_to "Find a Load", loads_path %>
+                    <%= link_to "Find a Load", loads_path,:class=>"find-load" %>
                   </li>
                 <% end %>
                <% end %>
@@ -125,6 +125,9 @@
  								<li>
  									<%= link_to('Register', new_user_registration_path, :class=> "signup-link") %>
  								</li>
+                <li>
+                  <%= link_to('Subscription', new_user_registration_path, :class=> "signup-link") %>
+                </li>
  							<% end %>	
  						</ul>
  					</li>

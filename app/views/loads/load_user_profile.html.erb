@@ -330,7 +330,7 @@
                   <%= render "loads_title", loads: @loads  %>
                     <br>
                 </div>
-                <div class="text-data-align">You have <%= Load.where(:booked=> "requesting").count %> request pending from truck owner </div>
+                <div class="text-data-align">You have <%= current_user.loads.where(:booked=> "requesting").count %> request pending from truck owner </div>
                 <div>
                   <%= form_tag trucks_path, :method => 'get' do %>
                     <%= select_tag 'truck_from', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:truck_from].present? ? params[:truck_from] : ''), :class=> "input control-label col-sm-4 width-20", :prompt=>"Source" %>

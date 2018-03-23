@@ -8,6 +8,7 @@ FreightExchange::Application.routes.draw do
   resources :loads
   resources :trucks
   resources :services
+  resources :subscriptions
   # devise_for :users
   devise_for :users, :controllers => {:registrations => "registrations", confirmations: 'confirmations' }
   get "welcome/index"
