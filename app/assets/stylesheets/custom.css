@@ -28,9 +28,8 @@ block;} /*warehouse -inquiry page*/ .header-font{text-align: center;font-size:
 32px;} .flash{color: red;} #spnTruckStatus{display: none;} /*Error Load page*/
 .error-set{ padding: 20px;}
     
-    .para{color:green;}
-  .error-set1{border: 0.1px solid red padding:5px;
-  }
+.para{color:green;}
+.error-set1{border: 0.1px solid:red; padding:5px;}
 
   .form-group{padding-top: 20px;padding-bottom: 20px;}
 
