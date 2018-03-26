@@ -8,10 +8,22 @@
    border-style: inset;
    box-shadow: 10px 10px 5px grey;}
 
+
     .user-form1{ 
      border-style: outset;
      background: linear-gradient(to bottom right, lightblue, white);
    box-shadow: 300px 300px 250px blue;}
+
+   .user-form2{ border: 1px solid black;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    margin-right: 50px;
+    margin-left: 50px;
+   padding:20px;
+  background: linear-gradient(to bottom right, lightblue, white);
+   border-style: inset;
+   box-shadow: 10px 10px 5px grey;}
+
 
 
    user-form-width{ width: 40%;  } #error_explanation h2{ display: none;
