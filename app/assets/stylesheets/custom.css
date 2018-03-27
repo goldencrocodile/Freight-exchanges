@@ -27,18 +27,14 @@ none;color: red} #contact_subject {margin-right: 450px; margin-bottom: 20px;   }
 block;} /*warehouse -inquiry page*/ .header-font{text-align: center;font-size:
 32px;} .flash{color: red;} #spnTruckStatus{display: none;} /*Error Load page*/
 .error-set{ padding: 20px;}
-    
 .para{color:green;}
-/*.error-set1{border: 0.1px; solid: red; padding:5px;}*/
-
-  .form-group{padding-top: 20px;padding-bottom: 20px;}
-
-   .post-form-msg{padding-top:20px;}
+.error-set1{border: 0.1px; solid: red; padding:5px;}
+.form-group{padding-top: 20px;padding-bottom: 20px;}
+.post-form-msg{padding-top:20px;}
 .container.container-padding-top{padding-top: 100px;} .header-text{padding:
 20px;} .map-align{padding-top:20px;} .color_orange{color: #fd4404;} .font-32
 {font-size: 32px;} .font-24{font-size: 24px;} /*#distance-from{float:
 left;width: 40%;}*/
-
 .container-wid75{width: 100%;}
 .ddlalign{width:150px;}
 #distance_from{width: 200px;}
