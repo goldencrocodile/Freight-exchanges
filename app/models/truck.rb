@@ -40,7 +40,8 @@ SHARE_DOCS = { No: 0,Yes: 1}
 #   'Semi Low Bed Trailer': '22 MT',
 #   'Low Bed trailer': '22 MT'
 #     }
-TRUCK_CAPICITY = {'LCV (Tata 407)', 
+TRUCK_CAPICITY = [
+  'LCV (Tata 407)', 
   'LCV (Canter / Swaraj Mazda)',
   'LPT 709',
   'LPT 1109',
@@ -56,8 +57,7 @@ TRUCK_CAPICITY = {'LCV (Tata 407)',
   'High Bed Trailer Triple AXLE',
   'Trailer Triple AXLE',
   'Semi Low Bed Trailer',
-  'Low Bed trailer'
-    }
+  'Low Bed trailer']
   # default_scope { where(truck_enabled: true) }
   def booked(truck)
     if truck.truck_booked == true
