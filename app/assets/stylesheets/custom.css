@@ -1,4 +1,4 @@
-.user-form{ border: 1px solid black;
+.user-form{ border: 1px; solid: black;
     margin-top: 150px;
     margin-bottom: 150px;
     margin-right: 200px;
@@ -41,7 +41,7 @@ block;} /*warehouse -inquiry page*/ .header-font{text-align: center;font-size:
 .form-group{padding-top: 20px;padding-bottom: 20px;}
 .post-form-msg{padding-top:20px;}
 .para{color:green ;}
-.error-set1{border: 0.1px solid red padding:5px;
+.error-set1{border: 0.1px; solid: red; padding:5px;
 }
 
    .post-form-msg{padding-top:20px;}
