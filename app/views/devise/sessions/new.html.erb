@@ -1,7 +1,8 @@
-<h2>Log in</h2>
+<div class="user-form">
+<h2><center>Log in</center></h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<div class="error-set">
+<div class="error-set1">
   <%= devise_error_messages! %>
     <% flash.each do |key, value| %>
        <div class="flash <%= key %>"><%= value %></div>
@@ -28,5 +29,6 @@
     <%= f.submit "Log in", class: "main-btn" %>
   </div>
 <% end %>
+  </div>
 
 <%= render "devise/shared/links" %>
