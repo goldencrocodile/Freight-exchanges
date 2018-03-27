@@ -63,7 +63,7 @@ class LoadsController < ApplicationController
     Ordermailer.booking_email(@truck,@load).deliver! if @load.present?
     TruckBook.truck_booking_email(@truck, @load).deliver! if @load.present?
      respond_to do |format|
-       format.html { redirect_to root_path, success: 'You have requested to load provider..! ' }
+       format.html { redirect_to load_user_profile_path, success: 'You have requested to load provider..! ' }
      end
     end
   end

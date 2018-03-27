@@ -19,7 +19,6 @@
     <th>source_pin_code</th>
     <th>destination_pin_code</th>
     <th>expected_price</th>
-    <th>sharing</th>
     <th>information</th>
   </tr>
     <tr>
@@ -34,7 +33,7 @@
       <td><%= @load.source_pin_code if @load.source_pin_code.present? %></td>
       <td><%= @load.destination_pin_code if @load.destination_pin_code.present? %></td>
       <td><%= @load.expected_price if @load.expected_price.present? %></td>
-      <td><%= @load.sharing = 1 ? "Yes" : "No" if @load.sharing.present? %></td>
+      <!-- <td><%#= @load.sharing = 1 ? "Yes" : "No" if @load.sharing.present? %></td> -->
       <td><%= @load.information if @load.information.present? %></td>
     </tr>
   </table>

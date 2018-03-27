@@ -48,7 +48,7 @@
       <td>
         <div class="form-group  " id="truck-type">
           <label for="from">Truck Type<span>*</span></label>
-            <%= f.select :load_truck_type, options_for_select(Truck::TRUCK_CAPICITY.map {|k,v| [k,v]}, :selected=> params[:load].present? ? params[:load][:load_truck_type] : ''), :prompt=>"Truck Type" %>
+            <%= f.select :load_truck_type, options_for_select(Truck::TRUCK_CAPICITY.map {|k,v| [k]}, :selected=> params[:load].present? ? params[:load][:load_truck_type] : ''), :prompt=>"Truck Type" %>
         </div>
       </td>
       <td>
@@ -98,12 +98,12 @@
          <%= f.text_field :destination_pin_code, class: "input control-label col-sm-4", :class=> "form-control", :placeholder=> "Delivery Address" %>
       </div>
     </td>
-    <td>
+    <!-- <td>
       <div class="form-group ">
         <label for="from">Are you wiling to share<span>*</span></label>
-          <%= f.select :sharing_load, options_for_select(Load::LOAD_SHARE.map {|k,v| [k,v]}, :selected=> params[:sharing].present? ? params[:load][:sharing_load] : ''  ) %>      
+          <%#= f.select :sharing_load, options_for_select(Load::LOAD_SHARE.map {|k,v| [k,v]}, :selected=> params[:sharing].present? ? params[:load][:sharing_load] : ''  ) %>      
       </div>
-      </td>
+      </td> -->
       <tr>
         <td>
           <div class="form-group" id="pin-code-destination">
@@ -135,13 +135,11 @@
 </div>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript">
-    $("#datepicker").datepicker({ minDate: 0, dateFormat: 'yy-mm-dd' });
-</script>
-<script type="text/javascript">
-  $("#load_load_truck_type").change(function(){
-    $("#load_load_weight").val($('#load_load_truck_type :selected').val());
-  });
-  $("#load_load_weight").change(function(){
-    $("#load_load_truck_type").val($('#load_load_weight :selected').val());
-  });
+  $("#datepicker").datepicker({ minDate: 0, dateFormat: 'yy-mm-dd' });
+  // $("#load_load_truck_type").change(function(){
+  //   $("#load_load_weight").val($('#load_load_truck_type :selected').val());
+  // });
+  // $("#load_load_weight").change(function(){
+  //   $("#load_load_truck_type").val($('#load_load_weight :selected').val());
+  // });
 </script>

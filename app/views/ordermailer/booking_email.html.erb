@@ -20,7 +20,7 @@
       <th>Truck type</th>
       <th>Expected price(inr)</th>
       <th>Transit time(days)</th>
-      <th>Sharing</th>
+      <!-- <th>Sharing</th> -->
       <th>Information</th>
 	  </tr>
     <tr>
@@ -34,7 +34,7 @@
       <td><%= @truck.truck_weight if @truck.truck_weight.present? %></td>
       <td><%= @truck.truck_type if @truck.truck_type.present? %></td>
       <td><%= @truck.expected_price if @truck.expected_price.present? %></td>
-      <td><%= @truck.sharing if @truck.sharing.present? %></td>
+      <!-- <td><%#= @truck.sharing if @truck.sharing.present? %></td> -->
       <td><%#= @truck.information if @truck.information.present? %></td>
     </tr>
   </table>

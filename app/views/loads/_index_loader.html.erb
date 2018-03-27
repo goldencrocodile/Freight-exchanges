@@ -7,7 +7,7 @@
   <th scope="col">Truck Type</th>
   <th scope="col">Schedule Date</th>
   <th scope="col">Willing to shared truck</th>
-  <th scope="col">Map</th>
+  <!-- <th scope="col">Map</th> -->
   <th scope="col">Status</th>
   </tr>
   <%= hidden_field_tag "truck_id", @trucks.present? ? @trucks.first.id : "" %>
@@ -31,14 +31,14 @@
         <td>
           <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_schedule_date.to_formatted_s(:long) %>><%= load.load_schedule_date.to_formatted_s(:long)%></span>
         </td>
-        <td>
-          <span> <%= load.load_sharing(load) %></span>
-        </td>
-        <td>
+        <!-- <td>
+          <span> <%#= load.load_sharing(load) %></span>
+        </td> -->
+        <!-- <td>
           <center>
-            <%= link_to image_tag('/assets/map_icon.png') + "",  root_direction_path(:load_from=> load.load_from, :load_to=>load.load_from), target: "_blank" %>
+            <%#= link_to image_tag('/assets/map_icon.png') + "",  root_direction_path(:load_from=> load.load_from, :load_to=>load.load_from), target: "_blank" %>
           </center>
-        </td>
+        </td> -->
         <td>
           <% if load.booked == "requesting" %>
             <% if params[:user_id].present? %>

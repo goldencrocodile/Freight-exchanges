@@ -31,15 +31,22 @@ LOAD_TRUCK_TYPE = ['canter jumbo',
   LOAD_TYPE = ['Full Load','Part Load']
   LOAD_SHARE = { Yes: 1, No: 0, Both: 2 }
   LOAD_STATUS = { request: 0, requesting: 1, accept_request:2, barganning:3 }
-  validates :load_from, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
-  validates :load_to, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
-  validates :load_material, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
+  # validates :load_from, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
+  validates :load_from,   :presence => {:message => "can't be blank."}
+  validates :load_to,   :presence => {:message => "can't be blank."}
+  validates :load_material,   :presence => {:message => "can't be blank."}
+  validates :load_weight,   :presence => {:message => "can't be blank."}
   validates :load_schedule_date,   :presence => {:message => "can't be blank."}
-  validates :load_weight, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
-  validates :load_no_of_truck, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
-  validates :load_truck_type, :if => Proc.new{|f|  f.load_type == "Full load"},   :presence => {:message => "can't be blank."}
+  validates :load_truck_type,   :presence => {:message => "can't be blank."}
+  validates :load_no_of_truck,   :presence => {:message => "can't be blank."}
+  # validates :load_to, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
+  # validates :load_material, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
+  # validates :load_schedule_date,   :presence => {:message => "can't be blank."}
+  # validates :load_weight, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
+  # validates :load_no_of_truck, :if => Proc.new{|f| f.load_type == "Full load" },   :presence => {:message => "can't be blank."}
+  # validates :load_truck_type, :if => Proc.new{|f|  f.load_type == "Full load"},   :presence => {:message => "can't be blank."}
   validates :source_pin_code, :presence => true
-  validates :load_type, :presence => {:message => "can't be blank."}
+  validates :load_type, :presence => true
   validates :destination_pin_code, :presence => true
   # validates :source_pin_code, :destination_pin_code ,:presence => true,
                    # :numericality => true,

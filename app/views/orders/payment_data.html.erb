@@ -19,7 +19,7 @@
           <script
               src="https://checkout.razorpay.com/v1/checkout.js"
               data-key="<%= "#{Figaro.env.MERCHANT_KEY_ID}" %>"
-              data-amount="<%= @load.expected_price.to_i * 100 %>"
+              data-amount="<%= (@load.expected_price.to_i * 100) * 0.20 %>"
               data-name="<%= "#{@load.user.full_name}" %>"
               data-description="<% @load.information.present? ? "#{@load.information}" : '' %>"
               data-image="/assets/3SC.png"
@@ -45,7 +45,7 @@
 $(document).ready(function(){
   var options = {
       "key": "<%= "#{Figaro.env.MERCHANT_KEY_ID}" %>",
-      "amount": "<%= "#{@load.expected_price.to_i}" %>",
+      "amount": "<%= "#{@load.expected_price.to_i * 0.20}" %>",
       "name": "<%= "#{@load.user.full_name}" %>",
       "description": "<%= "#{@load.information}" %>",
       "image": "/assets/3SC.png",
