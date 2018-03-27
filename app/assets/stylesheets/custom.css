@@ -12,7 +12,7 @@
   border-style: outset;
   background: linear-gradient(to bottom right, lightblue, white);
   box-shadow: 300px 300px 250px blue;}
-.user-form2{ border: 1px solid black;
+.user-form2{ border: 1px; solid: black;
     margin-top: 150px;
     margin-bottom: 150px;
     margin-right: 50px;
@@ -101,11 +101,11 @@ border-collapse: separate;
 .width-15-date{width: 15% !important;}
 .text-data-align{font-size: 25px;text-align: left;}
 .confirm-btn{font-size: 20px;}
-#datepicker{font-weight: 500;border: 2px solid gray !important;}
+#datepicker{font-weight: 500;border: 2px; solid: gray !important;}
 #load_source_pin_code,#load_destination_pin_code,#load_information,
 #truck_expected_price,#truck_licence_number,
 #truck_current_transporter_name,#max-truck-capacity,
-#truck_vehicle_number,#truck_driver_name,#truck_driver_mobile_no,#truck_information{border: 2px solid gray !important;}
+#truck_vehicle_number,#truck_driver_name,#truck_driver_mobile_no,#truck_information{border: 2px; solid: gray !important;}
 .information-text{width: 100% !important;}
 #validate-msg-mobile, #validate-msg-vehicle-number{
   display:block;
