@@ -7,7 +7,7 @@
   background: linear-gradient(to bottom right, lightblue, white);
    border-style: inset;
    box-shadow: 10px 10px 5px grey;}
-.form-group{}
+
 .user-form1{ 
   border-style: outset;
   background: linear-gradient(to bottom right, lightblue, white);
@@ -21,6 +21,7 @@
   background: linear-gradient(to bottom right, lightblue, white);
    border-style: inset;
    box-shadow: 10px 10px 5px grey;}
+
    user-form-width{ width: 40%;  } #error_explanation h2{ display: none;
 } #error_explanation ul li  {     color: red; } .error_msg {     color: red; }
 .contact-form .input:nth-child(2) {     width: calc(100% - 10px); } .form-
@@ -30,7 +31,7 @@ width-40{width: 40%;} .text-data{border-style: solid;border-width: 1px ;color:
 red; text-align: center;} .board_header {background-color: none repeat scroll
 0 0 #00468c !important;} .calculate-data{display: none;margin-right: 70px;}
 #error_distance_from{display: none;color: red} #error_distance_to{display:
-none;color: red} #contact_subject {margin-right: 450px; margin-bottom: 20px;   }
+none;color: red} #contact_subject {margin-right: 550px; margin-bottom: 20px;   }
 .contact-text{text-align: center;} #multi_markers{width: 1200px;height:
 400px;} .map-div{width: 1000px;} #map {height: 50%;} #truck-type{display:
 block;} /*warehouse -inquiry page*/ .header-font{text-align: center;font-size:
