@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <div id="divContentBody" class="pad-top-5 fix-min-height">
     <div class="container">
@@ -333,10 +334,10 @@
                 <div class="text-data-align">You have <%= Truck.where(:truck_booked=> "requesting").count %> request pending from truck owner </div>
                 <div>
                   <%= form_tag trucks_path, :method => 'get' do %>
-                    <%= select_tag 'truck_from', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:truck_from].present? ? params[:truck_from] : ''), :class=> "input control-label col-sm-4 width-20", :prompt=>"Source" %>
-                  <%= select_tag 'truck_to', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:truck_to].present? ? params[:truck_to] : ''), :prompt=>"Destination", :class=> "filter-type width-20" %>
-                  <%= select_tag :vehicle_number, options_for_select(Truck.pluck(:vehicle_number).map {|k| [k]}, :selected=> params[:vehicle_number].present? ? params[:vehicle_number] : ''), :prompt=>"Vehicle Number", :class=> "filter-type width-20" %>
-                  <%= text_field_tag :schedule_date, "", class: 'width-15-date', id: "datepicker", :placeholder=>"Scheduled Date", value: params[:schedule_date].present? ? "#{params[:schedule_date]}" : '' %>
+                    <%#= select_tag 'truck_from', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:truck_from].present? ? params[:truck_from] : ''), :class=> "input control-label col-sm-4 width-20", :prompt=>"Source" %>
+                  <%#= select_tag 'truck_to', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:truck_to].present? ? params[:truck_to] : ''), :prompt=>"Destination", :class=> "filter-type width-20" %>
+                  <%#= select_tag :vehicle_number, options_for_select(Truck.pluck(:vehicle_number).map {|k| [k]}, :selected=> params[:vehicle_number].present? ? params[:vehicle_number] : ''), :prompt=>"Vehicle Number", :class=> "filter-type width-20" %>
+                  <%#= text_field_tag :schedule_date, "", class: 'width-15-date', id: "datepicker", :placeholder=>"Scheduled Date", value: params[:schedule_date].present? ? "#{params[:schedule_date]}" : '' %>
                   <%= submit_tag "Search", :name => nil %>
                 <% end %>
                 </div>

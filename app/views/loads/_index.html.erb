@@ -15,15 +15,6 @@
   <!-- <th scope="col">Truck Body</th> -->
   <!-- <th scope="col">Map</th> -->
   <th scope="col">Action</th>
-  <%= "truck" %>
-  <%= @trucks.map(&:truck_from).uniq %>
-  <%= @trucks.map(&:truck_to).uniq %>
-  <%= @trucks.map(&:id).uniq %>
-  <br>
-  <%= "load "%>
-  <%= @loads.map(&:load_from).uniq %>
-  <%= @loads.map(&:load_to).uniq %>
-  <%= @loads.map(&:id).uniq %>
   </tr>
   <%= hidden_field_tag "truck_id", @trucks.present? ? @trucks.map(&:id).uniq : "" %>
   <% loads.each do |load| %>
