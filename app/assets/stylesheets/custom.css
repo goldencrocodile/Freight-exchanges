@@ -125,3 +125,60 @@ border-collapse: separate;
   padding: 0;
   cursor: pointer;
 }
+/* Available truck board*/
+#truck_from{
+  width: 20%;
+    margin-left: 15px;
+    padding: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+#truck_to{
+  width: 20%;
+    margin-left: 15px;
+    padding: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+#vehicle_number{
+  width: 20%;
+    margin-left: 15px;
+    padding: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+.btn-group-xs>.btn, .btn-xs {
+    padding: 2px 8px;
+    font-size: 12px;
+    line-height: 2;
+    border-radius: 5px;
+    margin-left: 100px;
+}
+#datepicker{
+      font-weight: 500;
+    border: 2px solid gray !important;
+    width: 20%;
+    margin-left: 15px;
+    padding: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+}
+}
+#find{
+  width: 20%;
+    margin-left: 15px;
+    padding: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
