@@ -19,27 +19,26 @@ class Truck < ActiveRecord::Base
 PROVIDE_DOCS = { Yes: 1, No: 0 }
 FREQUENCY = { monthly: 1, weekly: 2, daily: 3 }
 TRANSIT_TIME = {'1': 1,'2':2,'3':3,'4':4,'5':5, '6':6, '7':7,'8':8,'9':9}
-TRUCK_STATUS = { request: 0, requesting: 1, accept_request:2 }
+TRUCK_STATUS = { request: 0, requesting: 1, accept_request:2, paid: 3}
 TRUCK_BODY = { Open: 1,Close: 2}
 SHARE_DOCS = { No: 0,Yes: 1}
-# TRUCK_CAPICITY = {'LCV (Tata 407)': '2.5 MT', 
-#   'LCV (Canter / Swaraj Mazda)': '3.5 MT',
-#   'LPT 709': '4.5 MT',
-#   'LPT 1109': '7.5 MT',
-#   'Containerised Truck 24 FT SXL': '7 MT',
-#   'Containerised Truck 24 FT DBL SXL': '14 MT',
-#   'Containerised Truck 32 FT SXL': '7 MT',
-#   'Containerised Truck 32 FT MXL': '14 MT',
-#   'Open Body Truck': '9 MT',
-#   'Taurus': '15 MT',
-#   'Taurus': '21 MT',
-#   'Trailer': '20 MT',
-#   'High Bed Trailer (DBL AXLE)': '22 MT',
-#   'High Bed Trailer Triple AXLE': '27 MT',
-#   'Trailer Triple AXLE': '32 MT',
-#   'Semi Low Bed Trailer': '22 MT',
-#   'Low Bed trailer': '22 MT'
-#     }
+LOAD_CAPICITY = [
+  '2.5 MT', 
+  '3.5 MT',
+  '4.5 MT',
+  '7.5 MT',
+  '7 MT',
+  '14 MT',
+  '7 MT',
+  '14 MT',
+  '9 MT',
+  '15 MT',
+  '21 MT',
+  '20 MT',
+  '22 MT',
+  '27 MT',
+  '32 MT'
+]
 TRUCK_CAPICITY = [
   'LCV (Tata 407)', 
   'LCV (Canter / Swaraj Mazda)',

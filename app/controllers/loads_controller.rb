@@ -3,13 +3,16 @@ class LoadsController < ApplicationController
   respond_to :html, :json, :js
   before_filter :authenticate_user!
   def index
+    load_by_source = Truck.pluck(:truck_from).uniq
+    load_by_destination = Truck.pluck(:truck_to).uniq
     if current_user.present? and current_user.role.name=="Truck Owner"
       if (params[:load_from].present? or params[:load_to].present? or params[:load_material].present? or params[:load_schedule_date].present? or params[:load_truck_type].present?)
-        @loads = params[:load_schedule_date].present? ? Load.where('load_schedule_date = ?',params[:load_schedule_date]).search(params) : Load.search(params)
-        @trucks = params[:load_schedule_date].present? ? current_user.trucks.where('schedule_date = ?',params[:load_schedule_date]) : current_user.trucks.find(:all, :conditions=>["truck_from LIKE ? AND truck_to LIKE ? AND truck_type LIKE ?", "%#{params[:load_from]}%","%#{params[:load_to]}%", "%#{params[:load_truck_type]}%"])
+@loads = params[:load_schedule_date].present? ? Load.where('load_schedule_date = ?',params[:load_schedule_date]).where("load_from IN (?) AND load_to IN (?)",load_by_source,load_by_destination).search(params) : Load.where("load_from IN (?) AND load_to IN (?)",load_by_source,load_by_destination).search(params)
+@trucks = params[:load_schedule_date].present? ? current_user.trucks.where('schedule_date = ?',params[:load_schedule_date]) : current_user.trucks.find(:all, :conditions=>["truck_from LIKE ? AND truck_to LIKE ? AND truck_type LIKE ?", "%#{params[:load_from]}%","%#{params[:load_to]}%", "%#{params[:load_truck_type]}%"])
       else
-        @loads = Load.all
-        @trucks = params[:load_schedule_date].present? ? current_user.trucks.where('schedule_date = ?',params[:load_schedule_date]) : current_user.trucks.find(:all, :conditions=>["truck_from LIKE ? AND truck_to LIKE ? AND truck_type LIKE ?", "%#{params[:load_from]}%","%#{params[:load_to]}%", "%#{params[:load_truck_type]}%"])
+@loads = Load.where("load_from IN (?) AND load_to IN (?)",load_by_source,load_by_destination)
+# @loads = Load.where("load_from IN (?)",load_by_source)
+@trucks = params[:load_schedule_date].present? ? current_user.trucks.where('schedule_date = ?',params[:load_schedule_date]) : current_user.trucks.find(:all, :conditions=>["truck_from LIKE ? AND truck_to LIKE ? AND truck_type LIKE ?", "%#{params[:load_from]}%","%#{params[:load_to]}%", "%#{params[:load_truck_type]}%"])
       end
       @loads = @loads.paginate(page: params[:page], per_page: 10)
     else
@@ -63,7 +66,7 @@ class LoadsController < ApplicationController
     Ordermailer.booking_email(@truck,@load).deliver! if @load.present?
     TruckBook.truck_booking_email(@truck, @load).deliver! if @load.present?
      respond_to do |format|
-       format.html { redirect_to load_user_profile_path, success: 'You have requested to load provider..! ' }
+       format.html { redirect_to root_path, success: 'You have requested to load provider..! ' }
      end
     end
   end

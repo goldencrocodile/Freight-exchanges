@@ -119,10 +119,10 @@
  									<%= link_to "Sign Out" + " "+"#{current_user.email}", destroy_user_session_path, :method => :delete %>
  								</li>
  							<% else %>
- 								<li>
+ 								<li class="login-link">
  									<%= link_to('Login', new_user_session_path)  %> 
  								</li>
- 								<li>
+ 								<li class="register-link">
  									<%= link_to('Register', new_user_registration_path, :class=> "signup-link") %>
  								</li>
                 <li>
@@ -170,6 +170,12 @@
     location.reload(true)
   });
   $('.home-link').click(function() {
+    location.reload(true)
+  });
+  $('.register-link').click(function() {
+    location.reload(true)
+  });
+  $('.login-link').click(function() {
     location.reload(true)
   });
 </script>

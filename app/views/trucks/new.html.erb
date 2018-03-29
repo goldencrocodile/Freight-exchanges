@@ -61,7 +61,7 @@
         <td>
           <div class="form-group">
             <label for="from">Available truck capacity(Metric Ton)<span>*</span></label>
-            <%= f.select :truck_weight, options_for_select(Truck::TRUCK_CAPICITY.map {|k,v| [v,v]}),:prompt=>"Select Weight" %>
+            <%= f.select :truck_weight, options_for_select(Truck::LOAD_CAPICITY.map {|k| [k]}),:prompt=>"Select Weight" %>
           </div>
         </td> 
       </tr>

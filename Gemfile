@@ -12,6 +12,7 @@ gem 'will_paginate'
 # gem 'rails_12factor', group: :production
 gem "activeadmin", "~> 1.0.0.pre2"
 gem 'razorpay'
+gem 'whenever', require: false
 gem 'figaro'
 gem "paperclip"
 gem 'country_select'

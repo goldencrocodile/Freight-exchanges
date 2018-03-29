@@ -12,11 +12,20 @@
   <th scope="col">Drop point</th>
   <th scope="col">Expected Price(INR)</th>
   <th scope="col">Information</th>
-  <th scope="col">Truck Body</th>
+  <!-- <th scope="col">Truck Body</th> -->
   <!-- <th scope="col">Map</th> -->
   <th scope="col">Action</th>
+  <%= "truck" %>
+  <%= @trucks.map(&:truck_from).uniq %>
+  <%= @trucks.map(&:truck_to).uniq %>
+  <%= @trucks.map(&:id).uniq %>
+  <br>
+  <%= "load "%>
+  <%= @loads.map(&:load_from).uniq %>
+  <%= @loads.map(&:load_to).uniq %>
+  <%= @loads.map(&:id).uniq %>
   </tr>
-  <%= hidden_field_tag "truck_id", @trucks.present? ? @trucks.first.id : "" %>
+  <%= hidden_field_tag "truck_id", @trucks.present? ? @trucks.map(&:id).uniq : "" %>
   <% loads.each do |load| %>
     <tr>
       <td>
@@ -57,9 +66,9 @@
         <td>
           <span> <%= load.information if load.information.present?  %></span>
         </td>
-        <td>
-          <span> <%= load.load_body= true ? "Open" : "Close" if load.load_body.present? %></span>
-        </td>
+        <!-- <td>
+          <span> <%#= load.load_body= true ? "Open" : "Close" if load.load_body.present? %></span>
+        </td> -->
         <!-- <td>
           <center>
             <%#= link_to image_tag('/assets/map_icon.png') + "",  root_direction_path(:load_from=> load.load_from, :load_to=>load.load_from), target: "_blank" %>
@@ -76,7 +85,7 @@
             <%= link_to "Accepted request", "javascript:void(0)", :class=>"btn-xs btn-success btn-white-color" %>
           <% else %>
           <%# login_user_trucks = current_user.trucks if current_user.present? and current_user.trucks.present?  %>
-            <%= link_to "Accept", send_booked_mail_path(:id=> load.id, :truck_id=> Truck.search(params).present? ? Truck.search(params).first.id : ''), :confirm =>'Are you sure?', :class=>"btn-xs btn-danger btn-white-color" %>
+            <%= link_to "Accept", send_booked_mail_path(:id=> load.id, :truck_id=> @trucks.present? ? @trucks.map(&:id).uniq.first : ''), :confirm =>'Are you sure?', :class=>"btn-xs btn-danger btn-white-color" %>
           <% end %>
           </td>
       </td>

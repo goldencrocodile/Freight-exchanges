@@ -54,7 +54,13 @@ LOAD_TRUCK_TYPE = ['canter jumbo',
   validates :expected_price, :presence => true, 
     :format => { :with => /\A(\$)?(\d+)(\.|,)?\d{0,2}?\z/ }
   belongs_to :user
-
+  
+  def self.update_booked_record
+    loads = Load.where(:booked=> "requesting")
+    loads.each do |load|
+      l.update_attributes(:booked => "request")
+    end
+  end 
   def load_sharing(load)
     if load.sharing_load == 1
       return "Yes"
