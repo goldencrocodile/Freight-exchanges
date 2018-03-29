@@ -10,7 +10,7 @@
 	  <%= f.text_field :mobile_number, class: "input", placeholder:"Enter Mobile Number *" , :required => true %>
 		<%= f.text_field :name, class: "input", placeholder:"Enter Name *" , :required => true %>
 		<%= f.email_field :email, class: "input", placeholder:"Enter E-mail Address *" , :required => true %>
-	  <%= f.select :subject, options_for_select(Contact::CONTACT_CATEGORY.map {|k| [k.humanize.capitalize]}, :selected => "#{page_title.present? ? page_title : '' }"), :prompt=>"Please Select Subject" %>
+	  <%= f.select :subject, options_for_select(Contact::CONTACT_CATEGORY.map {|k| [k.humanize.capitalize]}, :selected => "#{page_title.present? ? page_title : '' }"), :prompt=>"Please Select Subject",:class=> "hello" %>
 		<%= f.text_area :messsage, class: "input messsage-txt", placeholder:"Write Message *" , :required => true %>
 		<%= f.submit "Send message", class: "main-btn" %>
 	<% end %>
