@@ -3,8 +3,8 @@
 # #
 # # Examples:
 # #
-#   Role.create(name: "Truck Owner")
-#   Role.create(name: "Load Provider")
+  Role.create(name: "Truck Owner")
+  Role.create(name: "Load Provider")
 # #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   # City.create(city_name: 'Ahmednagar',city_state: "Maharashtra")
 #   City.create(city_name: 'Akola',city_state: "Maharashtra")
