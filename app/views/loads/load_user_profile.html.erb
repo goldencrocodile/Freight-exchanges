@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <div id="divContentBody" class="pad-top-5 fix-min-height">
     <div class="container">
@@ -370,7 +371,7 @@
                            <div class="col-md-2 col-sm-4 mar-top-30 ">
                            </div>
                                     <!-- <input type="submit" name="ctl00$cphContent$btnClear" value="Clear" id="cphContent_btnClear" title="Clear your details" class="btn btn-danger btn-xs divClear cleat-btn"> -->
-                                    <%= link_to "Clear", trucks_path, :class=> "btn btn-danger btn-xs divClear cleat-btn"%>
+                                    <%= link_to "Clear", load_user_profile_path(:user_id=> current_user.id), :class=> "btn btn-danger btn-xs divClear cleat-btn"%>
                             </div>
   <table class="table table-hover table-striped table-condensed" cellspacing="0" rules="all" border="1" id="cphContent_grdTruckPost">
     <tbody class="truck-index">
