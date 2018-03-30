@@ -18,7 +18,7 @@ class Truck < ActiveRecord::Base
   # validates :current_transporter_name,   :presence => true
 PROVIDE_DOCS = { Yes: 1, No: 0 }
 FREQUENCY = { monthly: 1, weekly: 2, daily: 3 }
-TRANSIT_TIME = {'0' : 0, '1': 1,'2':2,'3':3,'4':4,'5':5, '6':6, '7':7,'8':8,'9':9}
+TRANSIT_TIME = {'0': 0, '1': 1,'2':2,'3':3,'4':4,'5':5, '6':6, '7':7,'8':8,'9':9}
 TRUCK_STATUS = { request: 0, requesting: 1, accept_request:2, paid: 3}
 TRUCK_BODY = { Open: 1,Close: 2}
 SHARE_DOCS = { No: 0,Yes: 1}
