@@ -6,6 +6,7 @@ gem 'rails', '4.0.4'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # gem 'pg'
+gem 'sprockets'
 gem 'pg', '0.20.0'
 gem 'will_paginate'
 # gem 'pg', '~> 0.11', group: [:development, :production]
