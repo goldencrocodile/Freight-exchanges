@@ -162,7 +162,7 @@ border-collapse: separate;
 }
 #datepicker{
       font-weight: 500;
-    border: 2px solid gray !important;
+    border: 2px; solid: gray !important;
     width: 35%;
     margin-left: 15px;
     padding: 10px;
@@ -170,8 +170,6 @@ border-collapse: separate;
     padding-right: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
-
-}
 }
 #find{
   width: 20%;
