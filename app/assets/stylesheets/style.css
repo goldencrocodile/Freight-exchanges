@@ -1754,7 +1754,7 @@ header {
 
 /*razer*/
 .razorpay-payment-button{
-  /*background: image-url('/images/PayWithRzp.png') center no-repeat;
+  background-image: asset-url('PayWithRzp.png') center no-repeat;
   background-size: contain;
   box-shadow: none;
   border: none;
@@ -1763,6 +1763,6 @@ header {
   height: 36px;
   width: 230px;
   padding: 0;
-  cursor: pointer;*/
+  cursor: pointer;
 }
 .inner_latest_updates_block {background-color: black;}
