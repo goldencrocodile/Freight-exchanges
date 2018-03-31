@@ -337,7 +337,7 @@
                   <%= select_tag 'truck_to', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:truck_to].present? ? params[:truck_to] : ''), :prompt=>"Destination", :class=> "filter-type width-20" %>
                   <%= select_tag :vehicle_number, options_for_select(Truck.pluck(:vehicle_number).map {|k| [k]}, :selected=> params[:vehicle_number].present? ? params[:vehicle_number] : ''), :prompt=>"Vehicle Number", :class=> "filter-type width-20" %>
                   <%= text_field_tag :schedule_date, "", class: 'width-15-date', id: "datepicker", :placeholder=>"Scheduled Date", value: params[:schedule_date].present? ? "#{params[:schedule_date]}" : '' %>
-                  <%#= submit_tag "Search", :name => nil %>
+                  <%= submit_tag "Search", :name => nil %>
                 <% end %>
                 </div>
                 <div id="cphContent_divAuthorisedElements" class="divMain">
