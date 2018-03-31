@@ -33,14 +33,26 @@
         <% end %>
         <!-- </form> -->
         <br>
-        <!-- <h3>Manual checkout</h3>
-        <input id="rzp-button1" type="button" value="Pay with razorpay" class="razorpay-payment-button"> -->
       </div>
     <div>
   </div>
   </div>
   </div>
 </div>
+<style type="text/css">
+  .razorpay-payment-button{
+    background: url("/assets/PayWithRzp.png") center no-repeat;
+    background-size: contain;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 0;
+    height: 36px;
+    width: 230px;
+    padding: 0;
+    cursor: pointer;
+  }
+</style>
 <script>
 $(document).ready(function(){
   var options = {

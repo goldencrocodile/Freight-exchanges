@@ -115,10 +115,10 @@ border-collapse: separate;
   margin:1em 0;
   color: red;
 }
-.razorpay-payment-button {
-  background-image: url('PayWithRzp.png') center no-repeat;
+/*.razorpay-payment-button {
+  background-image: url('PayWithRzp.png') center no-repeat;*/
   /*background: url("/assets/PayWithRzp.png") center no-repeat;*/
-  background-size: contain;
+  /*background-size: contain;
   box-shadow: none;
   border: none;
   outline: none;
@@ -126,8 +126,8 @@ border-collapse: separate;
   height: 36px;
   width: 230px;
   padding: 0;
-  cursor: pointer;
-}
+  cursor: pointer;*/
+/*}*/
 /* Available truck board*/
 #truck_from{
   width: 20%;
