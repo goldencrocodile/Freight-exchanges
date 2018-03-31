@@ -116,7 +116,8 @@ border-collapse: separate;
   color: red;
 }
 .razorpay-payment-button {
-  background: url("/assets/PayWithRzp.png") center no-repeat;
+  background-image: url('PayWithRzp.png') center no-repeat;
+  /*background: url("/assets/PayWithRzp.png") center no-repeat;*/
   background-size: contain;
   box-shadow: none;
   border: none;
