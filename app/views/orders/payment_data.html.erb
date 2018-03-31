@@ -17,7 +17,7 @@
         <!-- <form action="/purchase" method="POST"> -->
         <%= form_tag("/purchase", method: "post") do %>
           <script
-              src="https://checkout.razorpay.com/v1/checkout.js"
+              src="http://checkout.razorpay.com/v1/checkout.js"
               data-key="<%= "#{Figaro.env.MERCHANT_KEY_ID}" %>"
               data-amount="<%= (@load.expected_price.to_i * 100) * 0.20 %>"
               data-name="<%= "#{@load.user.full_name}" %>"
@@ -53,8 +53,7 @@
     cursor: pointer;
   }
 </style>
-<%= javascript_include_tag "https://checkout.razorpay.com/v1/checkout.js", "data-turbolinks-track" => true %>
-<script>
+<script type="text/javascript">
 $(document).ready(function(){
   var options = {
       "key": "<%= "#{Figaro.env.MERCHANT_KEY_ID}" %>",
