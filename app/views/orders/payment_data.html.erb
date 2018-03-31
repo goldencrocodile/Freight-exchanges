@@ -14,10 +14,9 @@
         <!-- <div class="rating"><img src="/images/rating.png"> 5 <span style='text-transform: uppercase;'>reviews</span></div> --> 
         <p class="description"><%#= @product.description %></p>
         <h3>Automatic checkout</h3>
-        <!-- <form action="/purchase" method="POST"> -->
         <%= form_tag("/purchase", method: "post") do %>
           <script
-              src="/assets/checkout.js"
+              src="https://checkout.razorpay.com/v1/checkout.js"
               data-key="<%= "#{Figaro.env.MERCHANT_KEY_ID}" %>"
               data-amount="<%= (@load.expected_price.to_i * 100) * 0.20 %>"
               data-name="<%= "#{@load.user.full_name}" %>"
@@ -30,8 +29,8 @@
           </script>
           <input type="hidden" value="<%= "#{@load.id}" %>" name="product_id">
           <input type="hidden" value="<%= "#{current_user.id}" %>" name="user_id">
+          <input id="rzp-button1" type="button" value="Pay with razorpay" class="razorpay-payment-button1">
         <% end %>
-        <!-- </form> -->
         <br>
       </div>
     <div>
@@ -40,8 +39,8 @@
   </div>
 </div>
 <style type="text/css">
-  .razorpay-payment-button{
-    background: url("/assets/PayWithRzp.png") center no-repeat;
+  .razorpay-payment-button1{
+    background: image-url('/assets/PayWithRzp.png') center no-repeat;
     background-size: contain;
     box-shadow: none;
     border: none;
@@ -52,8 +51,9 @@
     padding: 0;
     cursor: pointer;
   }
+  .razorpay-payment-button{display: none !important;}
 </style>
-<script type="text/javascript">
+<script>
 $(document).ready(function(){
   var options = {
       "key": "<%= "#{Figaro.env.MERCHANT_KEY_ID}" %>",
