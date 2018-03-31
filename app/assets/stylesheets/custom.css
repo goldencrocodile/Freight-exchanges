@@ -4,13 +4,13 @@
     margin-right: 200px;
     margin-left: 110px;
    padding:20px;
-  background: linear-gradient(to bottom right, lightblue, white);
+  background: #41f4a0;
    border-style: inset;
    box-shadow: 10px 10px 5px grey;}
 
 .user-form1{ 
   border-style: outset;
-  background: linear-gradient(to bottom right, lightblue, white);
+  background: #41f4a0;
   box-shadow: 300px 300px 250px blue;}
 .user-form2{ border: 1px solid black;
     margin-top: 150px;
@@ -18,7 +18,7 @@
     margin-right: 50px;
     margin-left: 50px;
    padding:20px;
-  background: linear-gradient(to bottom right, lightblue, white);
+  background: #41f4a0;
    border-style: inset;
    box-shadow: 10px 10px 5px grey;}
 
@@ -102,7 +102,12 @@ border-collapse: separate;
 .width-15-date{width: 15% !important;}
 .text-data-align{font-size: 25px;text-align: left;}
 .confirm-btn{font-size: 20px;}
-#datepicker{font-weight: 500;border: 2px solid gray !important;}
+#datepicker{font-weight: 500;border: 2px solid gray !important; padding: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
 #load_source_pin_code,#load_destination_pin_code,#load_information,
 #truck_expected_price,#truck_licence_number,
 #truck_current_transporter_name,#max-truck-capacity,
@@ -160,25 +165,4 @@ border-collapse: separate;
     border-radius: 5px;
     margin-left: 100px;
 }
-#datepicker{
-      font-weight: 500;
-    border: 2px solid gray !important;
-    width: 20%;
-    margin-left: 15px;
-    padding: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
 
-}
-}
-#find{
-  width: 20%;
-    margin-left: 15px;
-    padding: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-}
