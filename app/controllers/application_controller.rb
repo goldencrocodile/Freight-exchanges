@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def check_subscription
     if current_user.present?
-      max_hours = 24 * 30
+      max_hours = 24 * 15
       time = Time.now - current_user.created_at
       hours = (time / 1.hour).round
       if hours > max_hours

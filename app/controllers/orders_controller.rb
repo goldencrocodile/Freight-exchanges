@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_filter :authenticate_user!
   def purchase_status
     begin
     	set_credentials = Razorpay.setup(Figaro.env.MERCHANT_KEY_ID, Figaro.env.MERCHANT_KEY_SECRET)
