@@ -112,7 +112,7 @@ border-collapse: separate;
 #truck_expected_price,#truck_licence_number,
 #truck_current_transporter_name,#max-truck-capacity,
 #truck_vehicle_number,#truck_driver_name,#truck_driver_mobile_no,#truck_information{border: 2px solid gray !important;}
-.information-text{width: 100% !important;}
+.information-text{width: 100% !important; }
 #validate-msg-mobile, #validate-msg-vehicle-number{
   display:block;
   margin:1em 0;
@@ -165,4 +165,95 @@ border-collapse: separate;
     border-radius: 5px;
     margin-left: 100px;
 }
+/* post a truck*/
+  .post{
+     border: 1px solid black;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    margin-right: 50px;
+    margin-left: 50px;
+   padding:20px;
+  background: #FFFFFF;
+   border-style: inset;
+   box-shadow: 10px 10px 5px grey;
+   }
+  #truck_truck_type{
+    width: 200px;
+     height: 30px;
 
+  }
+  #truck_truck_from{
+    width: 200px;
+    height: 30px;
+
+  }
+  #truck_truck_to{
+    
+     width: 250px;
+    height: 30px;
+
+  }
+  #truck_transit_time{
+    
+     width: 200px;
+    height: 30px;
+
+  }
+  #truck_truck_weight{
+    
+     width: 200px;
+    height: 30px;
+
+  }
+  #truck_truck_body{
+    
+     width: 200px;
+    height: 30px;
+
+  }
+  #truck_documentation{
+    
+     width: 200px;
+    height: 30px;
+
+  }
+  
+  .width-20
+  {
+    width: 200px;
+    height: 30px;
+
+  }
+#load_truck_type
+{
+  width: 200px;
+    height: 30px;
+}
+.mar-lft-15
+{
+    
+    width: 70px;
+    border: 1px solid grey;
+    padding: 4px;
+  }
+/* available a truck*/
+  #vehicle_number
+  {
+    width: 170px;
+    height: 40px;
+  }
+  #truck_to
+  {
+     width: 170px;
+    height: 40px;
+  }
+  #truck_from
+  {
+    width: 170px;
+    height: 40px;
+  }
+  .text-data
+  {
+    text-align: center;
+  }
+  /*header*/
