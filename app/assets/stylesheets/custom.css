@@ -261,3 +261,34 @@ border-collapse: separate;
     text-align: center;
   }
   /*header*/
+#load_load_from
+{
+  width: 150px;
+    margin-left: 15px; 
+}
+#load_load_to
+{
+ width: 150px;
+    margin-left: 15px;
+}
+#load_load_body
+{
+  width: 150px;
+    margin-left: 15px;
+}
+#load_load_material
+{
+  width: 150px;
+    margin-left: 15px;
+}
+#load_load_truck_type
+{
+  width: 150px;
+    margin-left: 15px;
+    
+}
+#load_load_weight
+{
+ width: 150px;
+    margin-left: 15px;
+  }
