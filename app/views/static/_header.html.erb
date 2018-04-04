@@ -117,6 +117,7 @@
                   <% else %>
                   <% end %> 
  									<%= link_to "Sign Out" + " "+"#{current_user.email}", destroy_user_session_path, :method => :delete %>
+                  <%= link_to('Subscription', subscriptions_path, :class=> "subs-link") %>
  								</li>
  							<% else %>
  								<li class="login-link">
@@ -125,9 +126,6 @@
  								<li class="register-link">
  									<%= link_to('Register', new_user_registration_path, :class=> "signup-link") %>
  								</li>
-                <li>
-                  <%= link_to('Subscription', new_user_registration_path, :class=> "signup-link") %>
-                </li>
  							<% end %>	
  						</ul>
  					</li>
