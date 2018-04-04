@@ -1,5 +1,5 @@
 <div id="floating-panel">
-  <h2>Find Root Direction</h2>
+  <h2>Find Root<span class="color_orange"> Direction</span></h2>
   <table cellpadding="1" cellspacing="1" class="tblstyle">
     <tr>
       <td>
@@ -21,7 +21,7 @@
       var directionsService = new google.maps.DirectionsService;
       var directionsDisplay = new google.maps.DirectionsRenderer;
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 7,
+        zoom: 8,
         center: {lat: 41.85, lng: -87.65}
       });
       directionsDisplay.setMap(map);
