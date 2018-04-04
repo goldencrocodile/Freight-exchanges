@@ -33,7 +33,7 @@ red; text-align: center;} .board_header {background-color: none repeat scroll
 #error_distance_from{display: none;color: red} #error_distance_to{display:
 none;color: red} #contact_subject {margin-right: 550px; margin-bottom: 20px;   }
 .contact-text{text-align: center;} #multi_markers{width: 1200px;height:
-400px;} .map-div{width: 1000px;} #map {height: 50%;} #truck-type{display:
+400px;} .map-div{width: 1000px; } #map {height: 50%;} #truck-type{display:
 block;} /*warehouse -inquiry page*/ .header-font{text-align: center;font-size:
 32px;} .flash{color: red;} #spnTruckStatus{display: none;} /*Error Load page*/
 .error-set{ padding: 20px;}
@@ -68,6 +68,10 @@ border-collapse: separate;
 #map {
   height: 100%;
   margin-top:40px;
+
+   width: 100%;
+   background: #FFFFFF;
+   border-radius: 90%;
 }
     /* Optional: Makes the sample page fill the window. */
     html, body {
