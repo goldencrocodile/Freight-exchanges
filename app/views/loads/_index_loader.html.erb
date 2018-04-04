@@ -6,7 +6,7 @@
   <th scope="col">Weight (Metric Ton)</th>
   <th scope="col">Truck Type</th>
   <th scope="col">Schedule Date</th>
-  <th scope="col">Willing to shared truck</th>
+  <!-- <th scope="col">Willing to shared truck</th> -->
   <!-- <th scope="col">Map</th> -->
   <th scope="col">Status</th>
   </tr>
@@ -26,7 +26,7 @@
           <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_weight %>><%= load.load_weight %></span>
         </td>
         <td>
-          <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_truck_type %>><%= Truck::TRUCK_CAPICITY.key(load.load_truck_type).present? ? Truck::TRUCK_CAPICITY.key(load.load_truck_type) : load.load_truck_type if load.load_truck_type.present? %></span>
+          <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_truck_type %>><%= load.load_truck_type.present? ? load.load_truck_type : " " if load.load_truck_type.present? %></span>
         </td>
         <td>
           <span id="cphContent_grdTruckPost_lblTruckType_23" title=<%= load.load_schedule_date.to_formatted_s(:long) %>><%= load.load_schedule_date.to_formatted_s(:long)%></span>
