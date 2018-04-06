@@ -15,7 +15,7 @@ gem "activeadmin", "~> 1.0.0.pre2"
 gem 'razorpay'
 gem 'whenever', require: false
 gem 'figaro'
-gem "paperclip"
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'country_select'
 gem 'city-state'
 # gem "meta_search", '>= 1.1.0.pre'

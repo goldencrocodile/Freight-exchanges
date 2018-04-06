@@ -1753,7 +1753,7 @@ header {
 }
 
 /*razer*/
-/*.razorpay-payment-button{
+.razorpay-payment-button-subs-half-year{
   background-image: url('PayWithRzp.png') center no-repeat;
   background-size: contain;
   box-shadow: none;
@@ -1764,5 +1764,17 @@ header {
   width: 230px;
   padding: 0;
   cursor: pointer;
-}*/
+}
+.razorpay-payment-button-subs-monthly{
+  background-image: url('PayWithRzp.png') center no-repeat;
+  background-size: contain;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 0;
+  height: 36px;
+  width: 230px;
+  padding: 0;
+  cursor: pointer;
+}
 .inner_latest_updates_block {background-color: black;}

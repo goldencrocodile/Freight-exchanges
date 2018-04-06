@@ -2,6 +2,21 @@ class TrucksController < ApplicationController
   require 'will_paginate/array'
   respond_to :html, :json, :js
   before_filter :authenticate_user!, only: [:index]
+  before_action :check_subscription
+
+  def check_subscription
+    if current_user.present?
+      max_hours = 24 * 1
+      time = Time.now - current_user.subscription_date if current_user.subscription_date.present?
+      hours = (time / 1.hour).round
+      if hours > max_hours
+        # sign_out(current_user)
+        respond_to do |format|
+           format.html { redirect_to subscriptions_path, success: 'Please make subscription' }
+          end
+      end
+    end
+  end
   def index
     if current_user.present? and current_user.role.name=="Load Provider"
       if (params[:truck_from].present? or params[:truck_to].present? or params[:vehicle_number].present? or params[:schedule_date].present?)
@@ -16,6 +31,7 @@ class TrucksController < ApplicationController
       end
     end
   end
+
 	def new
     if current_user.present? and current_user.role.name=="Truck Owner"
       @truck =Truck.new

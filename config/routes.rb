@@ -21,7 +21,8 @@ FreightExchange::Application.routes.draw do
   get 'franchise-inquiry' => 'services#franchise_inquiry', as: :franchise_inquiry
   get 'vehicle-loan-inquiry' => 'services#vehicle_loan_inquiry', as: :vehicle_loan_inquiry
   post '/purchase' => 'orders#purchase_status'
-  post '/subscriptions/subscribe_user' => 'subscriptions#subscribe_user', as: :subscribe_user
+  post '/subscribe_user' => 'subscriptions#subscribe_user'
+  # get '/subscribe_user' => 'subscriptions#subscribe_user', as: :subscribe_user
   get '/truck_user_profile' => 'trucks#truck_user_profile'
   get '/load_user_profile' => 'loads#load_user_profile'
   get '/make_confirmation_load' => 'loads#make_confirmation_load'
