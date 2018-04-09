@@ -51,7 +51,6 @@ TRUCK_CAPICITY = [
   'Containerised Truck 32 FT MXL',
   'Open Body Truck',
   'Taurus',
-  'Taurus',
   'Trailer',
   'High Bed Trailer (DBL AXLE)',
   'High Bed Trailer Triple AXLE',

@@ -57,7 +57,7 @@
        <div class="form-group" id="weight-of-load">
           <label for="from">Weight(Metric Ton)<span>*</span></label>
             <%#= f.select :load_weight, options_for_select(Load::LOAD_WEIGHT.map {|k| [k.humanize.capitalize]}, :selected=> params[:load].present? ? params[:load][:load_weight] : ''), :prompt=>"Weight" %>
-            <%= f.select :load_weight, options_for_select(Truck::TRUCK_CAPICITY.map {|k,v| [v,v]}, :selected=> params[:truck].present? ? params[:truck][:load_weight] : ''), :prompt=>"Weight" %>
+            <%= f.select :load_weight, options_for_select(Truck::TRUCK_CAPICITY.map {|k| [k]}, :selected=> params[:truck].present? ? params[:truck][:load_weight] : ''), :prompt=>"Weight" %>
         </div> 
       </td>
     </tr>
