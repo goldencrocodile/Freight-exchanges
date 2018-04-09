@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <div class="user-form">
 <div class="container container-padding-top">
   <h2>Post a Load</h2>
@@ -16,12 +17,6 @@
     </div>
     <table cellpadding="1" cellspacing="1" class="tblstyle tblstyle-load">
       <tr>
-        <td>
-        <div class="form-group">
-          <label for="from">Load Type<span>*</span></label>
-            <%= f.select :load_type, options_for_select(Load::LOAD_TYPE.map {|k| [k.humanize.capitalize]}, :selected=> params[:load].present? ? params[:load][:load_type] : ''  ), :prompt=>"Select Load Type" %>      
-        </div>
-      </td>
       <td>
         <div class="form-group ">
         <label for="from">From<span>*</span></label>
@@ -34,6 +29,13 @@
         <%= f.select 'load_to', options_for_select(country_list.collect{ |u| [u] }, :selected=> params[:load].present? ? params[:load][:load_to] : ''), :prompt=>"Destination" %>
       </div>
       </td>
+       <td>
+          <div class="form-group">
+          <label for="from">Truck body</label>
+            <%= f.select :load_body, options_for_select(Load::LOAD_BODY.map {|k,v| [k,v]}),:prompt=>"Truck body" %>
+          </div>
+        </td>
+     
     </tr>
     <tr>
         <td>   </td>
@@ -75,10 +77,16 @@
          <span> <%= f.text_field :load_schedule_date, :id=> "datepicker", :placeholder=> "Date" %></span>
       </div>
     </td>
+     <td>
+        <div class="form-group">
+          <label for="from">Load Type<span>*</span></label>
+            <%= f.select :load_type, options_for_select(Load::LOAD_TYPE.map {|k| [k.humanize.capitalize]}, :selected=> params[:load].present? ? params[:load][:load_type] : ''  ), :prompt=>"Select Load Type" %>      
+        </div>
+      </td>
     <td>
       <div class="form-group ">
         <label for="from">Expected Price(INR) <span>*</span></span></label>
-         <span> <%= f.text_field :expected_price, :id=> "datepicker", :placeholder=> "Price" %></span>
+         <span> <%= f.text_field :expected_price, :placeholder=> "Expected Price" %></span>
       </div>
     </td>
   </tr>
@@ -98,6 +106,12 @@
          <%= f.text_field :destination_pin_code, class: "input control-label col-sm-4", :class=> "form-control", :placeholder=> "Delivery Address" %>
       </div>
     </td>
+     <td>
+      <div class="form-group ">
+        <label for="from">Scheduled Date <span>*</span></label>
+         <span> <%= f.text_field :load_schedule_date, :id=> "datepicker",  :placeholder=> "Scheduled Date" %></span>
+      </div>
+    </td>
     <!-- <td>
       <div class="form-group ">
         <label for="from">Are you wiling to share<span>*</span></label>
@@ -111,12 +125,7 @@
              <%= f.text_area :information, class: "input control-label col-sm-4", :class=> "information-text form-control", :placeholder=> "Information" %>
           </div>
         </td>
-        <td>
-          <div class="form-group">
-          <label for="from">Truck body</label>
-            <%= f.select :load_body, options_for_select(Load::LOAD_BODY.map {|k,v| [k,v]}),:prompt=>"Truck body" %>
-          </div>
-        </td>
+       
       </tr>
     </tr>
   <tr>

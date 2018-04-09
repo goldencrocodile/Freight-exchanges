@@ -4,13 +4,13 @@
     margin-right: 200px;
     margin-left: 110px;
    padding:20px;
-  background: linear-gradient(to bottom right, lightblue, white);
+  background: #FFFFFF;
    border-style: inset;
    box-shadow: 10px 10px 5px grey;}
 
 .user-form1{ 
   border-style: outset;
-  background: linear-gradient(to bottom right, lightblue, white);
+  background: #FFFFFF;
   box-shadow: 300px 300px 250px blue;}
 /*.user-form2{ border: 1px; border-style: black;*/
   .user-form2{ border: 1px;
@@ -19,7 +19,7 @@
     margin-right: 50px;
     margin-left: 50px;
    padding:20px;
-  background: linear-gradient(to bottom right, lightblue, white);
+  background: #FFFFFF;
    border-style: inset;
    box-shadow: 10px 10px 5px grey;}
 
@@ -34,7 +34,7 @@ red; text-align: center;} .board_header {background-color: none repeat scroll
 #error_distance_from{display: none;color: red} #error_distance_to{display:
 none;color: red} #contact_subject {margin-right: 550px; margin-bottom: 20px;   }
 .contact-text{text-align: center;} #multi_markers{width: 1200px;height:
-400px;} .map-div{width: 1000px;} #map {height: 50%;} #truck-type{display:
+400px;} .map-div{width: 1000px; } #map {height: 50%;} #truck-type{display:
 block;} /*warehouse -inquiry page*/ .header-font{text-align: center;font-size:
 32px;} .flash{color: red;} #spnTruckStatus{display: none;} /*Error Load page*/
 .error-set{ padding: 20px;}
@@ -69,6 +69,10 @@ border-collapse: separate;
 #map {
   height: 100%;
   margin-top:40px;
+
+   width: 100%;
+   background: #FFFFFF;
+   border-radius: 90%;
 }
     /* Optional: Makes the sample page fill the window. */
     html, body {
@@ -163,24 +167,126 @@ border-collapse: separate;
     border-radius: 5px;
     margin-left: 100px;
 }
-#datepicker{
-      font-weight: 500;
-    /*border: 2px; border-style: gray !important;*/
-    border: 2px;
-    width: 35%;
-    margin-left: 15px;
-    padding: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+/* post a truck*/
+  .post{
+     border: 1px solid black;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    margin-right: 50px;
+    margin-left: 50px;
+   padding:20px;
+  background: #FFFFFF;
+   border-style: inset;
+   box-shadow: 10px 10px 5px grey;
+   }
+  #truck_truck_type{
+    width: 200px;
+     height: 30px;
+
+  }
+  #truck_truck_from{
+    width: 200px;
+    height: 30px;
+
+  }
+  #truck_truck_to{
+    
+     width: 250px;
+    height: 30px;
+
+  }
+  #truck_transit_time{
+    
+     width: 200px;
+    height: 30px;
+
+  }
+  #truck_truck_weight{
+    
+     width: 200px;
+    height: 30px;
+
+  }
+  #truck_truck_body{
+    
+     width: 200px;
+    height: 30px;
+
+  }
+  #truck_documentation{
+    
+     width: 200px;
+    height: 30px;
+
+  }
+  
+  .width-20
+  {
+    width: 200px;
+    height: 30px;
+
+  }
+#load_truck_type
+{
+  width: 200px;
+    height: 30px;
 }
-#find{
-  width: 20%;
-    margin-left: 15px;
-    padding: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+.mar-lft-15
+{
+    
+    width: 70px;
+    border: 1px solid grey;
+    padding: 4px;
+  }
+/* available a truck*/
+  #vehicle_number
+  {
+    width: 170px;
+    height: 40px;
+  }
+  #truck_to
+  {
+     width: 170px;
+    height: 40px;
+  }
+  #truck_from
+  {
+    width: 170px;
+    height: 40px;
+  }
+  .text-data
+  {
+    text-align: center;
+  }
+  /*header*/
+#load_load_from
+{
+  width: 150px;
+    margin-left: 15px; 
 }
+#load_load_to
+{
+ width: 150px;
+    margin-left: 15px;
+}
+#load_load_body
+{
+  width: 150px;
+    margin-left: 15px;
+}
+#load_load_material
+{
+  width: 150px;
+    margin-left: 15px;
+}
+#load_load_truck_type
+{
+  width: 150px;
+    margin-left: 15px;
+    
+}
+#load_load_weight
+{
+ width: 150px;
+    margin-left: 15px;
+  }
