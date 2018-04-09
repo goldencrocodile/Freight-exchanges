@@ -30,6 +30,15 @@ class User < ActiveRecord::Base
     self.subscription_date = Time.now
     self.confirmed_at = Time.now 
   end
+  after_create :create_razor_customer
+
+  def create_razor_customer
+    if self.email.present? and self.mobile_number.present?
+      customer = Razorpay::Customer.create email: self.email, contact: self.mobile_number
+      self.update_attribute(:customer_id, customer.id) if self.present?
+    end
+  end
+
   # Validate content type
   # validates_attachment_content_type :aadhaar_no_image, content_type: /\Aimage\/.*\z/
   # validates :other_detail_aadhaar_no, :presence => {:message => 'Aadhaar card number should be 12 digit!'}, :numericality => true,

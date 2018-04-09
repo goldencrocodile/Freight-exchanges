@@ -14,22 +14,77 @@
         <p class="description"><%#= @product.description %></p>
         <h3>Subscription</h3>
         <%= form_tag("/subscribe_user", method: "post") do %>
-          <script
-              src="https://checkout.razorpay.com/v1/checkout.js"
-              data-key="<%= "#{Figaro.env.MERCHANT_KEY_ID}" %>"
-              data-amount= 100000
-              data-name="Sandeep"
-              data-description="Subs 1000"
-              data-image="/assets/3SC.png"
-              data-prefill.name="Chourey"
-              data-prefill.email="sandeep.chourey@3scsolution.com"
-              data-theme.color="#F37254"
-          >
-          </script>
-          <input type="submit" value="1000 INR per Monthly" class="razorpay-payment-button1">
-          <input type="hidden" value="plan_9vS9eTSf8lPqRn" name="product_id">
-          <input type="hidden" value="200" name="user_id">
-        <% end %>
+  <script
+      src="https://checkout.razorpay.com/v1/checkout.js"
+      data-key="<%= "#{Figaro.env.MERCHANT_KEY_ID}" %>"
+      data-amount= 100000
+      data-name= <%= current_user.full_name  if current_user.full_name%>
+      data-description="Monthly subscriptions"
+      data-image="/assets/3SC.png"
+      data-prefill.name=<%= current_user.first_name  if current_user.first_name %>
+      data-prefill.email=<%= current_user.email  if current_user.email %>
+      data-theme.color="#F37254"
+  >
+  </script>
+    <input type="submit" value="1000 INR per monthly" class="razorpay-payment-button-subs-monthly">
+    <input type="hidden" value="plan_9vS9eTSf8lPqRn" name="plan_id">
+    <input type="hidden" value= <%= current_user.customer_id if  current_user.customer_id.present? %> name="customer_id">
+  <% end %>
+<script>
+  $(document).ready(function(){
+    var options = {
+        "key": "<%= "#{Figaro.env.MERCHANT_KEY_ID}" %>",
+        "amount": "1000",
+        "name": "Sandeep",
+        "description": "Hello",
+        "image": "/assets/3SC.png",
+        "handler": function (response){
+          var mapForm = document.createElement("form");
+          mapForm.target = "_self";
+          mapForm.method = "post"; // or "post" if appropriate
+          mapForm.action = "/subscribe_user";
+
+          var mapInput = document.createElement("input");
+          mapInput.type = "text";
+          mapInput.name = "payment_id";
+          mapInput.value = response.razorpay_payment_id;
+          mapForm.appendChild(mapInput);
+
+          var mapInput2 = document.createElement("input");
+          mapInput2.type = "text";
+          mapInput2.name = "customer_id";
+          mapInput2.value = <%= current_user.id %>;
+
+          var mapInput3 = document.createElement("input");
+          mapInput3.type = "text";
+          mapInput3.name = "product_id";
+          mapInput3.value = "plan_9pxNV2jyF7X9td";
+
+          mapForm.appendChild(mapInput);
+          mapForm.appendChild(mapInput2);
+          mapForm.appendChild(mapInput3);
+
+          mapForm.submit();
+
+        },
+        "prefill": {
+          "name": <%= current_user.full_name if current_user.full_name.present? %>,
+          "email": <%= current_user.email if current_user.email.present? %>
+        },
+        "notes": {
+            "address": "Hello World"
+        },
+        "theme": {
+            "color": "#198F69"
+        }
+    };
+    $("#rzp-button1").click(function(e){
+      var rzp1 = new Razorpay(options);
+        rzp1.open();
+        e.preventDefault();
+    });
+  });
+</script>
         <br>
         <%= render "index"  %>
         <br>
@@ -55,58 +110,58 @@
   }
 </style>
 <script>
-$(document).ready(function(){
-  var options = {
-      "key": "<%= "#{Figaro.env.MERCHANT_KEY_ID}" %>",
-      "amount": "1000",
-      "name": "Sandeep",
-      "description": "Hello",
-      "image": "/assets/3SC.png",
-      "handler": function (response){
-        var mapForm = document.createElement("form");
-        mapForm.target = "_self";
-        mapForm.method = "POST"; // or "post" if appropriate
-        mapForm.action = "/subscribe_user";
+// $(document).ready(function(){
+//   var options = {
+//       "key": "<%#= "#{Figaro.env.MERCHANT_KEY_ID}" %>",
+//       "amount": "1000",
+//       "name": "Sandeep",
+//       "description": "Hello",
+//       "image": "/assets/3SC.png",
+//       "handler": function (response){
+//         var mapForm = document.createElement("form");
+//         mapForm.target = "_self";
+//         mapForm.method = "POST"; // or "post" if appropriate
+//         mapForm.action = "/subscribe_user";
 
-        var mapInput = document.createElement("input");
-        mapInput.type = "text";
-        mapInput.name = "payment_id";
-        mapInput.value = response.razorpay_payment_id;
-        mapForm.appendChild(mapInput);
+//         var mapInput = document.createElement("input");
+//         mapInput.type = "text";
+//         mapInput.name = "payment_id";
+//         mapInput.value = response.razorpay_payment_id;
+//         mapForm.appendChild(mapInput);
 
-        var mapInput2 = document.createElement("input");
-        mapInput2.type = "text";
-        mapInput2.name = "user_id";
-        mapInput2.value = "10";
+//         var mapInput2 = document.createElement("input");
+//         mapInput2.type = "text";
+//         mapInput2.name = "user_id";
+//         mapInput2.value = "10";
 
-        var mapInput3 = document.createElement("input");
-        mapInput3.type = "text";
-        mapInput3.name = "product_id";
-        mapInput3.value = "10";
+//         var mapInput3 = document.createElement("input");
+//         mapInput3.type = "text";
+//         mapInput3.name = "product_id";
+//         mapInput3.value = "10";
 
-        mapForm.appendChild(mapInput);
-        mapForm.appendChild(mapInput2);
-        mapForm.appendChild(mapInput3);
+//         mapForm.appendChild(mapInput);
+//         mapForm.appendChild(mapInput2);
+//         mapForm.appendChild(mapInput3);
 
-        mapForm.submit();
+//         mapForm.submit();
 
-      },
-      "prefill": {
-          "name": "Sandeep Chourey",
-          "email": "sandeep.chourey@3scsolution.com"
-      },
-      "notes": {
-          "address": "Hello World"
-      },
-      "theme": {
-          "color": "#198F69"
-      }
-  };
-  $("#rzp-button1").click(function(e){
-    var rzp1 = new Razorpay(options);
-      rzp1.open();
-      e.preventDefault();
-  });
+//       },
+//       "prefill": {
+//           "name": "Sandeep Chourey",
+//           "email": "sandeep.chourey@3scsolution.com"
+//       },
+//       "notes": {
+//           "address": "Hello World"
+//       },
+//       "theme": {
+//           "color": "#198F69"
+//       }
+//   };
+//   $("#rzp-button1").click(function(e){
+//     var rzp1 = new Razorpay(options);
+//       rzp1.open();
+//       e.preventDefault();
+//   });
 
-});
+// });
 </script>

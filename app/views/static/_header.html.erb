@@ -117,8 +117,8 @@
                   <% else %>
                   <% end %> 
  									<%= link_to "Sign Out" + " "+"#{current_user.email}", destroy_user_session_path, :method => :delete %>
-                  <% subs = Subscription.find_by_user_id(current_user.customer_id) if current_user.customer_id.present?  %>
-                    <%= link_to('Subscription', subscriptions_path, :class=> "")  if (subs.next_due_date <= Date.today == true) %>
+                  <%# subs = Subscription.find(:customer_id => current_user.customer_id) rescue nil  if current_user.customer_id.present?  %>
+                    <%= link_to('Subscription', subscriptions_path, :class=> "")  if current_user.present? and current_user.subscription_date.present? and current_user.subscription_date <= Date.today == true %>
  								</li>
  							<% else %>
  								<li class="login-link">
